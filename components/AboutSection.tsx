@@ -66,7 +66,8 @@ const fadeUp: Variants = {
 
 export default function AboutSection() {
   return (
-    <section className="relative py-24 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="profil" 
+    className="relative py-24 bg-white dark:bg-gray-950 overflow-hidden">
 
       {/* Subtle background grid */}
       <div
@@ -256,19 +257,24 @@ export default function AboutSection() {
             {/* CTA */}
             <motion.div custom={0.44} variants={fadeUp} className="flex flex-wrap gap-3">
               <Link
-                href="/profil"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full
-                  bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-semibold
-                  shadow-md shadow-emerald-900/20 hover:shadow-emerald-700/30
-                  hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
-              >
-                Profil Lengkap
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+  href="#sejarah"
+  className="inline-flex items-center gap-2 px-5 py-3 rounded-full
+    bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-semibold
+    shadow-md shadow-emerald-900/20 hover:shadow-emerald-700/30
+    hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+>
+  Profil Lengkap
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M17 8l4 4m0 0l-4 4m4-4H3"
+    />
+  </svg>
+</Link>
               <Link
-                href="/potensi"
+                href="#potensi"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full
                   border border-emerald-200 dark:border-emerald-800
                   text-emerald-700 dark:text-emerald-400 text-sm font-semibold

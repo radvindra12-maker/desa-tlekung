@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface StatItem {
@@ -191,7 +190,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col overflow-hidden">
+     <section id="beranda" 
+     className="relative min-h-screen">
 
       {/* ── Background image ── */}
       <div className="absolute inset-0 z-0">
@@ -288,7 +288,7 @@ export default function HeroSection() {
             className="flex flex-wrap gap-3"
           >
             <Link
-              href="/profil"
+              href="#profil"
               className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full
                 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm
                 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-600/40
@@ -308,7 +308,7 @@ export default function HeroSection() {
             </Link>
 
             <Link
-              href="/kontak"
+              href="#kontak"
               className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full
                 bg-white/10 hover:bg-white/20 backdrop-blur-sm
                 border border-white/30 hover:border-orange-400/60

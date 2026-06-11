@@ -24,13 +24,13 @@ interface NavLink {
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-const navLinks: NavLink[] = [
-  { label: "Beranda", href: "/" },
-  { label: "Profil Desa", href: "/profil" },
-  { label: "Potensi Desa", href: "/potensi" },
-  { label: "Berita", href: "/berita" },
-  { label: "Galeri", href: "/galeri" },
-  { label: "Kontak", href: "/kontak" },
+const navLinks = [
+  { label: "Beranda", href: "#beranda" },
+  { label: "Profil Desa", href: "#profil" },
+  { label: "Potensi Desa", href: "#potensi" },
+  { label: "Berita", href: "#berita" },
+  { label: "Galeri", href: "#galeri" },
+  { label: "Kontak", href: "#kontak" },
 ];
 
 const layananLinks: NavLink[] = [
@@ -147,7 +147,7 @@ export default function FooterSection() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-green-950 dark:bg-gray-950 text-white overflow-hidden">
+    <footer id="kontak">
 
       {/* Wave divider */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none">
