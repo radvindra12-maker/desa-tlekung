@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -12,6 +13,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main>{children}</main>
+        <Analytics />
       </body>
     </html>
   );
