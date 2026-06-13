@@ -152,7 +152,7 @@ function VideoPlayer() {
 
 export default function InterviewSection() {
   return (
-    <section className="relative py-24 bg-stone-950 overflow-hidden">
+    <section id="wawancara">
 
       {/* Ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-96 bg-amber-900/15 rounded-full blur-[120px] pointer-events-none" />
@@ -318,7 +318,7 @@ export default function InterviewSection() {
           </a>
 
           <a
-            href="/potensi"
+            href="#potensi"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full
               border border-stone-700 hover:border-amber-700/60
               text-stone-400 hover:text-amber-400 text-sm font-semibold

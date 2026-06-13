@@ -447,7 +447,7 @@ export default function GallerySection() {
             className="mt-12 flex justify-center"
           >
             <a
-              href="/galeri"
+              href="#galeri"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full
                 bg-emerald-800/30 hover:bg-emerald-700/50
                 border border-emerald-700/40 hover:border-emerald-500/60
