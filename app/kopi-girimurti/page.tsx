@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 // DATA — ganti dengan data nyata
 // ═══════════════════════════════════════════════════════════════════════════════
 
-const YOUTUBE_ID = "VIDEO_ID"; // ← ganti dengan ID video YouTube
 
 const timeline = [
   {
@@ -558,86 +557,80 @@ function GaleriSection() {
   );
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// 5. VIDEO
-// ═══════════════════════════════════════════════════════════════════════════════
-
-function VideoSection() {
-  const [playing, setPlaying] = useState(false);
+function ProsesProduksiSection() {
+  const proses = [
+    {
+      title: "Perkebunan Kopi",
+      image: "/images/kopi/kebun-pagi.jpg",
+      desc: "Kopi Girimurti tumbuh di kawasan pegunungan Desa Tlekung dengan udara sejuk dan tanah yang subur.",
+    },
+    {
+      title: "Panen Selektif",
+      image: "/images/kopi/panen.jpg",
+      desc: "Buah kopi dipetik saat mencapai kematangan optimal untuk menjaga kualitas rasa.",
+    },
+    {
+      title: "Pengeringan",
+      image: "/images/kopi/proses-kering.jpg",
+      desc: "Biji kopi dikeringkan secara bertahap untuk menghasilkan kualitas yang konsisten.",
+    },
+    {
+      title: "Proses Sangrai",
+      image: "/images/kopi/sangrai.jpg",
+      desc: "Roasting dilakukan untuk membentuk aroma khas dan karakter Kopi Girimurti.",
+    },
+    {
+      title: "Produk Siap Nikmati",
+      image: "/images/kopi/kemasan.jpg",
+      desc: "Kopi dikemas dan siap dinikmati oleh masyarakat maupun wisatawan.",
+    },
+  ];
 
   return (
-    <section className="relative py-24 bg-stone-950">
-      <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-stone-700/40 to-transparent" />
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-150 h-72 bg-amber-900/10 rounded-full blur-[120px]" />
-      </div>
+    <section className="py-24 bg-stone-900">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-14">
+          <span className="text-amber-400 uppercase tracking-widest text-sm font-semibold">
+            Dari Kebun ke Cangkir
+          </span>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-16">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}
-          variants={fadeUp} custom={0} className="text-center mb-10">
-          <Eyebrow>Wawancara Eksklusif</Eyebrow>
-          <SectionHeading>
-            Suara dari{" "}
-            <span className="relative text-amber-400">
-              Kebun
-              <GreenLine />
-            </span>
-          </SectionHeading>
-          <p className="mt-4 text-stone-400 text-sm max-w-lg mx-auto leading-relaxed">
-            Dengarkan langsung kisah dari generasi keempat penjaga Kopi Girimurti — tentang tradisi,
-            perubahan, dan harapan untuk masa depan kopi Desa Tlekung.
+          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
+            Proses Produksi Kopi Girimurti
+          </h2>
+
+          <p className="text-stone-400 max-w-3xl mx-auto mt-5">
+            Setiap cangkir Kopi Girimurti melewati proses yang panjang,
+            mulai dari kebun hingga menjadi produk berkualitas yang siap dinikmati.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}
-          variants={fadeIn} custom={0.1}
-          className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl shadow-black/70">
-          {playing ? (
-            <iframe className="absolute inset-0 w-full h-full"
-              src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1`}
-              title="Wawancara Pemilik Kopi Girimurti" allow="autoplay; fullscreen"
-              allowFullScreen />
-          ) : (
-            <>
-              <div className="absolute inset-0 bg-linear-to-br from-stone-950 via-amber-950/40 to-stone-950" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
-                <button onClick={() => setPlaying(true)} aria-label="Putar video"
-                  className="relative w-20 h-20 rounded-full bg-amber-700/90 hover:bg-amber-600
-                    border-2 border-amber-500/50 shadow-2xl shadow-amber-900/60
-                    flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300">
-                  <span className="absolute inset-0 rounded-full bg-amber-600/30 animate-ping" />
-                  <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-                <div className="text-center">
-                  <p className="text-amber-400 text-xs font-semibold uppercase tracking-widest mb-1">
-                    Klik untuk memutar
-                  </p>
-                  <p className="text-white/30 text-xs">Wawancara Eksklusif · Kopi Girimurti</p>
-                </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          {proses.map((item) => (
+            <div
+              key={item.title}
+              className="bg-stone-800 rounded-3xl overflow-hidden border border-stone-700 hover:border-amber-500/40 transition"
+            >
+              <div className="relative h-56">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="absolute top-0 left-0 right-0 h-6 bg-black/60" />
-              <div className="absolute bottom-0 left-0 right-0 h-6 bg-black/60" />
-            </>
-          )}
-        </motion.div>
 
-        {/* Narasumber */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}
-          variants={fadeUp} custom={0.2}
-          className="mt-6 flex items-center gap-4 p-4 rounded-2xl bg-stone-900 border border-stone-800">
-          <div className="w-12 h-12 rounded-full bg-linear-to-br from-amber-700 to-amber-900 flex items-center justify-center text-amber-200 font-extrabold">
-            NP
-          </div>
-          <div>
-            <p className="text-amber-300 font-bold text-sm">Nama Pemilik</p>
-            <p className="text-stone-500 text-xs">Generasi Keempat · Pemilik Kebun Kopi Girimurti, Desa Tlekung</p>
-          </div>
-          <blockquote className="ml-auto hidden sm:block max-w-xs border-l-2 border-amber-700 pl-3 text-xs text-stone-400 italic leading-relaxed">
-            "Kopi bukan hanya hasil panen, ia adalah identitas dan sejarah desa kami."
-          </blockquote>
-        </motion.div>
+              <div className="p-5">
+                <h3 className="text-white font-semibold mb-3">
+                  {item.title}
+                </h3>
+
+                <p className="text-stone-400 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -849,7 +842,7 @@ export default function KopiGirimurtiPage() {
       <CeritaSection />
       <TimelineSection />
       <GaleriSection />
-      <VideoSection />
+      <ProsesProduksiSection />
       <ProdukSection />
       <DampakSection />
       <CTAPenutup />
