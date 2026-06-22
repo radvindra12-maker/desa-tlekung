@@ -59,7 +59,7 @@ const timelineItems: TimelineItem[] = [
   {
     year: "Kini",
     title: "Era Modern",
-    desc: "Kopi Girimurti kini hadir dalam kemasan modern dan mulai merambah pasar nasional. Wisata kebun kopi menjadi daya tarik baru yang menghidupkan perekonomian Desa Tlekung.",
+    desc: "Kopi Girimurti kini hadir dalam kemasan modern dan mulai merambah pasar nasional. Kopi Girimurti kini hadir dalam kemasan modern dan mulai merambah pasar nasional. Inovasi pengolahan dan pemasaran terus dilakukan untuk menjaga kualitas sekaligus memperkenalkan warisan kopi Desa Tlekung kepada masyarakat yang lebih luas.",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
@@ -321,7 +321,7 @@ export default function HistoryCoffeeSection() {
               <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full
                 bg-amber-900/40 border border-amber-700/40
                 text-xs font-bold uppercase tracking-widest text-amber-400">
-                ☕ Warisan Desa
+                ☕ Warisan Kopi
               </span>
             </motion.div>
 
