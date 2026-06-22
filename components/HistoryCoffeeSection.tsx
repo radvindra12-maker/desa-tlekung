@@ -449,13 +449,13 @@ export default function HistoryCoffeeSection() {
             {/* CTA */}
             <motion.div custom={0.44} variants={fadeUp} className="flex flex-wrap gap-3">
               <a
-                href="#potensi"
+                href="#galeri"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full
                   bg-amber-700 hover:bg-amber-600 text-white text-sm font-semibold
                   shadow-lg shadow-amber-900/30 hover:shadow-amber-700/30
                   hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
-                Jelajahi Potensi Desa
+                Lihat Galeri Kopi
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
