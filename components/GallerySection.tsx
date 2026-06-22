@@ -20,70 +20,70 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
   {
     id: 1,
-    src: "/images/gallery/foto-1.jpg",
+    src: "/images/kopi/kebun-pagi.jpg",
     alt: "Perkebunan Kopi Girimurti di lereng Gunung Arjuno",
     title: "Perkebunan Kopi Girimurti",
-    kategori: "Pertanian",
+    kategori: "Kebun",
     span: "tall",
   },
   {
     id: 2,
-    src: "/images/gallery/foto-2.jpg",
-    alt: "Kegiatan panen apel warga Desa Tlekung",
-    title: "Panen Raya Apel",
-    kategori: "Pertanian",
+    src: "/images/kopi/panen.jpg",
+    alt: "Proses panen buah kopi merah",
+    title: "Panen Buah Kopi",
+    kategori: "Panen",
     span: "normal",
   },
   {
     id: 3,
-    src: "/images/gallery/foto-3.jpg",
-    alt: "Pemandangan alam Desa Tlekung dari ketinggian",
-    title: "Panorama Desa",
-    kategori: "Wisata",
+    src: "/images/kopi/proses-kering.jpg",
+    alt: "Proses pengeringan biji kopi",
+    title: "Pengeringan Biji Kopi",
+    kategori: "Pascapanen",
     span: "normal",
   },
   {
     id: 4,
-    src: "/images/gallery/foto-4.jpg",
-    alt: "Gotong royong warga Desa Tlekung",
-    title: "Semangat Gotong Royong",
-    kategori: "Sosial",
+    src: "/images/kopi/sangrai.jpg",
+    alt: "Proses penyangraian kopi Girimurti",
+    title: "Penyangraian Kopi",
+    kategori: "Produksi",
     span: "wide",
   },
   {
     id: 5,
-    src: "/images/gallery/foto-5.jpg",
-    alt: "Kegiatan posyandu balita Desa Tlekung",
-    title: "Posyandu Balita",
-    kategori: "Kesehatan",
+    src: "/images/kopi/kemasan.jpg",
+    alt: "Produk kopi kemasan Girimurti",
+    title: "Produk Kopi Girimurti",
+    kategori: "Produk",
     span: "normal",
   },
   {
     id: 6,
-    src: "/images/gallery/foto-6.jpg",
-    alt: "Balai Desa Tlekung Kecamatan Junrejo",
-    title: "Balai Desa Tlekung",
-    kategori: "Pemerintahan",
+    src: "/images/kopi/kebun-pagi.jpg",
+    alt: "Suasana kebun kopi di pagi hari",
+    title: "Kebun Kopi Arjuno",
+    kategori: "Kebun",
     span: "tall",
   },
 ];
 
 const kategoriColor: Record<string, string> = {
-  Pertanian:    "bg-emerald-900/70 text-emerald-300",
-  Wisata:       "bg-amber-900/70  text-amber-300",
-  Sosial:       "bg-sky-900/70    text-sky-300",
-  Kesehatan:    "bg-rose-900/70   text-rose-300",
-  Pemerintahan: "bg-violet-900/70 text-violet-300",
+  Kebun: "bg-emerald-900/70 text-emerald-300",
+  Panen: "bg-amber-900/70 text-amber-300",
+  Pascapanen: "bg-sky-900/70 text-sky-300",
+  Produksi: "bg-rose-900/70 text-rose-300",
+  Produk: "bg-violet-900/70 text-violet-300",
 };
 
 // ─── Placeholder SVGs per kategori ───────────────────────────────────────────
 
 const placeholderGradients: Record<string, string> = {
-  Pertanian:    "from-emerald-950 to-green-900",
-  Wisata:       "from-amber-950 to-stone-900",
-  Sosial:       "from-sky-950 to-slate-900",
-  Kesehatan:    "from-rose-950 to-stone-900",
-  Pemerintahan: "from-violet-950 to-slate-900",
+  Kebun: "from-emerald-950 to-green-900",
+  Panen: "from-amber-950 to-stone-900",
+  Pascapanen: "from-sky-950 to-slate-900",
+  Produksi: "from-rose-950 to-stone-900",
+  Produk: "from-violet-950 to-slate-900",
 };
 
 function Placeholder({ item }: { item: GalleryItem }) {
@@ -399,7 +399,7 @@ export default function GallerySection() {
             >
               Momen{" "}
               <span className="relative inline-block text-emerald-400">
-                Desa Tlekung
+                Kopi Giri Murti 
                 <svg className="absolute -bottom-1.5 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none">
                   <path d="M2 5 Q50 1 100 5 Q150 9 198 4"
                     stroke="#f97316" strokeWidth="2.5" fill="none" strokeLinecap="round" />
@@ -415,8 +415,8 @@ export default function GallerySection() {
               custom={0.16}
               className="text-stone-400 text-sm max-w-xl mx-auto"
             >
-              Dokumentasi kegiatan, potensi, dan kehidupan sehari-hari masyarakat Desa Tlekung,
-              Kecamatan Junrejo, Kota Batu.
+              Dokumentasi perjalanan Kopi Girimurti mulai dari kebun, panen,
+pengolahan, hingga produk kopi yang menjadi warisan masyarakat Desa Tlekung.
             </motion.p>
           </div>
 

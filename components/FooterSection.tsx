@@ -26,19 +26,19 @@ interface NavLink {
 
 const navLinks = [
   { label: "Beranda", href: "#beranda" },
-  { label: "Profil Desa", href: "#profil" },
-  { label: "Potensi Desa", href: "#potensi" },
-  { label: "Berita", href: "#berita" },
+  { label: "Tentang", href: "#profil" },
+  { label: "Sejarah", href: "#sejarah" },
   { label: "Galeri", href: "#galeri" },
+  { label: "Berita", href: "#berita" },
   { label: "Kontak", href: "#kontak" },
 ];
 
 const layananLinks: NavLink[] = [
-  { label: "Surat Keterangan Domisili", href: "#" },
-  { label: "Surat Pengantar RT/RW", href: "#" },
-  { label: "Data Kependudukan", href: "#" },
-  { label: "Pengumuman Desa", href: "#" },
-  { label: "APBDes", href: "#" },
+  { label: "Sejarah Kopi Girimurti", href: "#sejarah" },
+  { label: "Proses Produksi", href: "#produksi" },
+  { label: "Galeri Perkebunan", href: "#galeri" },
+  { label: "Berita & Kegiatan", href: "#berita" },
+  { label: "Hubungi Kami", href: "#kontak" },
 ];
 
 const contactInfo: ContactItem[] = [
@@ -51,7 +51,7 @@ const contactInfo: ContactItem[] = [
           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    text: "Jl. Tlekung No. 1, Kec. Junrejo, Kota Batu, Jawa Timur 65323",
+    text:  "Desa Tlekung, Kecamatan Junrejo, Kota Batu, Jawa Timur",
   },
   {
     icon: (
@@ -69,7 +69,7 @@ const contactInfo: ContactItem[] = [
           d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    text: "desatlekung@kotabatu.go.id",
+    text: "kopigirimurti@gmail.com",
   },
   {
     icon: (
@@ -205,16 +205,18 @@ export default function FooterSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-green-400">Pemerintah</p>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-green-400">
+                    Warisan Kopi
+                  </p>
                   <p className="text-xl font-extrabold tracking-tight text-white" style={{ fontFamily: "Georgia, serif" }}>
-                    Desa Tlekung
+                    Kopi Giri Murti
                   </p>
                 </div>
               </div>
 
               <p className="text-sm text-green-200/70 leading-relaxed mb-6">
-                Desa Tlekung merupakan salah satu desa di Kecamatan Junrejo, Kota Batu, Jawa Timur.
-                Berkomitmen membangun desa yang transparan, inovatif, dan berdaya saing.
+              Kopi Girimurti merupakan warisan perkebunan kopi yang telah menjadi bagian dari 
+              identitas masyarakat Desa Tlekung sejak tahun 1958. Hingga saat ini kopi ini terus dikembangkan sebagai produk unggulan yang mendukung perekonomian masyarakat lokal.
               </p>
 
               <div className="flex items-center gap-2">
@@ -266,7 +268,7 @@ export default function FooterSection() {
               variants={fadeUp}
             >
               <h3 className="text-sm font-bold uppercase tracking-widest text-orange-400 mb-5">
-                Layanan
+                Eksplorasi
               </h3>
               <ul className="space-y-2.5">
                 {layananLinks.map((link) => (
@@ -282,11 +284,9 @@ export default function FooterSection() {
                 ))}
               </ul>
 
-              <div className="mt-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-800/60 border border-green-700/50 text-xs text-green-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Portal PPID Desa
-              </div>
-            </motion.div>
+              
+             </motion.div>
+          
 
             {/* Col 4 — Kontak */}
             <motion.div
@@ -315,17 +315,11 @@ export default function FooterSection() {
 
           {/* Bottom bar */}
           <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-green-300/50">
-            <p>
-              &copy; {year} Pemerintah Desa Tlekung, Kec. Junrejo, Kota Batu.{" "}
+            <p>&copy; {year} Kopi Giri Murti.
+              {" "}
               <span className="text-green-300/30">Hak cipta dilindungi.</span>
             </p>
-            <div className="flex items-center gap-4">
-              <Link href="#" className="hover:text-green-200 transition-colors">Kebijakan Privasi</Link>
-              <span className="text-white/20">&middot;</span>
-              <Link href="#" className="hover:text-green-200 transition-colors">Aksesibilitas</Link>
-              <span className="text-white/20">&middot;</span>
-              <Link href="#" className="hover:text-green-200 transition-colors">Peta Situs</Link>
-            </div>
+      
 
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

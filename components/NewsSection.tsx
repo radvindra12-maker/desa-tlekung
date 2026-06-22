@@ -28,49 +28,49 @@ interface NewsItem {
 const newsItems: NewsItem[] = [
   {
     id: 1,
-    slug: "pembangunan-jalan-rabat-beton-2025",
-    thumbnail: "/images/news/berita-1.jpg",
+    slug: "panen-raya-kopi-girimurti-2025",
+    thumbnail: "/images/news/kopi-1.jpg",
     tanggal: "09",
     bulan: "Jun",
     tahun: "2025",
-    kategori: "Pembangunan",
-    judul: "Pembangunan Jalan Rabat Beton Dusun Tlekung Timur Resmi Dimulai",
+    kategori: "Kopi Girimurti",
+    judul: "Panen Raya Kopi Girimurti 2025 Resmi Dimulai",
     ringkasan:
-      "Pemerintah Desa Tlekung memulai pengerjaan jalan rabat beton sepanjang 450 meter di Dusun Tlekung Timur yang bersumber dari Dana Desa 2025. Proyek ini diharapkan rampung dalam 60 hari kerja dan akan memperlancar akses warga menuju lahan pertanian.",
-    penulis: "Admin Desa",
-    inisial: "AD",
+      "Musim panen tahun 2025 menjadi momentum penting bagi petani Kopi Girimurti. Hasil panen diperkirakan meningkat dibanding tahun sebelumnya berkat perawatan kebun yang lebih optimal.",
+    penulis: "Tim Kopi Girimurti",
+    inisial: "KG",
     readTime: 3,
     featured: true,
   },
   {
     id: 2,
-    slug: "posyandu-balita-juni-2025",
-    thumbnail: "/images/news/berita-2.jpg",
+    slug: "pelatihan-pascapanen-kopi",
+    thumbnail: "/images/news/kopi-2.jpg",
     tanggal: "05",
     bulan: "Jun",
     tahun: "2025",
-    kategori: "Kesehatan",
-    judul: "Posyandu Balita Bulan Juni: Cakupan Imunisasi Capai 97 Persen",
+    kategori: "Kopi Girimurti",
+    judul: "Pelatihan Pascapanen Tingkatkan Kualitas Biji Kopi",
     ringkasan:
-      "Kegiatan Posyandu rutin bulan Juni 2025 berhasil mencatat cakupan imunisasi dasar lengkap sebesar 97% dari total 214 balita terdaftar. Capaian ini melampaui target nasional sebesar 90% dan menjadi prestasi terbaik sepanjang tahun ini.",
-    penulis: "Kader Posyandu",
-    inisial: "KP",
+      "Kelompok petani mengikuti pelatihan pengolahan pascapanen untuk meningkatkan mutu dan konsistensi kualitas Kopi Girimurti.",
+    penulis: "Tim Kopi Girimurti",
+    inisial: "KG",
     readTime: 4,
     featured: false,
   },
   {
     id: 3,
-    slug: "panen-raya-apel-manalagi-2025",
-    thumbnail: "/images/news/berita-3.jpg",
+    slug: "kopi-girimurti-pameran-umkm",
+    thumbnail: "/images/news/kopi-3.jpg",
     tanggal: "01",
     bulan: "Jun",
     tahun: "2025",
-    kategori: "Pertanian",
-    judul: "Panen Raya Apel Manalagi: Petani Tlekung Raup Untung di Tengah Cuaca Ekstrem",
+    kategori: "Kopi Girimurti",
+    judul: "Kopi Girimurti Tampil di Pameran UMKM Kota Batu",
     ringkasan:
-      "Kelompok tani Makmur Sejahtera Desa Tlekung berhasil melaksanakan panen raya apel varietas Manalagi musim ini dengan hasil rata-rata 12 ton per hektar, meningkat 18% dibanding musim sebelumnya meski menghadapi tantangan cuaca ekstrem.",
-    penulis: "Tim Pertanian",
-    inisial: "TP",
+      "Kopi Girimurti mendapat perhatian pengunjung dalam pameran UMKM Kota Batu dan memperluas jangkauan promosi produk lokal.",
+    penulis: "Tim Kopi Girimurti",
+    inisial: "KG",
     readTime: 5,
     featured: false,
   },
@@ -78,31 +78,18 @@ const newsItems: NewsItem[] = [
 
 // ─── Kategori config ──────────────────────────────────────────────────────────
 
-const kategoriConfig: Record<string, { bg: string; text: string; dot: string }> = {
-  Pembangunan: {
-    bg:   "bg-emerald-900/50",
+const kategoriConfig: Record<
+  string,
+  {
+    bg: string;
+    text: string;
+    dot: string;
+  }
+> = {
+  "Kopi Girimurti": {
+    bg: "bg-emerald-900/50",
     text: "text-emerald-300",
-    dot:  "bg-emerald-400",
-  },
-  Kesehatan: {
-    bg:   "bg-rose-900/50",
-    text: "text-rose-300",
-    dot:  "bg-rose-400",
-  },
-  Pertanian: {
-    bg:   "bg-amber-900/50",
-    text: "text-amber-300",
-    dot:  "bg-amber-400",
-  },
-  Sosial: {
-    bg:   "bg-sky-900/50",
-    text: "text-sky-300",
-    dot:  "bg-sky-400",
-  },
-  Pemerintahan: {
-    bg:   "bg-violet-900/50",
-    text: "text-violet-300",
-    dot:  "bg-violet-400",
+    dot: "bg-emerald-400",
   },
 };
 
@@ -397,8 +384,8 @@ export default function NewsSection() {
               custom={0.16}
               className="mt-3 text-stone-400 text-sm max-w-md"
             >
-              Ikuti perkembangan terbaru kegiatan, pembangunan, dan informasi penting
-              dari Pemerintah Desa Tlekung.
+              Ikuti perkembangan terbaru seputar panen, pengolahan, promosi,
+dan kegiatan Kopi Girimurti.
             </motion.p>
           </div>
 
@@ -459,7 +446,9 @@ export default function NewsSection() {
           </span>
           <p className="text-sm text-stone-400">
             <span className="font-semibold text-emerald-400">Pengumuman:</span>{" "}
-            Musrenbangdes Tahun 2026 akan dilaksanakan pada 15 Juli 2025 di Balai Desa Tlekung.{" "}
+            <span className="font-semibold text-emerald-400">Informasi:</span>{" "}
+Kopi Girimurti terus dikembangkan sebagai produk unggulan masyarakat
+Desa Tlekung melalui peningkatan kualitas budidaya dan pengolahan kopi.{" "}
             <Link href="#berita" className="underline underline-offset-2 text-emerald-500 hover:text-orange-400 transition-colors">
               Selengkapnya
             </Link>

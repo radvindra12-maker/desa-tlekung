@@ -233,7 +233,7 @@ export default function HeroSection() {
               bg-white/10 backdrop-blur-sm border border-white/20
               text-xs font-semibold tracking-wider text-emerald-300 uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Kecamatan Junrejo &bull; Kota Batu &bull; Jawa Timur
+              WARISAN KOPI • SEJAK 1958 • DESA TLEKUNG
             </span>
           </motion.div>
 
@@ -246,9 +246,9 @@ export default function HeroSection() {
             className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.05] mb-2"
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
-            Desa{" "}
+            Kopi{" "}
             <span className="relative inline-block text-emerald-400">
-              Tlekung
+              Giri Murti
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 10" preserveAspectRatio="none">
                 <path d="M2 6 Q50 2 100 6 Q150 10 198 5" stroke="#f97316" strokeWidth="3" fill="none" strokeLinecap="round" />
               </svg>
@@ -263,7 +263,7 @@ export default function HeroSection() {
             variants={fadeSlideUp}
             className="text-lg sm:text-xl font-semibold text-white/80 tracking-wide mt-4 mb-3"
           >
-            Smart Village &mdash; Modern, Transparan &amp; Berdaya Saing
+            Warisan Rasa dari Lereng Tlekung Sejak 1958
           </motion.p>
 
           {/* Description */}
@@ -274,9 +274,7 @@ export default function HeroSection() {
             variants={fadeSlideUp}
             className="text-sm sm:text-base text-white/60 leading-relaxed max-w-xl mb-8"
           >
-            Desa Tlekung hadir sebagai pusat layanan digital terpadu yang menghubungkan warga,
-            pemerintah desa, dan potensi lokal dalam satu ekosistem yang inklusif dan modern
-            di bawah kaki Gunung Arjuno, Kota Batu.
+            Kopi Girimurti merupakan warisan perkebunan kopi Desa Tlekung yang telah tumbuh dan berkembang sejak tahun 1958. Ditanam di kawasan pegunungan dengan iklim yang mendukung, Kopi Girimurti menghadirkan cita rasa khas yang menjadi kebanggaan masyarakat setempat.
           </motion.p>
 
           {/* CTA */}
@@ -298,7 +296,7 @@ export default function HeroSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
               </svg>
-              Jelajahi Desa
+              Pelajari Sejarah
               <svg
                 className="w-3.5 h-3.5 translate-x-0 group-hover:translate-x-1 transition-transform duration-200"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -319,7 +317,7 @@ export default function HeroSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              Layanan Digital
+              Lihat Produk
             </Link>
           </motion.div>
 

@@ -117,15 +117,15 @@ export default function CTASection() {
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white max-w-3xl"
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
-            Mari Bangun{" "}
+            Mari Lestarikan{" "}
             <span className="relative inline-block text-emerald-400">
-              Desa Tlekung
+              Warisan Kopi
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 280 10" preserveAspectRatio="none">
                 <path d="M2 6 Q70 1 140 6 Q210 11 278 5"
                   stroke="#f97316" strokeWidth="3" fill="none" strokeLinecap="round" />
               </svg>
             </span>{" "}
-            Bersama
+            Girimurti
           </motion.h2>
 
           {/* Description */}
