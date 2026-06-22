@@ -7,14 +7,14 @@ import { motion, Variants } from "framer-motion";
 
 const quickLinks = [
   {
-    label: "Profil Desa",
+    label: "Tentang Kopi",
     href: "#profil",
-    icon: "🏛️",
+    icon: "☕",
   },
   {
-    label: "Potensi Desa",
-    href: "#potensi",
-    icon: "🌿",
+    label: "Sejarah",
+    href: "#sejarah",
+    icon: "📜",
   },
   {
     label: "Berita",
@@ -103,7 +103,7 @@ export default function CTASection() {
               bg-emerald-900/50 border border-emerald-700/50
               text-xs font-bold uppercase tracking-widest text-emerald-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Masa Depan Desa
+              Warisan Sejak 1958
             </span>
           </motion.div>
 
@@ -137,8 +137,8 @@ export default function CTASection() {
             custom={0.2}
             className="text-green-200/60 text-base sm:text-lg leading-relaxed max-w-2xl mb-10"
           >
-            Dapatkan informasi, layanan, dan perkembangan terbaru Desa Tlekung melalui
-            platform digital yang transparan dan modern.
+            Kopi Girimurti bukan hanya produk kopi, tetapi juga bagian dari sejarah,
+             budaya, dan identitas masyarakat Desa Tlekung yang terus dijaga dan dikembangkan hingga saat ini.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -151,29 +151,50 @@ export default function CTASection() {
             className="flex flex-wrap items-center justify-center gap-3 mb-14"
           >
             {/* Primary */}
-            <Link
-              href="#kontak"
-              className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full
-                bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm
-                shadow-lg shadow-emerald-900/50 hover:shadow-emerald-600/40
-                hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Hubungi Kami
-              <svg
-                className="w-3.5 h-3.5 translate-x-0 group-hover:translate-x-1 transition-transform duration-200"
-                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+<a
+  href="https://wa.me/6282139108285?text=Halo%20saya%20ingin%20mengetahui%20informasi%20tentang%20Kopi%20Girimurti"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full
+    bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm
+    shadow-lg shadow-emerald-900/50 hover:shadow-emerald-600/40
+    hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+>
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+    />
+  </svg>
+
+  Hubungi Kami
+
+  <svg
+    className="w-3.5 h-3.5 translate-x-0 group-hover:translate-x-1 transition-transform duration-200"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2.5}
+      d="M9 5l7 7-7 7"
+    />
+  </svg>
+</a>
+              
 
             {/* Secondary */}
             <Link
-              href="#profil"
+              href="#galeri"
               className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full
                 bg-white/10 hover:bg-white/20 backdrop-blur-sm
                 border border-white/20 hover:border-orange-400/50
@@ -184,7 +205,7 @@ export default function CTASection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              Layanan Desa
+              Lihat Galeri
             </Link>
           </motion.div>
 
