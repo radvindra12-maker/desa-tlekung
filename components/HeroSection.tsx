@@ -196,8 +196,8 @@ export default function HeroSection() {
       {/* ── Background image ── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-tlekung.jpg"
-          alt="Pemandangan Desa Tlekung, Kota Batu"
+          src="/images/hero/hero-kopi.jpg"
+          alt="Pemandangan Kebun Kopi Desa Tlekung, Kota Batu"
           fill
           priority
           quality={90}

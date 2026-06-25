@@ -26,7 +26,7 @@ const timelineItems: TimelineItem[] = [
   {
     year: "1940-an",
     title: "Awal Perkebunan",
-    desc: "Benih pertama kopi ditanam oleh para leluhur Desa Tlekung di lereng Gunung Arjuno. Iklim sejuk dan tanah vulkanik menciptakan kondisi ideal bagi tumbuhnya kopi berkualitas tinggi.",
+    desc: "Masyarakat mulai membuka lahan di lereng Gunung Arjuno dan menanam kopi sebagai salah satu komoditas utama yang kemudian menjadi sumber mata pencaharian warga.",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
@@ -35,9 +35,9 @@ const timelineItems: TimelineItem[] = [
     ),
   },
   {
-    year: "1970-an",
-    title: "Masa Kejayaan",
-    desc: "Kopi Girimurti mulai dikenal luas di kawasan Malang Raya. Puluhan keluarga menggantungkan hidup dari hasil panen kopi. Sistem pengolahan tradisional diwariskan turun-temurun.",
+    year: "1958-an",
+    title: "Perkembangan Kebun",
+    desc: "Perkebunan kopi semakin berkembang dengan bertambahnya luas lahan dan jumlah petani yang membudidayakan kopi di Desa Tlekung.",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
@@ -46,9 +46,9 @@ const timelineItems: TimelineItem[] = [
     ),
   },
   {
-    year: "2000-an",
-    title: "Generasi Penerus",
-    desc: "Para pemuda desa mengambil alih pengelolaan kebun dengan semangat baru. Metode tanam organik mulai diterapkan, menjaga kualitas biji kopi sekaligus kelestarian lingkungan.",
+    year: "1980-2000-an",
+    title: "Regenerasi Petani",
+    desc: "Pengetahuan mengenai budidaya, pemanenan, dan pengolahan kopi diwariskan kepada generasi berikutnya sehingga kualitas kopi tetap terjaga.",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
@@ -58,8 +58,8 @@ const timelineItems: TimelineItem[] = [
   },
   {
     year: "Kini",
-    title: "Era Modern",
-    desc: "Kopi Girimurti kini hadir dalam kemasan modern dan mulai merambah pasar nasional. Kopi Girimurti kini hadir dalam kemasan modern dan mulai merambah pasar nasional. Inovasi pengolahan dan pemasaran terus dilakukan untuk menjaga kualitas sekaligus memperkenalkan warisan kopi Desa Tlekung kepada masyarakat yang lebih luas.",
+    title: "Pendopo Kopi Giri Murti",
+    desc: "Pendopo Kopi Girimurti dibangun sebagai pusat promosi, edukasi, dan pengenalan kopi hasil perkebunan Desa Tlekung kepada masyarakat luas.",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
@@ -321,7 +321,7 @@ export default function HistoryCoffeeSection() {
               <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full
                 bg-amber-900/40 border border-amber-700/40
                 text-xs font-bold uppercase tracking-widest text-amber-400">
-                ☕ Warisan Kopi
+                SEJARAH PERKEBUNAN
               </span>
             </motion.div>
 
@@ -332,9 +332,9 @@ export default function HistoryCoffeeSection() {
               className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-5"
               style={{ color: "#fef3c7" }}
             >
-              Sejarah{" "}
+              Sejarah Perkebunan Kopi{" "}
               <span className="relative inline-block text-amber-400">
-                Kopi Girimurti
+                Desa Tlekung
                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 240 8" preserveAspectRatio="none">
                   <path d="M2 5 Q60 1 120 5 Q180 9 238 4"
                     stroke="#16a34a" strokeWidth="2.5" fill="none" strokeLinecap="round" />
@@ -348,11 +348,9 @@ export default function HistoryCoffeeSection() {
               variants={fadeUp}
               className="text-stone-400 text-sm sm:text-base leading-relaxed mb-8"
             >
-              Kopi Girimurti merupakan salah satu warisan berharga Desa Tlekung yang telah menjadi bagian
-              dari kehidupan masyarakat selama beberapa generasi. Perkebunan kopi ini tidak hanya menghasilkan
-              komoditas unggulan, tetapi juga menyimpan sejarah, budaya, dan semangat gotong royong masyarakat desa.
-            </motion.p>
-
+              Perkebunan kopi di Desa Tlekung telah menjadi bagian penting dari kehidupan masyarakat selama puluhan tahun. Berada di lereng Gunung Arjuno, 
+              kawasan ini menghasilkan kopi berkualitas sekaligus menjadi warisan yang terus dijaga dan dikembangkan dari generasi ke generasi.
+</motion.p>
             {/* ── Stats cards ── */}
             <motion.div
               custom={0.22}
@@ -461,7 +459,7 @@ export default function HistoryCoffeeSection() {
                 </svg>
               </a>
               <a
-                href="#kontak"
+              href="#kontak"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full
                   border border-stone-700 hover:border-amber-700/60
                   text-stone-400 hover:text-amber-400 text-sm font-semibold

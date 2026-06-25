@@ -6,6 +6,9 @@ import InterviewSection from "@/components/InterviewSection";
 import GallerySection from "@/components/GallerySection";
 import NewsSection from "@/components/NewsSection";
 import CTASection  from "@/components/CTASection";
+import VarietasSection from "@/components/VarietasSection";
+import ProsesSection from "@/components/ProsesSection";
+import ProductSection from "@/components/ProductSection";
 import { Analytics } from '@vercel/analytics/next';
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
 <HeroSection />
 <AboutSection />
 <HistoryCoffeeSection />
+<VarietasSection/>
+<ProsesSection />
+<ProductSection />
 <InterviewSection />
 <GallerySection />
 <NewsSection />
