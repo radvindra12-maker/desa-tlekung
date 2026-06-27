@@ -7,7 +7,6 @@ const proses = [
   {
     nomor: "01",
     judul: "Pembelian Hasil Panen",
-    icon: "🧺",
     badge: "Tahap Awal",
     image: "/images/proses/panen.jpg",
     deskripsi:
@@ -16,7 +15,6 @@ const proses = [
   {
     nomor: "02",
     judul: "Pengeringan",
-    icon: "☀️",
     badge: "Natural Drying",
     image: "/images/proses/pengeringan.jpg",
     deskripsi:
@@ -25,7 +23,6 @@ const proses = [
   {
     nomor: "03",
     judul: "Sortasi",
-    icon: "🔍",
     badge: "Quality Control",
     image: "/images/proses/sortasi.jpg",
     deskripsi:
@@ -34,7 +31,6 @@ const proses = [
   {
     nomor: "04",
     judul: "Sangrai",
-    icon: "🔥",
     badge: "Roasting",
     image: "/images/proses/sangrai.jpg",
     deskripsi:
@@ -43,7 +39,6 @@ const proses = [
   {
     nomor: "05",
     judul: "Penggilingan",
-    icon: "⚙️",
     badge: "Final Process",
     image: "/images/proses/giling.jpg",
     deskripsi:
@@ -203,28 +198,13 @@ export default function ProsesSection() {
       Tahap {item.nomor}
     </div>
 
-    {/* Icon */}
-    <div
-      className="
-        absolute
-        bottom-5
-        left-5
-        w-16
-        h-16
-        rounded-full
-        bg-emerald-600
-        flex
-        items-center
-        justify-center
-        text-3xl
-        shadow-xl
-      "
-    >
-      {item.icon}
-    </div>
-
-  </div>
-
+    <span className="text-xs uppercase tracking-[0.35em] text-emerald-400 font-semibold">
+  PROCESS {item.nomor}
+</span>
+<h3 className="mt-6 text-4xl font-bold text-white">
+  {item.judul}
+</h3>
+</div>
 </motion.div>
 
         {/* Kolom kanan */}
@@ -266,9 +246,9 @@ export default function ProsesSection() {
 
   </span>
 
-  <h3 className="mt-8 text-4xl font-bold text-white">
+  <h3 className="mt-8 text-4xl font-bold text-white leading-tight">
 
-    {item.icon} {item.judul}
+    {item.judul}
 
   </h3>
 
