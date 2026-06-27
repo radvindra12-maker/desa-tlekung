@@ -20,7 +20,7 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
   {
     id: 1,
-    src: "/images/kopi/kebun-pagi.jpg",
+    src: "/images/galeri/foto-1.jpg",
     alt: "Perkebunan Kopi Girimurti di lereng Gunung Arjuno",
     title: "Perkebunan Kopi Girimurti",
     kategori: "Kebun",
@@ -28,7 +28,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 2,
-    src: "/images/kopi/panen.jpg",
+    src: "/images/galeri/foto-2.jpg",
     alt: "Proses panen buah kopi merah",
     title: "Panen Buah Kopi",
     kategori: "Panen",
@@ -36,7 +36,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 3,
-    src: "/images/kopi/proses-kering.jpg",
+    src: "/images/galeri/foto-3.jpg",
     alt: "Proses pengeringan biji kopi",
     title: "Pengeringan Biji Kopi",
     kategori: "Pascapanen",
@@ -44,7 +44,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 4,
-    src: "/images/kopi/sangrai.jpg",
+    src: "/images/galeri/foto-4.jpg",
     alt: "Proses penyangraian kopi Girimurti",
     title: "Penyangraian Kopi",
     kategori: "Produksi",
@@ -52,7 +52,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 5,
-    src: "/images/kopi/kemasan.jpg",
+    src: "/images/galeri/foto-5.jpg",
     alt: "Produk kopi kemasan Girimurti",
     title: "Produk Kopi Girimurti",
     kategori: "Produk",
@@ -60,7 +60,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 6,
-    src: "/images/kopi/kebun-pagi.jpg",
+    src: "/images/galeri/foto-6.jpg",
     alt: "Suasana kebun kopi di pagi hari",
     title: "Kebun Kopi Arjuno",
     kategori: "Kebun",

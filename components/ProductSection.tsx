@@ -10,8 +10,9 @@ const products = [
     berat: "200 gram",
     gambar: "/images/produk/Arabica-YC.jpg",
     warna: "emerald",
+    notes: ["Floral", "Brown Sugar", "Citrus"],
     deskripsi:
-      "Kopi arabika dengan karakter rasa bersih, aroma floral, serta diproses menggunakan metode Natural Process.",
+      "Arabica Yellow Caturra merupakan kopi specialty yang dibudidayakan di kawasan pegunungan Desa Tlekung. Diproses menggunakan metode Natural Process sehingga menghasilkan karakter rasa manis alami, aroma floral, dan keasaman yang seimbang.",
   },
   {
     nama: "Arabika GP",
@@ -19,8 +20,9 @@ const products = [
     berat: "200 gram",
     gambar: "/images/produk/Arabika-GP.jpg",
     warna: "amber",
+    notes: ["Chocolate", "Caramel", "Nutty"],
     deskripsi:
-      "Menghasilkan cita rasa yang seimbang dengan aroma manis dan karakter khas kopi pegunungan Desa Tlekung.",
+      "Varian Arabika GP memiliki karakter body yang lembut dengan aroma cokelat dan karamel yang khas. Cocok dinikmati oleh pecinta kopi dengan cita rasa seimbang.",
   },
   {
     nama: "Robusta HN",
@@ -28,8 +30,9 @@ const products = [
     berat: "200 gram",
     gambar: "/images/produk/Robusta-HN.jpg",
     warna: "orange",
+    notes: ["Dark Chocolate", "Spices", "Bold"],
     deskripsi:
-      "Robusta pilihan dengan body yang kuat, aroma cokelat, dan rasa yang lebih tebal.",
+      "Robusta Honey Process menghasilkan body yang kuat dengan rasa cokelat pekat dan aroma rempah yang khas. Menjadi pilihan bagi penikmat kopi berkarakter kuat.",
   },
   {
     nama: "Excelsa",
@@ -37,188 +40,390 @@ const products = [
     berat: "200 gram",
     gambar: "/images/produk/Excelsa.jpg",
     warna: "stone",
+    notes: ["Jackfruit", "Fruity", "Complex"],
     deskripsi:
-      "Memiliki karakter unik dengan aroma buah serta rasa yang kompleks dan menyegarkan.",
+      "Excelsa memiliki karakter rasa yang unik dengan aroma buah tropis dan aftertaste yang kompleks. Salah satu varietas yang menjadi ciri khas perkebunan kopi Desa Tlekung.",
   },
 ];
+
 export default function ProductSection() {
   return (
     <section
       id="produk"
       className="relative overflow-hidden bg-black py-28"
     >
+          {/* Background Glow */}
 
-      <div className="max-w-7xl mx-auto px-6">
-<motion.div
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.8 }}
-  className="text-center mb-28"
->
+      <div className="absolute inset-0 pointer-events-none">
 
-  <span
-    className="
-      inline-flex
-      items-center
-      gap-2
-      rounded-full
-      border
-      border-emerald-700/40
-      bg-emerald-900/30
-      px-5
-      py-2
-      text-xs
-      uppercase
-      tracking-[0.3em]
-      text-emerald-300
-    "
-  >
+        <div className="absolute top-0 left-1/4 w-112.5 h-112.5 rounded-full bg-emerald-600/10 blur-[180px]" />
 
-    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-125 h-125 rounded-full bg-amber-500/10 blur-[220px]" />
 
-    PRODUK KOPI
+      </div>
 
-  </span>
+      <div className="relative max-w-7xl mx-auto px-6">
 
-  <h2
-    className="mt-8 text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
-    style={{
-      fontFamily: "Georgia, 'Times New Roman', serif",
-    }}
-  >
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-28"
+        >
 
-    Produk
+          <span
+            className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-emerald-700/40
+              bg-emerald-900/30
+              px-5
+              py-2
+              text-xs
+              uppercase
+              tracking-[0.3em]
+              text-emerald-300
+            "
+          >
 
-    <br />
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
 
-    <span className="text-amber-400">
+            PRODUK KOPI
 
-      Kopi Girimurti
+          </span>
 
-    </span>
+          <h2
+            className="mt-8 text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+            style={{
+              fontFamily: "Georgia, 'Times New Roman', serif",
+            }}
+          >
 
-  </h2>
+            Produk
 
-  <div className="flex justify-center my-8">
+            <br />
 
-    <div className="w-36 h-1 rounded-full bg-linear-to-r from-emerald-500 via-amber-400 to-emerald-500" />
+            <span className="text-amber-400">
 
-  </div>
+              Kopi Girimurti
 
-  <p className="max-w-3xl mx-auto text-lg leading-8 text-stone-400">
+            </span>
 
-    Nikmati berbagai pilihan kopi unggulan Desa Tlekung yang diproses secara
-    profesional dengan karakter rasa khas dari lereng pegunungan Kota Batu.
+          </h2>
 
-  </p>
+          <div className="flex justify-center my-8">
 
-</motion.div>
-<div className="space-y-32">
+            <div className="w-36 h-1 rounded-full bg-linear-to-r from-emerald-500 via-amber-400 to-emerald-500" />
 
-  {products.map((product, index) => {
+          </div>
 
-    const reverse = index % 2 === 1;
+          <p className="max-w-3xl mx-auto text-lg leading-8 text-stone-400">
 
-    return (
+            Berbagai pilihan kopi unggulan hasil budidaya petani Desa Tlekung
+            yang diproses secara profesional untuk menghasilkan cita rasa khas
+            dari lereng pegunungan Kota Batu.
+
+          </p>
+
+        </motion.div>
+
+        <div className="space-y-40">
+          {products.map((product, index) => {
+
+  const reverse = index % 2 === 1;
+
+  return (
+<>
+    <motion.div
+      key={product.nama}
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.1,
+      }}
+      className={`
+        grid
+        lg:grid-cols-2
+        gap-20
+        items-center
+        ${reverse ? "lg:[&>*:first-child]:order-2" : ""}
+      `}
+    >
+
+      {/* ===========================
+          FOTO PRODUK
+      =========================== */}
 
       <motion.div
-        key={product.nama}
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
+        whileHover={{
+          y: -8,
+        }}
+        transition={{
+          duration: .35
+        }}
         className={`
-          grid
-          grid-cols-1
-          lg:grid-cols-2
-          gap-20
-          items-center
-          ${reverse ? "lg:[&>*:first-child]:order-2" : ""}
+          group
+          relative
+          overflow-hidden
+          rounded-[30px]
+          border
+          border-stone-800
+          bg-stone-900
+          shadow-2xl
+          shadow-black/50
+          ${reverse ? "lg:order-1" : "lg:order-2"}
         `}
       >
-    <div
-  className="
-    relative
-    overflow-hidden
-    rounded-[30px]
-    border
-    border-stone-800
-    bg-stone-900
-    shadow-2xl
-    shadow-black/50
-  "
->
 
-  <div className="relative h-140">
+        <div className="relative h-140">
 
-    <Image
-      src={product.gambar}
-      alt={product.nama}
-      fill
-      className="object-cover"
-    />
+          <Image
+            src={product.gambar}
+            alt={product.nama}
+            fill
+            className="
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-110
+            "
+          />
 
-  </div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
-</div>
-<div className="space-y-6">
+          {/* Badge */}
 
-  <span className="inline-flex rounded-full bg-emerald-900/40 border border-emerald-700/40 px-4 py-2 text-emerald-300 text-xs uppercase tracking-widest">
-    {product.proses}
-  </span>
+          <div
+            className="
+              absolute
+              top-6
+              right-6
+              rounded-full
+              bg-black/60
+              backdrop-blur-md
+              border
+              border-white/10
+              px-5
+              py-2
+              text-sm
+              font-semibold
+              text-white
+            "
+          >
 
-  <h3 className="text-5xl font-bold text-white">
-    {products[0].nama}
-  </h3>
+            {product.proses}
 
-  <p className="text-stone-400 leading-8">
-    {product.deskripsi}
-  </p>
+          </div>
 
-  <div className="flex flex-wrap gap-3 pt-4">
+          {/* Berat */}
 
-    <span className="rounded-full bg-stone-900 border border-stone-700 px-4 py-2 text-sm text-white">
-      ☕ Fresh Roast
-    </span>
+          <div
+            className="
+              absolute
+              bottom-6
+              left-6
+              rounded-full
+              bg-emerald-600
+              px-5
+              py-3
+              text-white
+              font-semibold
+              shadow-xl
+            "
+          >
 
-    <span className="rounded-full bg-stone-900 border border-stone-700 px-4 py-2 text-sm text-white">
-      📦 {product.berat}
-    </span>
+            {product.berat}
 
-    <span className="rounded-full bg-stone-900 border border-stone-700 px-4 py-2 text-sm text-white">
-      🌿 Single Origin
-    </span>
+          </div>
 
-  </div>
-<div className="pt-6">
-
-  <button
-    className="
-      rounded-full
-      bg-emerald-600
-      hover:bg-emerald-500
-      transition-all
-      duration-300
-      px-8
-      py-4
-      text-white
-      font-semibold
-      shadow-lg
-      shadow-emerald-900/40
-    "
-  >
-    Lihat Detail Produk →
-  </button>
-
-</div>
-</div>
-</motion.div>
-
-        );
-    })}    
-      </div>
         </div>
-    </section>
+
+      </motion.div>
+
+      {/* ===========================
+          INFORMASI PRODUK
+      =========================== */}
+
+      <div
+        className={`
+          max-w-xl
+          space-y-8
+          ${reverse ? "lg:order-2" : "lg:order-1"}
+        `}
+      >
+
+        <span
+          className="
+            inline-flex
+            items-center
+            gap-2
+            rounded-full
+            border
+            border-emerald-700/40
+            bg-emerald-900/40
+            px-4
+            py-2
+            text-xs
+            uppercase
+            tracking-[0.25em]
+            text-emerald-300
+          "
+        >
+
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
+
+          Specialty Coffee
+
+        </span>
+
+        <h3
+          className="text-5xl font-bold text-white leading-tight"
+          style={{
+            fontFamily: "Georgia, 'Times New Roman', serif",
+          }}
+        >
+
+          {product.nama}
+
+        </h3>
+
+        <p className="text-lg leading-8 text-stone-400">
+
+          {product.deskripsi}
+
+        </p>
+
+                {/* ===========================
+            FLAVOR NOTES
+        =========================== */}
+
+        <div>
+
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-stone-500">
+
+            Flavor Notes
+
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+
+            {product.notes.map((note) => (
+
+              <span
+                key={note}
+                className="
+                  rounded-full
+                  border
+                  border-stone-700
+                  bg-stone-900
+                  px-4
+                  py-2
+                  text-sm
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:border-emerald-500
+                  hover:bg-emerald-900/20
+                "
+              >
+
+                {note}
+
+              </span>
+
+            ))}
+
+          </div>
+
+        </div>
+
+        {/* ===========================
+            INFO
+        =========================== */}
+
+        <div className="flex flex-wrap gap-4">
+
+          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-white">
+
+            ☕ Fresh Roast
+
+          </span>
+
+          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-white">
+
+            📦 {product.berat}
+
+          </span>
+
+          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-white">
+
+            🌿 Single Origin
+
+          </span>
+
+        </div>
+
+        {/* ===========================
+            BUTTON
+        =========================== */}
+
+        <div className="pt-4">
+
+          <button
+            className="
+              rounded-full
+              bg-emerald-600
+              px-8
+              py-4
+              font-semibold
+              text-white
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:bg-emerald-500
+              hover:shadow-xl
+              hover:shadow-emerald-500/20
+            "
+          >
+
+            Lihat Detail Produk →
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </motion.div>
+
+    {/* Divider */}
+
+    {index !== products.length - 1 && (
+
+      <div className="flex justify-center">
+
+        <div className="h-px w-40 bg-stone-800" />
+
+      </div>
+
+    )}
+</>
   );
+
+})}
+
+        </div>
+
+      </div>
+
+    </section>
+
+  );
+
 }

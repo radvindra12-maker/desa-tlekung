@@ -196,23 +196,23 @@ export default function HeroSection() {
       {/* ── Background image ── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/hero-kopi.jpg"
+          src="/images/hero/hero-kopi-new.jpg"
           alt="Pemandangan Kebun Kopi Desa Tlekung, Kota Batu"
           fill
           priority
           quality={90}
-          className="object-cover object-center scale-105"
+          className="object-cover object-center scale-110"
           sizes="100vw"
         />
       </div>
 
       {/* ── Overlays ── */}
-      <div className="absolute inset-0 z-10 bg-black/50" />
+      <div className="absolute inset-0 z-10 bg-black/35" />
       <div className="absolute inset-0 z-10 bg-linear-to-b from-green-950/60 via-transparent to-black/80" />
       <div className="absolute inset-0 z-10 bg-linear-to-r from-green-950/40 via-transparent to-transparent" />
 
       {/* Ambient blobs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-emerald-500/15 blur-[100px] z-10 pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-emerald-950/403- blur-[100px] z-10 pointer-events-none" />
       <div className="absolute bottom-1/3 left-1/3 w-80 h-80 rounded-full bg-orange-500/10 blur-[80px] z-10 pointer-events-none" />
 
       {/* ── Content ── */}
@@ -310,7 +310,7 @@ export default function HeroSection() {
               className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full
                 bg-white/10 hover:bg-white/20 backdrop-blur-sm
                 border border-white/30 hover:border-orange-400/60
-                text-white font-semibold text-sm
+                text-white font-semibold text-sm6
                 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
             >
               <svg className="w-4 h-4 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
