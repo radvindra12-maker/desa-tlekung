@@ -59,8 +59,7 @@ export default function VarietasSection() {
           </h2>
 <div className="flex justify-center mt-6 mb-8">
 
-  <div className="w-28 h-1 rounded-full bg-linear-to-r from-emerald-500 to-amber-400" />
-
+  <div className="absolute bottom-20 left-20 w-105 h-105 rounded-full bg-green-500/8 blur-[220px]" />
 </div>
           <p className="mt-6 max-w-3xl mx-auto text-stone-400 leading-relaxed">
             Perkebunan kopi Desa Tlekung memiliki berbagai varietas kopi

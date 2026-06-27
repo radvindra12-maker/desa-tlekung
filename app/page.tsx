@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <>-
 <HeroSection />
+<div className="website-bg">
 <AboutSection />
 <HistoryCoffeeSection />
 <VarietasSection/>
@@ -23,8 +24,9 @@ export default function Home() {
 <GallerySection />
 <NewsSection />
 <CTASection />
-<Analytics />
 <FooterSection />
+</div>
+<Analytics />
  </>
   );
 }

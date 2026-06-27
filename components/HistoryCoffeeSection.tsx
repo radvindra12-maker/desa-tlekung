@@ -201,7 +201,7 @@ export default function HistoryCoffeeSection() {
       />
 
       {/* Ambient blobs */}
-      <div className="absolute top-0 left-0 w-125 h-125 bg-amber-900/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-20 right-0 w-112.5 h-112.5 rounded-full bg-amber-500/8 blur-[220px]" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-900/20 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Top divider line */}
@@ -447,13 +447,13 @@ export default function HistoryCoffeeSection() {
             {/* CTA */}
             <motion.div custom={0.44} variants={fadeUp} className="flex flex-wrap gap-3">
               <a
-                href="#galeri"
+                href="#varietas"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full
                   bg-amber-700 hover:bg-amber-600 text-white text-sm font-semibold
                   shadow-lg shadow-amber-900/30 hover:shadow-amber-700/30
                   hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
-                Lihat Galeri Kopi
+                Lihat Varietas Kopi
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -474,6 +474,20 @@ export default function HistoryCoffeeSection() {
 
       {/* Bottom divider */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-900/30 to-transparent" />
+      <div
+  className="
+    absolute
+    -bottom-40
+    left-1/2
+    -translate-x-1/2
+    w-175
+    h-87.5
+    rounded-full
+    bg-emerald-500/10
+    blur-[180px]
+    pointer-events-none
+  "
+/>
     </section>
   );
 }

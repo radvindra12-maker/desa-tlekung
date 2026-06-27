@@ -60,21 +60,16 @@ export default function AboutSection() {
   return (
     <section
       id="profil"
-      className="relative py-24 bg-white dark:bg-gray-950 overflow-hidden"
+      className="relative py-28 overflow-hidden"
     >
-      <div
-        className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(#16a34a 1px, transparent 1px), linear-gradient(90deg, #16a34a 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
+       {/* Glow */}
+  <div className="absolute -top-40 -left-10 w-125 h-125 rounded-full bg-emerald-500/5 blur-[180px]" />
 
-      <div className="absolute -top-24 -left-24 w-80 h-80 bg-emerald-100 dark:bg-emerald-950/40 rounded-full blur-3xl opacity-60 pointer-events-none" />
+
+      <div className="absolute -top-40 -left-10 w-125 h-125 dark:bg-emerald-950/40 rounded-full bg-emerald-500/8 blur-[220px]" />
       <div className="absolute -bottom-16 right-0 w-72 h-72 bg-orange-50 dark:bg-orange-950/20 rounded-full blur-3xl opacity-70 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Gambar */}
