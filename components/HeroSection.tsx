@@ -200,7 +200,7 @@ export default function HeroSection() {
           alt="Pemandangan Kebun Kopi Desa Tlekung, Kota Batu"
           fill
           priority
-          quality={90}
+          quality={95}
           className="object-cover object-center scale-110"
           sizes="100vw"
         />

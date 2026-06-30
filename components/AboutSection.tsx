@@ -60,8 +60,13 @@ export default function AboutSection() {
   return (
     <section
       id="profil"
-      className="relative py-28 overflow-hidden"
-    >
+     className="section-fade relative py-28"
+style={
+{
+"--section-next-bg":"#05080d"
+} as React.CSSProperties
+}
+>
        {/* Glow */}
   <div className="absolute -top-40 -left-10 w-125 h-125 rounded-full bg-emerald-500/5 blur-[180px]" />
 

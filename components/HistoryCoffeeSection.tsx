@@ -193,13 +193,13 @@ export default function HistoryCoffeeSection() {
 
       {/* Background texture */}
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, #d97706 1px, transparent 0)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-
+      className="section-fade relative overflow-hidden py-28"
+    style={
+      {
+        "--section-next-bg":"#05080d"
+      } as React.CSSProperties
+    }
+/>
       {/* Ambient blobs */}
       <div className="absolute top-20 right-0 w-112.5 h-112.5 rounded-full bg-amber-500/8 blur-[220px]" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-900/20 rounded-full blur-[100px] pointer-events-none" />
@@ -273,12 +273,22 @@ export default function HistoryCoffeeSection() {
 
             {/* Floating stat cards */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.88 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
-              className="absolute -top-4 -right-4 w-44 bg-stone-900 rounded-2xl p-4 border border-stone-800 shadow-xl"
-            >
+              initial={{
+  opacity:0,
+  y:50
+}}
+whileInView={{
+  opacity:1,
+  y:0
+}}
+transition={{
+  duration:.8
+}}
+viewport={{
+  once:true
+}}
+>
+             
               <p className="text-[10px] text-stone-500 mb-1 uppercase tracking-wider">Ketinggian Kebun</p>
               <p className="text-2xl font-extrabold text-amber-400 leading-none">
                 950 <span className="text-sm font-semibold text-stone-500">mdpl</span>
@@ -477,17 +487,31 @@ export default function HistoryCoffeeSection() {
       <div
   className="
     absolute
+    bottom-0
+    left-0
+    w-full
+    h-28
+    pointer-events-none
+    bg-linear-to-b
+    from-transparent
+    to-[#05080d]
+    z-10
+  "
+  />
+<div
+  className="
+    absolute
     -bottom-40
     left-1/2
     -translate-x-1/2
     w-175
-    h-87.5
+    h-75
     rounded-full
-    bg-emerald-500/10
+    bg-emerald-500/5
     blur-[180px]
     pointer-events-none
   "
-/>
+/> 
     </section>
   );
 }

@@ -18,3 +18,8 @@ export default function RootLayout({
     </html>
   );
 }
+export const metadata = {
+  title: "Kopi Girimurti | Desa Tlekung",
+  description:
+    "Website resmi Kopi Girimurti Desa Tlekung, Kota Batu.",
+};

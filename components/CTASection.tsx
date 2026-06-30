@@ -52,7 +52,10 @@ const linkItem: Variants = {
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-stone-950 via-green-950 to-green-950">
+    
+    <section 
+    id="kontak"
+    className="relative overflow-hidden bg-linear-to-b from-stone-950 via-green-950 to-green-950">
 
       {/* ── Decorative background elements ── */}
 
@@ -87,7 +90,7 @@ export default function CTASection() {
       </div>
 
       {/* ── Content ── */}
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="flex flex-col items-center text-center">
 
           {/* Badge */}
@@ -190,8 +193,54 @@ export default function CTASection() {
     />
   </svg>
 </a>
-              
+               
+<a
+  href="https://maps.app.goo.gl/NrFKExFjEHpDhoYr5"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    group
+    inline-flex
+    items-center
+    gap-2.5
+    px-7
+    py-3.5
+    rounded-full
+    bg-orange-500/10
+    hover:bg-orange-500
+    border
+    border-orange-400/30
+    text-orange-300
+    hover:text-white
+    font-semibold
+    text-sm
+    transition-all
+    duration-300
+    hover:-translate-y-0.5
+  "
+>
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+  </svg>
 
+  Lihat Lokasi
+</a>
             {/* Secondary */}
             <Link
               href="#galeri"
@@ -250,3 +299,4 @@ export default function CTASection() {
     </section>
   );
 }
+
