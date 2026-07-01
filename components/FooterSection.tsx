@@ -147,10 +147,13 @@ export default function FooterSection() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="kontak">
+    <footer
+  id="kontak"
+  className="relative overflow-hidden bg-stone-950"
+>
 
       {/* Wave divider */}
-      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none">
+      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
         <svg viewBox="0 0 1440 56" preserveAspectRatio="none" className="w-full h-14 fill-white dark:fill-gray-900">
           <path d="M0,32 C360,56 1080,0 1440,32 L1440,0 L0,0 Z" />
         </svg>
@@ -158,7 +161,7 @@ export default function FooterSection() {
 
       {/* Dot-grid texture */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
           backgroundSize: "32px 32px",
@@ -169,7 +172,7 @@ export default function FooterSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-green-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative pt-24 pb-0">
+      <div className="relative z-10 pt-24 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* ── Main 4-column grid ── */}

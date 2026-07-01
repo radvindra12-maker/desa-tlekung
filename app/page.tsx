@@ -1,3 +1,4 @@
+
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import FooterSection from "@/components/FooterSection";
@@ -11,8 +12,11 @@ import ProsesSection from "@/components/ProsesSection";
 import ProductSection from "@/components/ProductSection";
 import { Analytics } from '@vercel/analytics/next';
 export default function Home() {
+
+
+
   return (
-    <>-
+    <>
 <HeroSection />
 <div className="website-bg">
 <AboutSection />
