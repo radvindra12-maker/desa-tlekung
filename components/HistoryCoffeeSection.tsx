@@ -148,23 +148,7 @@ const timelineItem: Variants = {
 
 // ─── Image placeholder (shown when /images/kopi-girimurti.jpg is missing) ─────
 
-function ImagePlaceholder() {
-  return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center bg-linear-to-br from-amber-950 via-stone-900 to-green-950">
-      {/* Coffee bean SVG illustration */}
-      <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 h-36 opacity-30">
-        <ellipse cx="80" cy="80" rx="52" ry="68" stroke="#d97706" strokeWidth="3" />
-        <path d="M80 20 Q60 50 60 80 Q60 110 80 140" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" />
-        <ellipse cx="40" cy="60" rx="20" ry="28" stroke="#a16207" strokeWidth="2" opacity="0.5" />
-        <ellipse cx="120" cy="100" rx="18" ry="24" stroke="#a16207" strokeWidth="2" opacity="0.5" />
-        <circle cx="80" cy="80" r="6" fill="#d97706" opacity="0.4" />
-      </svg>
-      <p className="mt-4 text-amber-600/60 text-sm font-medium tracking-wide">
-        Letakkan foto di /images/kopi-girimurti.jpg
-      </p>
-    </div>
-  );
-}
+
 
 // ─── Timeline dot ─────────────────────────────────────────────────────────────
 
@@ -186,7 +170,7 @@ function TimelineDot({ active }: { active: boolean }) {
 
 export default function HistoryCoffeeSection() {
   const [activeStep, setActiveStep] = useState(3); // default: "Kini"
-  const [imgError, setImgError] = useState(false);
+ 
 
   return (
     <section id="sejarah">
@@ -236,20 +220,29 @@ export default function HistoryCoffeeSection() {
             className="relative"
           >
             {/* Main image */}
-            <div className="relative rounded-4xl overflow-hidden aspect-3/4 max-h-155 group shadow-2xl shadow-black/60">
-              {imgError ? (
-                <ImagePlaceholder />
-              ) : (
-                <Image
-                  src="/images/kopi-girimurti.jpg"
-                  alt="Perkebunan Kopi Girimurti, Desa Tlekung"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={88}
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  onError={() => setImgError(true)}
-                />
-              )}
+
+           <div className="relative h-155 overflow-hidden rounded-[30px]">
+
+  <motion.video
+  autoPlay
+  muted
+  loop
+  playsInline
+  initial={{ scale: 1 }}
+  animate={{ scale: 1.08 }}
+  transition={{
+    duration: 10,
+    repeat: Infinity,
+    repeatType: "reverse",
+    ease: "easeInOut",
+  }}
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source src="/videos/produk_preview.mp4" 
+  type="video/mp4"
+  />
+</motion.video>
+              
 
               {/* Inner gradient overlays */}
               <div className="absolute inset-0 bg-linear-to-t from-stone-950/80 via-stone-950/10 to-transparent" />

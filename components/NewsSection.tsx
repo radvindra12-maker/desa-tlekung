@@ -1,5 +1,6 @@
 "use client";
 
+import { news } from "@/data/news";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
@@ -25,56 +26,7 @@ interface NewsItem {
 
 // ─── Data dummy — ganti dengan data nyata / API call ─────────────────────────
 
-const newsItems: NewsItem[] = [
-  {
-    id: 1,
-    slug: "panen-raya-kopi-girimurti-2025",
-    thumbnail: "/images/news/kopi-1.jpg",
-    tanggal: "09",
-    bulan: "Jun",
-    tahun: "2025",
-    kategori: "Kopi Girimurti",
-    judul: "Panen Raya Kopi Girimurti 2025 Resmi Dimulai",
-    ringkasan:
-      "Musim panen tahun 2025 menjadi momentum penting bagi petani Kopi Girimurti. Hasil panen diperkirakan meningkat dibanding tahun sebelumnya berkat perawatan kebun yang lebih optimal.",
-    penulis: "Tim Kopi Girimurti",
-    inisial: "KG",
-    readTime: 3,
-    featured: true,
-  },
-  {
-    id: 2,
-    slug: "pelatihan-pascapanen-kopi",
-    thumbnail: "/images/news/kopi-2.jpg",
-    tanggal: "05",
-    bulan: "Jun",
-    tahun: "2025",
-    kategori: "Kopi Girimurti",
-    judul: "Pelatihan Pascapanen Tingkatkan Kualitas Biji Kopi",
-    ringkasan:
-      "Kelompok petani mengikuti pelatihan pengolahan pascapanen untuk meningkatkan mutu dan konsistensi kualitas Kopi Girimurti.",
-    penulis: "Tim Kopi Girimurti",
-    inisial: "KG",
-    readTime: 4,
-    featured: false,
-  },
-  {
-    id: 3,
-    slug: "kopi-girimurti-pameran-umkm",
-    thumbnail: "/images/news/kopi-3.jpg",
-    tanggal: "01",
-    bulan: "Jun",
-    tahun: "2025",
-    kategori: "Kopi Girimurti",
-    judul: "Kopi Girimurti Tampil di Pameran UMKM Kota Batu",
-    ringkasan:
-      "Kopi Girimurti mendapat perhatian pengunjung dalam pameran UMKM Kota Batu dan memperluas jangkauan promosi produk lokal.",
-    penulis: "Tim Kopi Girimurti",
-    inisial: "KG",
-    readTime: 5,
-    featured: false,
-  },
-];
+
 
 // ─── Kategori config ──────────────────────────────────────────────────────────
 
@@ -146,13 +98,31 @@ function FeaturedCard({ item, index }: { item: NewsItem; index: number }) {
   const k = getKategori(item.kategori);
 
   return (
-    <motion.article
-      variants={cardVariant}
-      className="group relative flex flex-col lg:flex-row overflow-hidden rounded-2xl
-        bg-stone-900 border border-stone-800 hover:border-emerald-800/50
-        shadow-xl shadow-black/40 hover:shadow-2xl hover:shadow-black/60
-        hover:-translate-y-1 transition-all duration-300 lg:col-span-3"
-    >
+   <motion.article
+  variants={cardVariant}
+  className="
+    relative
+    z-10
+    group
+    flex
+    flex-col
+    lg:flex-row
+    overflow-hidden
+    rounded-2xl
+    bg-stone-900
+    border
+    border-stone-800
+    hover:border-emerald-800/50
+    shadow-xl
+    shadow-black/40
+    hover:shadow-2xl
+    hover:shadow-black/60
+    hover:-translate-y-1
+    transition-all
+    duration-300
+    lg:col-span-3
+  "
+>
       {/* Thumbnail — larger for featured */}
       <div className="relative w-full lg:w-[45%] aspect-video lg:aspect-auto shrink-0 overflow-hidden">
         {imgError ? (
@@ -243,13 +213,29 @@ function RegularCard({ item, index }: { item: NewsItem; index: number }) {
   const k = getKategori(item.kategori);
 
   return (
-    <motion.article
-      variants={cardVariant}
-      className="group flex flex-col overflow-hidden rounded-2xl
-        bg-stone-900 border border-stone-800 hover:border-stone-700
-        shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-black/50
-        hover:-translate-y-1 transition-all duration-300"
-    >
+   <motion.article
+  variants={cardVariant}
+  className="
+    relative
+    z-10
+    group
+    flex
+    flex-col
+    overflow-hidden
+    rounded-2xl
+    bg-stone-900
+    border
+    border-stone-800
+    hover:border-stone-700
+    shadow-lg
+    shadow-black/30
+    hover:shadow-xl
+    hover:shadow-black/50
+    hover:-translate-y-1
+    transition-all
+    duration-300
+  "
+>
       {/* Thumbnail */}
       <div className="relative w-full aspect-video overflow-hidden shrink-0">
         {imgError ? (
@@ -323,8 +309,8 @@ function RegularCard({ item, index }: { item: NewsItem; index: number }) {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function NewsSection() {
-  const featured = newsItems.filter((n) => n.featured);
-  const regular  = newsItems.filter((n) => !n.featured);
+  const featured = news.filter((n) => n.featured);
+  const regular  = news.filter((n) => !n.featured);
 
   return (
     <section id="berita">

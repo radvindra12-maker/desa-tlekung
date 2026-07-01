@@ -1,50 +1,10 @@
 "use client";
 
+import { products } from "../data/products";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const products = [
-  {
-    nama: "Arabica Yellow Caturra",
-    proses: "Natural Process",
-    berat: "200 gram",
-    gambar: "/images/produk/Arabica-YC.jpg",
-    warna: "emerald",
-    notes: ["Floral", "Brown Sugar", "Citrus"],
-    deskripsi:
-      "Arabica Yellow Caturra merupakan kopi specialty yang dibudidayakan di kawasan pegunungan Desa Tlekung. Diproses menggunakan metode Natural Process sehingga menghasilkan karakter rasa manis alami, aroma floral, dan keasaman yang seimbang.",
-  },
-  {
-    nama: "Arabika GP",
-    proses: "Natural Process",
-    berat: "200 gram",
-    gambar: "/images/produk/Arabika-GP.jpg",
-    warna: "amber",
-    notes: ["Chocolate", "Caramel", "Nutty"],
-    deskripsi:
-      "Varian Arabika GP memiliki karakter body yang lembut dengan aroma cokelat dan karamel yang khas. Cocok dinikmati oleh pecinta kopi dengan cita rasa seimbang.",
-  },
-  {
-    nama: "Robusta HN",
-    proses: "Honey Process",
-    berat: "200 gram",
-    gambar: "/images/produk/Robusta-HN.jpg",
-    warna: "orange",
-    notes: ["Dark Chocolate", "Spices", "Bold"],
-    deskripsi:
-      "Robusta Honey Process menghasilkan body yang kuat dengan rasa cokelat pekat dan aroma rempah yang khas. Menjadi pilihan bagi penikmat kopi berkarakter kuat.",
-  },
-  {
-    nama: "Excelsa",
-    proses: "Natural Process",
-    berat: "200 gram",
-    gambar: "/images/produk/Excelsa.jpg",
-    warna: "stone",
-    notes: ["Jackfruit", "Fruity", "Complex"],
-    deskripsi:
-      "Excelsa memiliki karakter rasa yang unik dengan aroma buah tropis dan aftertaste yang kompleks. Salah satu varietas yang menjadi ciri khas perkebunan kopi Desa Tlekung.",
-  },
-];
 
 export default function ProductSection() {
   return (
@@ -184,7 +144,7 @@ export default function ProductSection() {
         <div className="relative h-140">
 
           <Image
-            src={product.gambar}
+            src={product.image}
             alt={product.nama}
             fill
             className="
@@ -313,7 +273,7 @@ export default function ProductSection() {
 
           <div className="flex flex-wrap gap-3">
 
-            {product.notes.map((note) => (
+            {product.tasting.map((note) => (
 
               <span
                 key={note}
@@ -373,28 +333,28 @@ export default function ProductSection() {
             BUTTON
         =========================== */}
 
-        <div className="pt-4">
+        <div className="pt-4 relative z-50">
 
-          <button
-            className="
-              rounded-full
-              bg-emerald-600
-              px-8
-              py-4
-              font-semibold
-              text-white
-              transition-all
-              duration-300
-              hover:-translate-y-1
-              hover:bg-emerald-500
-              hover:shadow-xl
-              hover:shadow-emerald-500/20
-            "
-          >
-
-            Lihat Detail Produk →
-
-          </button>
+          <Link
+    href={`/produk/${product.slug}`}
+    className="inline-flex
+        items-center
+        gap-2
+        rounded-full
+        bg-emerald-600
+        hover:bg-emerald-500
+        px-7
+        py-3
+        font-semibold
+        text-white
+        transition-all
+        duration-300
+        hover:translate-x-1
+    "
+>
+    Lihat Detail Produk
+    <span>→</span>
+</Link>
 
         </div>
 

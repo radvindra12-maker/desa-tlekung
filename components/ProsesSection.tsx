@@ -40,7 +40,8 @@ const proses = [
     nomor: "05",
     judul: "Penggilingan",
     badge: "Final Process",
-    image: "/images/proses/giling.jpg",
+    image: "/image/proses/penggilingan.jpg",
+    video: "/videos/proses/penggilingan.mp4",
     deskripsi:
       "Setelah disangrai, kopi digiling hingga siap dikemas maupun diseduh.",
   },
@@ -160,7 +161,17 @@ export default function ProsesSection() {
   <div className="relative h-105">
   
 
-
+{item.video ? (
+  <video
+    src={item.video}
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+) : (
 
     <Image
       src={item.image}
@@ -173,7 +184,7 @@ export default function ProsesSection() {
         group-hover:scale-110
       "
     />
-
+)}
     {/* Overlay */}
     <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 

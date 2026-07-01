@@ -19,30 +19,32 @@ interface GalleryItem {
 
 const galleryItems: GalleryItem[] = [
   {
-    id: 1,
-    src: "/images/galeri/foto-1.jpg",
-    alt: "Perkebunan Kopi Girimurti di lereng Gunung Arjuno",
-    title: "Perkebunan Kopi Girimurti",
-    kategori: "Kebun",
-    span: "tall",
-  },
-  {
-    id: 2,
-    src: "/images/galeri/foto-2.jpg",
-    alt: "Proses panen buah kopi merah",
-    title: "Panen Buah Kopi",
-    kategori: "Panen",
-    span: "normal",
-  },
-  {
-    id: 3,
-    src: "/images/galeri/foto-3.jpg",
-    alt: "Proses pengeringan biji kopi",
-    title: "Pengeringan Biji Kopi",
-    kategori: "Pascapanen",
-    span: "normal",
-  },
-  {
+    id:1,
+    src:"/images/galeri/foto-1.jpg",
+    alt:"Kebun Kopi",
+    title:"Kebun Kopi",
+    kategori:"Kebun",
+    span:"normal",
+},
+
+{
+    id:2,
+    src:"/images/galeri/foto-2.jpg",
+    alt:"Produk",
+    title:"Produk Kopi",
+    kategori:"Produk",
+    span:"wide",
+},
+
+{
+    id:3,
+    src:"/images/galeri/foto-3.jpg",
+    alt:"Proses",
+    title:"Proses Produksi",
+    kategori:"Proses",
+    span:"tall",
+},
+{
     id: 4,
     src: "/images/galeri/foto-4.jpg",
     alt: "Proses penyangraian kopi Girimurti",
@@ -67,6 +69,7 @@ const galleryItems: GalleryItem[] = [
     span: "tall",
   },
 ];
+
 
 const kategoriColor: Record<string, string> = {
   Kebun: "bg-emerald-900/70 text-emerald-300",
@@ -346,6 +349,7 @@ function GalleryCard({
 
 export default function GallerySection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [filter, setFilter] = useState("Semua");
 
   const openLightbox  = (i: number) => setActiveIndex(i);
   const closeLightbox = useCallback(() => setActiveIndex(null), []);
@@ -356,6 +360,14 @@ export default function GallerySection() {
     setActiveIndex((i) => (i === null ? null : (i + 1) % galleryItems.length)),
   []);
 
+  const categories = [
+  "Semua",
+  "Kebun",
+  "Produksi",
+  "Produk",
+  "Panen",
+  "Pascapanen",
+];
   return (
     <>
       <section id="galeri"
@@ -420,23 +432,66 @@ pengolahan, hingga produk kopi yang menjadi warisan masyarakat Desa Tlekung.
             </motion.p>
           </div>
 
+<div className="flex flex-wrap justify-center gap-3 mb-10">
+
+  {categories.map((cat) => (
+
+    <button
+      key={cat}
+      onClick={() => setFilter(cat)}
+      className={`
+        px-5
+        py-2
+        rounded-full
+        transition-all
+        duration-300
+        ${
+          filter === cat
+            ? "bg-emerald-600 text-white"
+            : "border border-stone-700 text-stone-300 hover:border-emerald-500"
+        }
+      `}
+    >
+
+      {cat}
+
+    </button>
+
+  ))}
+
+</div>
+
           {/* ── Masonry grid ── */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={stagger}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-              auto-rows-[220px] gap-4"
-          >
-            {galleryItems.map((item, i) => (
-              <GalleryCard
-                key={item.id}
-                item={item}
-                onClick={() => openLightbox(i)}
-              />
-            ))}
-          </motion.div>
+         <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, margin: "-60px" }}
+  variants={stagger}
+  className="
+    grid
+    grid-cols-1
+    sm:grid-cols-2
+    lg:grid-cols-3
+    auto-rows-[220px]
+    gap-4
+  "
+>
+
+  {galleryItems
+    .filter(
+      (item) =>
+        filter === "Semua" ||
+        item.kategori === filter
+    )
+    .map((item, i) => (
+      <GalleryCard
+        key={item.id}
+        item={item}
+        onClick={() => openLightbox(i)}
+      />
+    ))}
+
+</motion.div>
 
           {/* ── View all CTA ── */}
           <motion.div
