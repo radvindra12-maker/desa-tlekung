@@ -114,8 +114,7 @@ function Lightbox({
   onClose: () => void;
 }) {
   useEffect(() => {
-    document.body.style.overflow = "hidden";
-
+  document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
     };
@@ -131,6 +130,7 @@ function Lightbox({
         className="
           fixed
           inset-0
+          overflow-hidden
           z-[9999]
           bg-black/90
           backdrop-blur-sm
@@ -148,8 +148,13 @@ function Lightbox({
           onClick={(e) => e.stopPropagation()}
           className="relative w-full max-w-6xl"
         >
-          <div className="relative aspect-16/10 w-full">
-
+          <div
+  className="
+    relative
+    w-full
+    h-[85vh]
+"
+>
             <Image
               src={item.src}
               alt={item.title}
@@ -160,25 +165,26 @@ function Lightbox({
           </div>
 
           <button
-            onClick={onClose}
-            className="
-              absolute
-              -top-14
-              right-0
-              w-11
-              h-11
-              rounded-full
-              bg-white
-              text-black
-              text-xl
-              font-bold
-              hover:scale-110
-              transition
-            "
-          >
-            ×
-          </button>
-
+  onClick={onClose}
+  className="
+    absolute
+    top-4
+    right-4
+    z-50
+    w-12
+    h-12
+    rounded-full
+    bg-black/70
+    backdrop-blur
+    text-white
+    text-2xl
+    hover:bg-black
+    transition
+  "
+>
+  ×
+</button>
+          
         </motion.div>
       </motion.div>
   
