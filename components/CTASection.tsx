@@ -122,13 +122,13 @@ export default function CTASection() {
           >
             Mari Lestarikan{" "}
             <span className="relative inline-block text-emerald-400">
-              Warisan Kopi
+              Warisan The Java
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 280 10" preserveAspectRatio="none">
                 <path d="M2 6 Q70 1 140 6 Q210 11 278 5"
                   stroke="#f97316" strokeWidth="3" fill="none" strokeLinecap="round" />
               </svg>
             </span>{" "}
-            Girimurti
+            Coffee
           </motion.h2>
 
           {/* Description */}

@@ -11,7 +11,7 @@ const varietas = [
       "Memiliki cita rasa lembut dengan aroma yang kompleks dan tumbuh optimal di kawasan pegunungan Desa Tlekung.",
   },
   {
-    nama: "Atingjanda",
+    nama: "Atengjanda",
     latin: "Varietas Lokal",
     image: "/images/varietas/atingjanda.jpg",
     warna: "bg-green-500",
@@ -19,7 +19,7 @@ const varietas = [
       "Varietas kopi yang turut dibudidayakan masyarakat sebagai bagian dari keberagaman tanaman kopi di Desa Tlekung.",
   },
   {
-    nama: "Gayuh",
+    nama: "Gayoh Aceh",
     latin: "Varietas Lokal",
     image: "/images/varietas/gayuh.jpg",
     warna: "bg-yellow-500",
@@ -27,7 +27,7 @@ const varietas = [
       "Dikenal memiliki produktivitas yang baik dan mampu beradaptasi dengan kondisi lahan pegunungan.",
   },
   {
-    nama: "Hilukatura",
+    nama: "Yellow Caturra",
     latin: "Varietas Lokal",
     image: "/images/varietas/hilukatura.jpg",
     warna: "bg-stone-600",

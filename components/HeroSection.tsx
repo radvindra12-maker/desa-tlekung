@@ -263,7 +263,7 @@ export default function HeroSection() {
             variants={fadeSlideUp}
             className="text-lg sm:text-xl font-semibold text-white/80 tracking-wide mt-4 mb-3"
           >
-            Warisan Rasa dari Lereng Tlekung Sejak 1958
+            Warisan Rasa dari Lereng Kawi Sejak 1958
           </motion.p>
 
           {/* Description */}

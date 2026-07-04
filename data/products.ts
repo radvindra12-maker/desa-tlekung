@@ -20,7 +20,7 @@ export const products = [
   {
     slug: "arabica-yellow-caturra",
     nama: "Arabica Yellow Caturra",
-    harga: "Rp95.000",
+    harga: "Harga Fluktuatif6",
     berat: "200 gram",
     roast: "Medium Roast",
     proses: "Natural Process",
@@ -59,7 +59,7 @@ export const products = [
   {
     slug: "arabica-gp",
     nama: "Arabica Gangsiran Puthuk",
-    harga: "Rp120.000",
+    harga: "Harga Fluktuatif",
     berat: "200 gram",
     roast: "Light Roast",
     proses: "Natural Process",
@@ -93,51 +93,15 @@ gallery: [
   "/images/produk/Arabika-GP.jpg",
   "/images/produk/Arabika-GP.jpg",
 ],
-  },
+},
+
+  
 
   {
-    slug: "robusta-honey",
-    nama: "Robusta Honey",
-    harga: "Rp65.000",
-    berat: "200 gram",
-    roast: "Medium Dark",
-    proses: "Honey Process",
-    origin: "Desa Tlekung",
-    image: "/images/produk/Robusta-HN.jpg",
 
-    whatsapp:
-      "Halo, saya ingin membeli Robusta Honey.",
-
-    deskripsi:
-      "Robusta dengan body tebal, aroma coklat dan karakter yang kuat.",
-
-    tasting: [
-      "Dark Chocolate",
-      "Caramel",
-      "Nutty",
-      "Bold Body",
-    ],
-    story:
-"Robusta Honey diproses menggunakan metode Honey Process yang mempertahankan sebagian lapisan lendir buah kopi selama proses pengeringan. Teknik ini menghasilkan karakter rasa yang lebih manis, body tebal, serta aroma cokelat dan karamel yang khas, menjadikannya pilihan tepat bagi penikmat kopi dengan cita rasa kuat.",
-
-brew: [
-  "French Press",
-  "Vietnam Drip",
-  "Espresso",
-],
-
-gallery: [
-  "/images/produk/Robusta-HN.jpg",
-  "/images/produk/Robusta-HN.jpg",
-  "/images/produk/Robusta-HN.jpg",
-  "/images/produk/Robusta-HN.jpg",
-],
-  },
-
-  {
     slug: "excelsa",
     nama: "Excelsa",
-    harga: "Rp90.000",
+    harga: " Harga Fluktuatif",
     berat: "200 gram",
     roast: "Medium Roast",
     proses: "Natural",
@@ -171,5 +135,5 @@ gallery: [
   "/images/produk/Excelsa.jpg",
   "/images/produk/Excelsa.jpg",
 ],
-  },
+},
 ];
