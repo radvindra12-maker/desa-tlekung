@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Default Next */
+  --background: #FBF5DD;
+  --foreground: #1F1B18;
+
+  /* ==========================
+     GIRIMURTI COLOR PALETTE
+  ========================== */
+
+  --cream: #FBF5DD;
+  --beige: #E7E1B1;
+  --coffee: #8B5E34;
+  --green: #306D29;
+  --dark-green: #0D530E;
+
+  --text-dark: #1F1B18;
+  --text-light: #FFFDF8;
+  --text-muted: #5C554D;
 }
 html {
   scroll-behavior: smooth;
@@ -17,14 +32,14 @@ section {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
-
+*/
 body {
   background: var(--background);
   color: var(--foreground);
@@ -39,9 +54,16 @@ body {
   overflow: hidden;
 
   background:
-  radial-gradient(circle at 15% 20%, rgba(16,185,129,.08), transparent 28%),
-  radial-gradient(circle at 85% 70%, rgba(245,158,11,.05), transparent 35%),
-  linear-gradient(180deg,#05080d 0%,#070b10 100%);
+    radial-gradient(circle at 15% 20%, rgba(34,197,94,.10), transparent 30%),
+    radial-gradient(circle at 85% 75%, rgba(251,191,36,.08), transparent 35%),
+    radial-gradient(circle at 50% 100%, rgba(120,53,15,.08), transparent 40%),
+    linear-gradient(
+      180deg,
+      #241c16 0%,
+      #1c1713 35%,
+      #181410 70%,
+      #14110e 100%
+    );
 }
 
 /* Grid */
@@ -84,4 +106,45 @@ body {
 html,
 body {
   overflow-x: hidden;
+}
+
+/* ==========================================
+   GIRIMURTI THEME SYSTEM
+========================================== */
+
+:root{
+
+  /* Background */
+
+  --bg-dark: var(--dark-green);
+  --bg-primary: var(--green);
+  --bg-coffee: var(--coffee);
+  --bg-soft: var(--beige);
+  --bg-light: var(--cream);
+
+  /* Card */
+
+  --card-dark: #19451A;
+  --card-coffee: #9A6A3A;
+  --card-light: #FFF9E8;
+
+  /* Text */
+
+  --heading: #1D1A17;
+  --text: #50483F;
+  --text-light: #FFFDF7;
+
+  /* Border */
+
+  --border: rgba(48,109,41,.15);
+
+  /* Shadow */
+
+  --shadow:
+      0 10px 35px rgba(0,0,0,.08);
+
+  /* Transition */
+
+  --transition: all .35s ease;
+
 }

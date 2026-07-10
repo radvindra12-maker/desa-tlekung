@@ -17,10 +17,10 @@ interface Narasumber {
 const VIDEO_ID = "dQw4w9WgXcQ"; // ← ID dari URL YouTube
 // youtube.com/watch?v=dQw4w9WgXcQ → ambil bagian ini
 const narasumber: Narasumber = {
-  nama: "Nama Pemilik",
+  nama: "Pak Natan",
   peran: "Pemilik Perkebunan Kopi Girimurti",
   deskripsi:
-    "Generasi ketiga penerus perkebunan kopi keluarga yang telah berdiri sejak tahun 1940-an di lereng Gunung Arjuno, Desa Tlekung.",
+    "Generasi ketiga penerus perkebunan kopi keluarga yang telah berdiri sejak tahun 1940-an di lereng Gunung Kawi, Desa Tlekung.",
   inisial: "NP",
 };
 
@@ -152,7 +152,12 @@ function VideoPlayer() {
 
 export default function InterviewSection() {
   return (
-    <section id="wawancara">
+    <section 
+    id="wawancara"
+  className="bg-[var(--cream)]"
+    >
+
+
 
       {/* Ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-96 bg-amber-900/15 rounded-full blur-[120px] pointer-events-none" />
@@ -184,8 +189,9 @@ export default function InterviewSection() {
 
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4"
-            style={{ color: "#fef3c7" }}
+            style={{ color: "#8B4513" }}
           >
+          
             Perjalanan Kopi Girimurti{" "}
             <span className="relative inline-block text-amber-400">
               dari Masa ke Masa
@@ -201,7 +207,7 @@ export default function InterviewSection() {
             </span>
           </h2>
 
-          <p className="text-stone-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Wawancara eksklusif bersama pemilik perkebunan Kopi Girimurti yang menceritakan sejarah,
             perkembangan, serta harapan untuk masa depan kopi Desa Tlekung.
           </p>

@@ -149,7 +149,7 @@ export default function FooterSection() {
   return (
     <footer
   id="kontak"
-  className="relative overflow-hidden bg-stone-950"
+  className="relative overflow-hidden bg-linear-to-b from-(--coffee) via-(--green-forest) to-(--green-forest)"
 >
 
       {/* Wave divider */}

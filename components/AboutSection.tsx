@@ -60,7 +60,7 @@ export default function AboutSection() {
   return (
     <section
       id="profil"
-     className="section-fade relative py-28"
+     className="relative overflow-hidden bg-linear-to-b from-(--bg-primary) via-(--bg-primary) to-(--coffee)"
 style={
 {
 "--section-next-bg":"#05080d"
@@ -85,7 +85,7 @@ style={
             variants={fadeLeft}
             className="relative"
           >
-            <div className="relative rounded-4xl overflow-hidden aspect-4/5 max-h-145 shadow-2xl shadow-green-900/20">
+            <div className="relative rounded-4xl overflow-hidden aspect-4/5 max-h-145 shadow-[var(--shadow)] shadow-green-900/20">
               <Image
                 src="/images/kopi/kebun-pagi.jpg"
                 alt="Kebun Kopi Girimurti"
@@ -97,7 +97,7 @@ style={
 
               <div className="absolute bottom-5 left-5 right-5 flex justify-between items-end">
                 <div className="px-4 py-2 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20">
-                  <span className="text-xs font-semibold text-white">
+                  <span className="text-xs font-semibold text-[var(--heading)]">
                     Desa Tlekung, Kota Batu
                   </span>
                 </div>
@@ -109,7 +109,7 @@ style={
             </div>
 
             <div className="absolute -top-5 -right-5 bg-white dark:bg-gray-900 p-4 rounded-2xl shadow-xl">
-              <h4 className="font-bold text-emerald-600">
+              <h4 className="font-bold text-[var(--coffee)]">
                 Kopi Girimurti
               </h4>
               <p className="text-xs text-gray-500">
@@ -121,7 +121,7 @@ style={
               <p className="text-xs text-gray-400 mb-1">
                 Ketinggian Kebun
               </p>
-              <p className="text-2xl font-extrabold text-emerald-600">
+              <p className="text-2xl font-extrabold text-[var(--beige)]">
                 ±950 mdpl
               </p>
               <p className="text-[10px] text-gray-500">
@@ -142,7 +142,7 @@ style={
               variants={fadeUp}
               className="inline-flex mb-4"
             >
-              <span className="px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-widest">
+              <span className="px-4 py-2 rounded-full bg-[var(--green)]/10 text-[var(--green)] text-xs font-bold uppercase tracking-widest">
                 Tentang Kopi
               </span>
             </motion.div>
@@ -150,10 +150,10 @@ style={
             <motion.h2
               custom={0.1}
               variants={fadeUp}
-              className="text-4xl font-extrabold text-gray-900 dark:text-white mb-6"
+              className="text-4xl font-extrabold text-gray-900 dark:text-white/60"
             >
               Mengenal Lebih Dekat{" "}
-              <span className="text-emerald-600">
+              <span className="text-[var(--dark-green)]">
                 Kopi Girimurti
               </span>
             </motion.h2>
@@ -161,7 +161,7 @@ style={
             <motion.p
               custom={0.2}
               variants={fadeUp}
-              className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4"
+              className="text-[var(--cream)] dark:text-[var(--cream)] leading-relaxed mb-4"
             >
               Kopi Girimurti merupakan warisan perkebunan kopi yang
               telah menjadi bagian dari identitas masyarakat Desa
@@ -171,7 +171,7 @@ style={
             <motion.p
               custom={0.25}
               variants={fadeUp}
-              className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8"
+              className="text-gray-600 dark:text-[var(--cream)] leading-relaxed mb-8"
             >
               Ditanam di kawasan pegunungan dengan kondisi alam yang
               mendukung, Kopi Girimurti dikenal memiliki karakter rasa
@@ -189,7 +189,7 @@ style={
               {highlights.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
+                  className="flex items-center gap-3 text-gray-700 dark:text-[var(--beige)]"
                 >
                   <span className="text-xl">
                     {item.icon}
@@ -209,7 +209,7 @@ style={
                   key={index}
                   className="text-center p-4 rounded-2xl bg-gray-50 dark:bg-gray-900"
                 >
-                  <div className="text-2xl font-bold text-emerald-600">
+                  <div className="text-2xl font-bold text-[var(--beige)]">
                     {stat.value}
                   </div>
                   <div className="text-xs text-gray-500">
@@ -226,14 +226,14 @@ style={
             >
               <Link
                 href="#sejarah"
-                className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition"
+                className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-[var(--beige)] font-semibold transition"
               >
                 Sejarah Kopi
               </Link>
 
               <Link
                 href="#galeri"
-                className="px-6 py-3 rounded-full border border-emerald-600 text-emerald-600 hover:bg-emerald-50 font-semibold transition"
+                className="px-6 py-3 rounded-full border border-emerald-600 hover:bg-emerald-500 text-[var(--beige)] hover:bg-emerald-50 font-semibold transition"
               >
                 Lihat Galeri
               </Link>

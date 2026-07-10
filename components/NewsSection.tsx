@@ -313,7 +313,8 @@ export default function NewsSection() {
   const regular  = news.filter((n) => !n.featured);
 
   return (
-    <section id="berita">
+    <section id="berita"
+    className="bg-[var(--beige)]">
 
       {/* Ambient */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-950/25 rounded-full blur-[100px] pointer-events-none" />
@@ -430,7 +431,7 @@ dan kegiatan Kopi Girimurti.
                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
             </svg>
           </span>
-          <p className="text-sm text-stone-400">
+          <p className="text-sm text-stone-600">
             <span className="font-semibold text-emerald-400">Pengumuman:</span>{" "}
             <span className="font-semibold text-emerald-400">Informasi:</span>{" "}
 Kopi Girimurti terus dikembangkan sebagai produk unggulan masyarakat

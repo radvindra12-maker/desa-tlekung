@@ -10,7 +10,7 @@ export default function ProductSection() {
   return (
     <section
       id="produk"
-      className="relative overflow-hidden bg-black py-28"
+      className="relative overflow-hidden bg-[var(--cream)]"
     >
           {/* Background Glow */}
 
@@ -173,7 +173,7 @@ export default function ProductSection() {
               py-2
               text-sm
               font-semibold
-              text-white
+              text-green-300
             "
           >
 
@@ -192,7 +192,7 @@ export default function ProductSection() {
               bg-emerald-600
               px-5
               py-3
-              text-white
+              text-green-300
               font-semibold
               shadow-xl
             "
@@ -243,7 +243,7 @@ export default function ProductSection() {
         </span>
 
         <h3
-          className="text-5xl font-bold text-white leading-tight"
+          className="text-5xl font-bold text-yellow-400 leading-tight"
           style={{
             fontFamily: "Georgia, 'Times New Roman', serif",
           }}
@@ -253,7 +253,7 @@ export default function ProductSection() {
 
         </h3>
 
-        <p className="text-lg leading-8 text-stone-400">
+        <p className="text-lg leading-8 text-stone-500">
 
           {product.deskripsi}
 
@@ -281,11 +281,11 @@ export default function ProductSection() {
                   rounded-full
                   border
                   border-stone-700
-                  bg-stone-900
+                  bg-yellow-200
                   px-4
                   py-2
                   text-sm
-                  text-white
+                  text-stone-600
                   transition-all
                   duration-300
                   hover:border-emerald-500
@@ -309,19 +309,19 @@ export default function ProductSection() {
 
         <div className="flex flex-wrap gap-4">
 
-          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-white">
+          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-green-600">
 
             ☕ Fresh Roast
 
           </span>
 
-          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-white">
+          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-green-600">
 
             📦 {product.berat}
 
           </span>
 
-          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-white">
+          <span className="rounded-full border border-stone-700 px-4 py-2 text-sm text-green-600">
 
             🌿 Single Origin
 

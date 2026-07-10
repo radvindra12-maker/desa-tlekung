@@ -173,8 +173,10 @@ export default function HistoryCoffeeSection() {
  
 
   return (
-    <section id="sejarah">
-
+    <section 
+    id="sejarah"
+ className="bg-[var(--bg-coffee)]"
+ >
       {/* Background texture */}
       <div
       className="section-fade relative overflow-hidden py-28"
@@ -182,8 +184,36 @@ export default function HistoryCoffeeSection() {
       {
         "--section-next-bg":"#05080d"
       } as React.CSSProperties
-    }
+  }
+    
 />
+<div className="absolute inset-0 pointer-events-none">
+
+  <div className="
+      absolute
+      top-0
+      left-0
+      w-[500px]
+      h-[500px]
+      rounded-full
+      bg-[var(--cream)]
+      opacity-5
+      blur-[180px]
+  "/>
+
+  <div className="
+      absolute
+      bottom-0
+      right-0
+      w-[500px]
+      h-[500px]
+      rounded-full
+      bg-[var(--green)]
+      opacity-10
+      blur-[180px]
+  "/>
+
+</div>
       {/* Ambient blobs */}
       <div className="absolute top-20 right-0 w-112.5 h-112.5 rounded-full bg-amber-500/8 blur-[220px]" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-900/20 rounded-full blur-[100px] pointer-events-none" />
@@ -251,13 +281,13 @@ export default function HistoryCoffeeSection() {
               {/* Bottom label */}
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10">
-                    <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                    <span className="text-xs font-semibold text-white/90 tracking-wide">
+                  <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[var(--coffee)]/40 backdrop-blur-md border border-white/10">
+                    <div className="w-2 h-2 rounded-full bg-[var(--green)] animate-pulse" />
+                    <span className="text-xs font-semibold text-[var(--cream)]/90 tracking-wide">
                       Kopi Girimurti
                     </span>
                   </div>
-                  <div className="px-3 py-2 rounded-xl bg-amber-600/80 backdrop-blur-sm text-white text-xs font-bold">
+                  <div className="px-3 py-2 rounded-xl bg-[var(--green)]/80 backdrop-blur-sm text-white text-xs font-bold">
                     Arabika &amp; Robusta
                   </div>
                 </div>
@@ -265,36 +295,14 @@ export default function HistoryCoffeeSection() {
             </div>
 
             {/* Floating stat cards */}
-            <motion.div
-              initial={{
-  opacity:0,
-  y:50
-}}
-whileInView={{
-  opacity:1,
-  y:0
-}}
-transition={{
-  duration:.8
-}}
-viewport={{
-  once:true
-}}
->
-             
-              <p className="text-[10px] text-stone-500 mb-1 uppercase tracking-wider">Ketinggian Kebun</p>
-              <p className="text-2xl font-extrabold text-amber-400 leading-none">
-                950 <span className="text-sm font-semibold text-stone-500">mdpl</span>
-              </p>
-              <p className="text-[10px] text-stone-500 mt-1">Lereng Gunung Arjuno</p>
-            </motion.div>
+  
 
             <motion.div
               initial={{ opacity: 0, scale: 0.88 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.55, duration: 0.5, ease: "easeOut" }}
-              className="absolute -bottom-4 -left-4 w-48 bg-stone-900 rounded-2xl p-4 border border-stone-800 shadow-xl"
+              className="absolute -bottom-4 -left-4 w-48 bg-[rgba(255,255,255,.06)] rounded-2xl p-4 border border-stone-800 shadow-xl"
             >
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-7 h-7 rounded-lg bg-amber-900/50 flex items-center justify-center">
@@ -500,7 +508,7 @@ viewport={{
     w-175
     h-75
     rounded-full
-    bg-emerald-500/5
+    bg-[#C89B3C]
     blur-[180px]
     pointer-events-none
   "

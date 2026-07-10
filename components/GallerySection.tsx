@@ -197,7 +197,7 @@ export default function GallerySection() {
   return (
     <section
       id="galeri"
-      className="relative py-24 bg-stone-950 overflow-hidden"
+      className="relative overflow-hidden bg-linear-to-b from-(--cream) via-(--beige) to-(--beige)"
     >
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 rounded-full bg-emerald-900/10 blur-[180px] pointer-events-none" />

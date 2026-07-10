@@ -191,7 +191,7 @@ export default function HeroSection() {
 
   return (
      <section id="beranda" 
-     className="relative min-h-screen">
+     className="relative overflow-hidden bg-linear-to-b from-(--green-forest) via-(--bg-primary) to-(--bg-primary)">
 
       {/* ── Background image ── */}
       <div className="absolute inset-0 z-0">
@@ -207,13 +207,13 @@ export default function HeroSection() {
       </div>
 
       {/* ── Overlays ── */}
-      <div className="absolute inset-0 z-10 bg-black/35" />
-      <div className="absolute inset-0 z-10 bg-linear-to-b from-green-950/60 via-transparent to-black/80" />
-      <div className="absolute inset-0 z-10 bg-linear-to-r from-green-950/40 via-transparent to-transparent" />
+      <div className="absolute inset-0 z-10 bg-[rgba(13,83,14,.18)]" />
+      <div className="absolute inset-0 z-10 bg-linear-to-b from-(--dark-green)/45 via-transparent to-[rgba(20,20,20,.55)]" />
+      <div className="absolute inset-0 z-10 bg-linear-to-r from-[var(--dark-green)]/50 via-transparent to-transparent" />
 
       {/* Ambient blobs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-emerald-950/403- blur-[100px] z-10 pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/3 w-80 h-80 rounded-full bg-orange-500/10 blur-[80px] z-10 pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[var(--green)]- blur-[100px] z-10 pointer-events-none" />
+      <div className="absolute bottom-1/3 left-1/3 w-80 h-80 rounded-full bg-[var(--coffee)] blur-[80px] z-10 pointer-events-none" />
 
       {/* ── Content ── */}
       <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 pb-8">
@@ -247,10 +247,10 @@ export default function HeroSection() {
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
             Kopi{" "}
-            <span className="relative inline-block text-emerald-400">
+            <span className="relative inline-block text-(--beige)">
               Giri Murti
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 10" preserveAspectRatio="none">
-                <path d="M2 6 Q50 2 100 6 Q150 10 198 5" stroke="#f97316" strokeWidth="3" fill="none" strokeLinecap="round" />
+                <path d="M2 6 Q50 2 100 6 Q150 10 198 5" stroke="#8B5E34" strokeWidth="3" fill="none" strokeLinecap="round" />
               </svg>
             </span>
           </motion.h1>
@@ -288,8 +288,8 @@ export default function HeroSection() {
             <Link
               href="#profil"
               className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full
-                bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm
-                shadow-lg shadow-emerald-900/40 hover:shadow-emerald-600/40
+                bg-(--green) hover:bg-(--dark-green) text-white font-semibold text-sm
+                shadow-lg shadow-[var(--green)]-900/40 hover:shadow-[var(--green)]-600/40
                 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -10,7 +10,7 @@ export default function ProsesSection() {
   return (
   <section
     id="proses"
-    className="relative overflow-hidden bg-stone-950 py-28"
+    className="relative overflow-hidden bg-linear-to-b from-(--beige) via-(--cream) to-(--cream)"
   >
     {/* Background Glow */}
     <div className="absolute inset-0 pointer-events-none">
@@ -63,7 +63,7 @@ Perjalanan
 
         </div>
 
-        <p className="max-w-3xl mx-auto text-lg leading-8 text-stone-400">
+        <p className="max-w-3xl mx-auto text-lg leading-8 text-[var(--coffee)]">
 
          Perjalanan Kopi Girimurti dimulai dari kebun milik petani Gangsiran puthuk,
 melalui proses budidaya, panen, hingga pengolahan pascapanen sebelum
@@ -72,17 +72,7 @@ akhirnya menjadi secangkir kopi dengan cita rasa khas yang siap dinikmati.
 
       </motion.div>
 
-<div className="mt-10 flex flex-wrap justify-center gap-4">
 
-  <span className="rounded-full border border-emerald-700/40 bg-emerald-900/20 px-5 py-2 text-sm text-emerald-300">
-    🌿 Tahap Budidaya
-  </span>
-
-  <span className="rounded-full border border-amber-700/40 bg-amber-900/20 px-5 py-2 text-sm text-amber-300">
-    ☕ Tahap Pengolahan
-  </span>
-
-</div>
 
 
 
@@ -125,7 +115,7 @@ akhirnya menjadi secangkir kopi dengan cita rasa khas yang siap dinikmati.
       font-semibold
     ">
 
-      ☕ Memasuki Tahap Pengolahan
+       Memasuki Tahap Pengolahan
 
     </div>
 
@@ -176,14 +166,16 @@ akhirnya menjadi secangkir kopi dengan cita rasa khas yang siap dinikmati.
         text-amber-300
       "
     >
-      ☕ Memasuki Tahap Pengolahan
+      
+Siap untuk Dinikmati
+
     </span>
 
     <div className="h-px w-24 bg-emerald-700" />
 
   </div>
 
-  <p className="mt-8 max-w-2xl mx-auto text-stone-400 leading-8">
+  <p className="mt-8 max-w-2xl mx-auto text-[var(--coffee)] leading-8">
 
     Setelah melalui proses budidaya dan pemilihan buah kopi terbaik,
     kopi Girimurti memasuki tahapan pengolahan untuk menjaga kualitas,

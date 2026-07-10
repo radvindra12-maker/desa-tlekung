@@ -39,7 +39,7 @@ export default function VarietasSection() {
   return (
     <section
       id="varietas"
-      className="relative py-24 bg-stone-950 overflow-hidden"
+      className="relative overflow-hidden bg-linear-to-b from-(--coffee) via-(--beige) to-(--beige)"
     >
       <div className="max-w-7xl mx-auto px-6">
 

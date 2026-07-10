@@ -55,7 +55,7 @@ export default function CTASection() {
     
     <section 
     id="kontak"
-    className="relative overflow-hidden bg-linear-to-b from-stone-950 via-green-950 to-green-950">
+    className="relative overflow-hidden bg-linear-to-b from-(--beige) via-(--coffee) to-(--coffee)">
 
       {/* ── Decorative background elements ── */}
 

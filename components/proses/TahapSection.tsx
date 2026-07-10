@@ -19,12 +19,12 @@ type Props = {
 };
 
 const icons: Record<string, string> = {
-  "Tanam": "🌱",
-  "Petik": "🍒",
-  "Rambang": "🧺",
-  "Pengeringan": "☀️",
-  "Penggilingan": "⚙️",
-  "Seduh": "☕",
+  "Tanam": "",
+  "Petik": "",
+  "Rambang": "",
+  "Pengeringan": "",
+  "Penggilingan": "",
+  "Seduh": "",
 };
 
 export default function TahapSection({
@@ -57,22 +57,24 @@ export default function TahapSection({
         </span>
 
         <h3
-          className="mt-6 text-4xl font-bold text-white"
+          className="mt-6 text-4xl font-bold text-shadow-yellow-500"
           style={{ fontFamily: "Georgia, serif" }}
         >
           {title}
         </h3>
 
-<p className="mt-4 text-stone-400 max-w-2xl mx-auto leading-8">
+<p className="mt-4 text-[var(--coffee)] max-w-2xl mx-auto leading-8">
   {description}
 </p>
 
       </div>
-<div className="space-y-32">
+<div className="space-y-20">
 
   {data.map((item, index) => (
 
+
     <motion.div
+
   key={item.nomor}
   initial={{ opacity: 0, y: 50 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +158,7 @@ export default function TahapSection({
           text-white
         ">
 
-          Tahap {item.badge}
+          {item.badge}
 
         </span>
 
@@ -179,7 +181,7 @@ export default function TahapSection({
     `}
   >
 
-    <div className="absolute -top-10 left-0 text-[100px] font-black text-emerald-500/10">
+    <div className="absolute -top-10 left-0 text-[140px] font-black text-emerald-500/5">
 
       {item.nomor}
 
@@ -205,7 +207,7 @@ export default function TahapSection({
 
     </span>
 
-   <h3 className="mt-8 flex items-center gap-4 text-4xl font-bold text-white">
+   <h3 className="mt-8 flex items-center gap-4 text-4xl font-bold text-green-500">
 
   <span className="text-5xl">
 
@@ -228,27 +230,25 @@ export default function TahapSection({
 
 
 {index !== data.length - 1 && (
-
-<div className="lg:col-span-2 flex justify-center">
-
-<div
-className="
-w-px
-h-20
-bg-linear-to-b
-from-emerald-500
-to-amber-500
-"
-/>
-
-</div>
-
+  <div className="flex justify-center lg:col-span-2">
+    <div
+      className="
+        h-16
+        w-px
+        rounded-full
+        bg-linear-to-b
+        from-emerald-500/80
+        via-emerald-300/50
+        to-transparent
+      "
+    />
+  </div>
 )}
     
 </motion.div>
     
 
- 
+
   ))}
 
 </div>
