@@ -246,7 +246,7 @@ export default function HeroSection() {
             className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.05] mb-2"
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
-            Kopi{" "}
+            {" "}
             <span className="relative inline-block text-(--beige)">
               Giri Murti
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 10" preserveAspectRatio="none">
