@@ -90,6 +90,7 @@ style={
                 src="/images/kopi/kebun-pagi.jpg"
                 alt="Kebun Kopi Girimurti"
                 fill
+                priority
                 className="object-cover"
               />
 

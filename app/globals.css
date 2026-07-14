@@ -9,11 +9,12 @@
      GIRIMURTI COLOR PALETTE
   ========================== */
 
-  --cream: #FBF5DD;
-  --beige: #E7E1B1;
-  --coffee: #8B5E34;
+  --cream: #C8B68A;
+  --beige: #DDD39B;
+  --coffee: #6F4E37;
   --green: #306D29;
   --dark-green: #0D530E;
+  --gold: #C89B3C;
 
   --text-dark: #1F1B18;
   --text-light: #FFFDF8;
@@ -57,6 +58,9 @@ body {
     radial-gradient(circle at 15% 20%, rgba(34,197,94,.10), transparent 30%),
     radial-gradient(circle at 85% 75%, rgba(251,191,36,.08), transparent 35%),
     radial-gradient(circle at 50% 100%, rgba(120,53,15,.08), transparent 40%),
+    radial-gradient(circle at top right,
+rgba(200,155,60,.08),
+transparent 40%)
     linear-gradient(
       180deg,
       #241c16 0%,
@@ -121,6 +125,7 @@ body {
   --bg-coffee: var(--coffee);
   --bg-soft: var(--beige);
   --bg-light: var(--cream);
+  --bg-light: var(--gold);
 
   /* Card */
 

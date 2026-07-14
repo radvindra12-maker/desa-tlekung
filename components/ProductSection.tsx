@@ -281,7 +281,7 @@ export default function ProductSection() {
                   rounded-full
                   border
                   border-stone-700
-                  bg-yellow-200
+                  bg-[var(--gold)]
                   px-4
                   py-2
                   text-sm

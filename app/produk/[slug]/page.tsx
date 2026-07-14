@@ -22,7 +22,7 @@ export default async function ProductDetail({ params }: Props) {
 
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-stone-950 text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[var(--beige)] text-white">
 
 <div className="absolute inset-0 overflow-hidden pointer-events-none">
 

@@ -34,7 +34,7 @@ export default function Navbar() {
   <img
     src="/images/logo/logo-girimurti.png"
     alt="Logo Girimurti"
-    className="w-11 h-11 object-contain"
+    className="w-15 h-15 object-contain"
   />
 
   <div className="hidden sm:block">
