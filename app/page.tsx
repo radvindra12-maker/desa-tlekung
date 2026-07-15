@@ -10,6 +10,7 @@ import CTASection  from "@/components/CTASection";
 import VarietasSection from "@/components/VarietasSection";
 import ProsesSection from "@/components/ProsesSection";
 import ProductSection from "@/components/ProductSection";
+import ProgramSection from "@/components/ProgramSection";
 import { Analytics } from '@vercel/analytics/next';
 export default function Home() {
 
@@ -18,18 +19,18 @@ export default function Home() {
   return (
     <>
 <HeroSection />
-<div className="website-bg">
 <AboutSection />
 <HistoryCoffeeSection />
 <VarietasSection/>
 <ProsesSection />
 <ProductSection />
+<ProgramSection />
 <InterviewSection />
 <GallerySection />
 <NewsSection />
 <CTASection />
 <FooterSection />
-</div>
+
 <Analytics />
  </>
   );

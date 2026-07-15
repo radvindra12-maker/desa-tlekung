@@ -191,29 +191,14 @@ export default function HeroSection() {
 
   return (
      <section id="beranda" 
-     className="relative overflow-hidden bg-linear-to-b from-(--green-forest) via-(--bg-primary) to-(--bg-primary)">
+     className="relative overflow-hidden min-h-screen bg-linear-to-b from-(--dark-green) via-(--bg-primary) to-(--bg-primary)">
 
-      {/* ── Background image ── */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero/hero-kopi-new.jpg"
-          alt="Pemandangan Kebun Kopi Desa Tlekung, Kota Batu"
-          fill
-          priority
-          quality={95}
-          className="object-cover object-center scale-100"
-          sizes="100vw"
-        />
-      </div>
+    {/* ── Overlays ── */}
+     <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-transparent" />
+    
 
-      {/* ── Overlays ── */}
-      <div className="absolute inset-0 z-10 bg-[rgba(13,83,14,.18)]" />
-      <div className="absolute inset-0 z-10 bg-linear-to-b from-(--dark-green)/45 via-transparent to-[rgba(20,20,20,.55)]" />
-      <div className="absolute inset-0 z-10 bg-linear-to-r from-[var(--dark-green)]/50 via-transparent to-transparent" />
 
-      {/* Ambient blobs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[var(--green)]- blur-[100px] z-10 pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/3 w-80 h-80 rounded-full bg-[var(--coffee)] blur-[80px] z-10 pointer-events-none" />
+     
 
       {/* ── Content ── */}
       <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 pb-8">
