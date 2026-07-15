@@ -60,15 +60,50 @@ export default function ProgramSection() {
           className="text-center mb-24"
         >
 
-<div className="grid lg:grid-cols-3 gap-8">
+
 
   {paketWisata.map((item, index) => (
-    <div key={index}>
-      {item.title}
-    </div>
-  ))}
 
-</div>
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{
+      delay: index * 0.15,
+      duration: 0.6,
+    }}
+    whileHover={{
+      y: -10,
+      scale: 1.02,
+    }}
+    className="
+      group
+      overflow-hidden
+      rounded-[28px]
+      border
+      border-white/10
+      bg-white/10
+      backdrop-blur-xl
+      shadow-2xl
+      transition-all
+      duration-300
+    "
+  >
+
+    <div className="h-64 flex items-center justify-center">
+
+      <span className="text-2xl font-bold text-white">
+
+        {item.title}
+
+      </span>
+
+    </div>
+
+  </motion.div>
+
+))}
 
           <span
             className="
