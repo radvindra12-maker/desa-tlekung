@@ -149,7 +149,7 @@ export default function FooterSection() {
   return (
     <footer
   id="kontak"
-  className="relative overflow-hidden bg-linear-to-b from-(--coffee) via-(--green-forest) to-(--green-forest)"
+  className="relative overflow-hidden bg-linear-to-b from-(--coffee) via-(--coffee) to-(--coffee)"
 >
 
       {/* Wave divider */}
@@ -252,7 +252,7 @@ export default function FooterSection() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="group flex items-center gap-2 text-sm text-stone-600 hover:text-white transition-colors duration-200"
+                      className="group flex items-center gap-2 text-sm text-green-600 hover:text-white transition-colors duration-200"
                     >
                       <span className="w-4 h-px bg-green-600 group-hover:bg-orange-400 group-hover:w-6 transition-all duration-300" />
                       {link.label}
@@ -278,7 +278,9 @@ export default function FooterSection() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="group flex items-center gap-2 text-sm text-stone-600 hover:text-white transition-colors duration-200"
+                      className="group flex items-center gap-2 text-sm text-green-600 hover:text-white transition-colors duration-200"
+
+          
                     >
                       <span className="w-4 h-px bg-green-600 group-hover:bg-orange-400 group-hover:w-6 transition-all duration-300" />
                       {link.label}
@@ -304,7 +306,7 @@ export default function FooterSection() {
               </h3>
               <ul className="space-y-4">
                 {contactInfo.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-stone-600">
+                  <li key={i} className="flex items-start gap-3 text-sm text-green-600">
                     <span className="text-orange-400">{item.icon}</span>
                     <span className="leading-relaxed">{item.text}</span>
                   </li>

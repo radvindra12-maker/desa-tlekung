@@ -10,7 +10,8 @@ export default function ProductSection() {
   return (
     <section
       id="produk"
-      className="relative overflow-hidden bg-[var(--cream)]"
+     className="relative overflow-hidden py-28 bg-linear-to-b from bg-[var(--beige)] via-[--beige] to-[var(--coffee)]"
+    
     >
           {/* Background Glow */}
 

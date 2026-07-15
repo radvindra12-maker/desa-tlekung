@@ -15,6 +15,7 @@
   --green: #306D29;
   --dark-green: #0D530E;
   --gold: #C89B3C;
+  --white-cream: #EFE6D4;
 
   --text-dark: #1F1B18;
   --text-light: #FFFDF8;
@@ -124,6 +125,7 @@ body {
   --bg-soft: var(--beige);
   --bg-light: var(--cream);
   --bg-gold: var(--gold);
+  --bg-white: var(--white-cream);
 
   /* Card */
 

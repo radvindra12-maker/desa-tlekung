@@ -10,7 +10,7 @@ export default function ProsesSection() {
   return (
   <section
     id="proses"
-    className="relative overflow-hidden bg-linear-to-b from-(--beige) via-(--cream) to-(--cream)"
+    className="relative overflow-hidden bg-linear-to-b from-(--beige) via-(--cream) to-(--beige)"
   >
     {/* Background Glow */}
     <div className="absolute inset-0 pointer-events-none">
