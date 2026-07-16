@@ -20,12 +20,12 @@ export const products = [
   {
     slug: "arabica-yellow-caturra",
     nama: "Arabica Yellow Caturra",
-    harga: "Harga Fluktuatif6",
+    harga: "Harga Fluktuatif",
     berat: "200 gram",
     roast: "Medium Roast",
     proses: "Natural Process",
     origin: "Desa Tlekung, Kota Batu",
-    image: "/images/produk/Arabica-YC.jpg",
+    image: "/images/produk/Arabica-YC-new.jpg",
 
     whatsapp:
       "Halo, saya ingin membeli Arabica Yellow Caturra.",
@@ -49,10 +49,10 @@ export const products = [
   ],
 
   gallery: [
-    "/images/produk/Arabica-YC.jpg",
-    "/images/produk/Arabica-YC.jpg",
-    "/images/produk/Arabica-YC.jpg",
-    "/images/produk/Arabica-YC.jpg",  
+    "/images/produk/galeri/Arabica-YC-1.jpg",
+    "/images/produk/galeri/Arabica-YC-2.jpg",
+    "/images/produk/galeri/Arabica-YC-3.jpg",
+    "/images/produk/galeri/Arabica-YC-4.mp4",  
   ],
   },
 
@@ -64,7 +64,7 @@ export const products = [
     roast: "Light Roast",
     proses: "Natural Process",
     origin: "Desa Tlekung",
-    image: "/images/produk/Arabika-GP.jpg",
+    image: "/images/produk/Arabika-GP-new.jpg",
 
     whatsapp:
       "Halo, saya ingin membeli Arabika Gangsiran Puthuk.",
@@ -88,10 +88,10 @@ brew: [
 ],
 
 gallery: [
-  "/images/produk/Arabika-GP.jpg",
-  "/images/produk/Arabika-GP.jpg",
-  "/images/produk/Arabika-GP.jpg",
-  "/images/produk/Arabika-GP.jpg",
+  "/images/produk/galeri/Arabika-GP-1.jpg",
+  "/images/produk/galeri/Arabika-GP-2.jpg",
+  "/images/produk/galeri/Arabika-GP-3.jpg",
+  "/images/produk/galeri/Arabika-GP-4.mp4",
 ],
 },
 
@@ -106,7 +106,7 @@ gallery: [
     roast: "Medium Roast",
     proses: "Natural",
     origin: "Desa Tlekung",
-    image: "/images/produk/Excelsa.jpg",
+    image: "/images/produk/Excelsa-new.jpg",
 
     whatsapp:
       "Halo, saya ingin membeli Kopi Excelsa.",
@@ -130,10 +130,11 @@ brew: [
 ],
 
 gallery: [
-  "/images/produk/Excelsa.jpg",
-  "/images/produk/Excelsa.jpg",
-  "/images/produk/Excelsa.jpg",
-  "/images/produk/Excelsa.jpg",
+  "/images/produk/galeri/Excelsa-1.jpg",
+  "/images/produk/galeri/Excelsa-2.jpg",
+  "/images/produk/galeri/Excelsa-3.jpg",
+  "/images/produk/galeri/Excelsa-4.mp4",
+  
 ],
 },
 ];

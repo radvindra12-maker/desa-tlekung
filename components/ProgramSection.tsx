@@ -11,7 +11,7 @@ const paketWisata = [
     duration: "±2 Jam",
     price: "Mulai Rp50.000",
     badge: "Paling Populer",
-    icon: "🌿",
+    icon: "",
     description:
       "Menjelajahi kebun kopi, mengenal varietas kopi, serta belajar budidaya langsung dari petani.",
   },
@@ -21,7 +21,7 @@ const paketWisata = [
     duration: "±3 Jam",
     price: "Mulai Rp75.000",
     badge: "Best Experience",
-    icon: "☕",
+    icon: "",
     description:
       "Belajar proses roasting, grinding, hingga menyeduh kopi menggunakan berbagai metode manual brew.",
   },
@@ -31,7 +31,7 @@ const paketWisata = [
     duration: "Half Day",
     price: "Mulai Rp120.000",
     badge: "Limited",
-    icon: "🌄",
+    icon: "",
     description:
       "Menikmati sunrise di lereng pegunungan sambil menikmati secangkir Kopi Girimurti.",
   },

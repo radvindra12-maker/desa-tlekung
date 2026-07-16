@@ -154,7 +154,7 @@ export default function InterviewSection() {
   return (
     <section 
     id="wawancara"
-  className="bg-[var(--cream)]"
+  className=" bg-linear-to-b from-(--cream) via-(--cream) to-(--coffee)"
     >
 
 

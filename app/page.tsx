@@ -20,12 +20,12 @@ export default function Home() {
     <>
 <HeroSection />
 <AboutSection />
+<InterviewSection />
 <HistoryCoffeeSection />
 <VarietasSection/>
 <ProsesSection />
 <ProductSection />
 <ProgramSection />
-<InterviewSection />
 <GallerySection />
 <NewsSection />
 <CTASection />

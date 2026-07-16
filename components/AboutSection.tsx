@@ -60,7 +60,7 @@ export default function AboutSection() {
   return (
     <section
       id="profil"
-     className="relative overflow-hidden bg-linear-to-b from-(--bg-primary) via-(--bg-primary) to-(--coffee)"
+     className="relative overflow-hidden bg-linear-to-b from-(--bg-primary) via-(--bg-primary) to-(--cream)"
 style={
 {
 "--section-next-bg":"#05080d"

@@ -7,14 +7,18 @@ import { AnimatePresence, motion } from "framer-motion";
 type Props = {
   images: string[];
   nama: string;
+
 };
 
 export default function ProductGallery({
+  
   images,
   nama,
+  
 }: Props) {
   const [selectedImage, setSelectedImage] = useState(images[0]);
   const [isOpen, setIsOpen] = useState(false);
+  const isSelectedVideo = selectedImage.endsWith(".mp4");
 
   return (
     <>
@@ -32,18 +36,38 @@ export default function ProductGallery({
           group
         "
       >
-        <Image
-          src={selectedImage}
-          alt={nama}
-          fill
-          priority
-          className="
-            object-cover
-            transition-transform
-            duration-700
-            group-hover:scale-105
-          "
-        />
+        {isSelectedVideo ? (
+
+  <video
+    src={selectedImage}
+    controls
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="
+      h-full
+      w-full
+      object-cover
+    "
+  />
+
+) : (
+
+  <Image
+    src={selectedImage}
+    alt={nama}
+    fill
+    priority
+    className="
+      object-cover
+      transition-transform
+      duration-700
+      group-hover:scale-105
+    "
+  />
+
+)}
 
         <div
           className="
@@ -95,17 +119,34 @@ export default function ProductGallery({
               }
             `}
           >
-            <Image
-              src={img}
-              alt={`${nama} ${index + 1}`}
-              fill
-              className="
-                object-cover
-                transition-transform
-                duration-500
-                hover:scale-110
-              "
-            />
+            {img.endsWith(".mp4") ? (
+
+  <video
+    src={img}
+    muted
+    playsInline
+    className="
+      h-full
+      w-full
+      object-cover
+    "
+  />
+
+) : (
+
+  <Image
+    src={img}
+    alt={`${nama} ${index + 1}`}
+    fill
+    className="
+      object-cover
+      transition-transform
+      duration-500
+      hover:scale-110
+    "
+  />
+
+)}
           </button>
         ))}
       </div>
@@ -143,12 +184,29 @@ export default function ProductGallery({
                 h-[80vh]
               "
             >
-              <Image
-                src={selectedImage}
-                alt={nama}
-                fill
-                className="object-contain"
-              />
+              {isSelectedVideo ? (
+
+  <video
+    src={selectedImage}
+    controls
+    autoPlay
+    className="
+      h-full
+      w-full
+      object-contain
+    "
+  />
+
+) : (
+
+  <Image
+    src={selectedImage}
+    alt={nama}
+    fill
+    className="object-contain"
+  />
+
+)}
 
               <button
                 onClick={() => setIsOpen(false)}

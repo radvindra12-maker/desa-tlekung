@@ -207,7 +207,7 @@ export default function TahapSection({
 
     </span>
 
-   <h3 className="mt-8 flex items-center gap-4 text-4xl font-bold text-green-500">
+   <h3 className="mt-8 flex items-center gap-4 text-4xl font-bold text-[var(--coffee)]">
 
   <span className="text-5xl">
 
@@ -219,7 +219,7 @@ export default function TahapSection({
 
 </h3>
 
-    <p className="mt-6 text-stone-400 leading-8">
+    <p className="mt-6 text-stone-600 leading-8">
 
       {item.deskripsi}
 

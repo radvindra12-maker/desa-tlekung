@@ -179,6 +179,273 @@ const fadeSlideUp: Variants = {
   }),
 };
 
+  // ─── Ambient glow cluster (right) ─────────────────────────────────────────────
+
+function AmbientGlow() {
+  return (
+    <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Main amber glow — far right */}
+      <motion.div
+        className="absolute"
+        animate={{
+  opacity: [0.15, 0.35, 0.15],
+  scale: [1, 1.08, 1],
+}}
+
+transition={{
+  duration: 16,
+  repeat: Infinity,
+  ease: "easeInOut",
+}}
+        style={{
+          right: "-10%",
+          top: "10%",
+          width: "55%",
+          height: "80%",
+          background:
+            "radial-gradient(ellipse at 80% 45%, rgba(180,130,40,0.09) 0%, transparent 65%)",
+        }}
+      />
+      {/* Secondary green-gold glow */}
+      <motion.div
+        className="absolute"
+        animate={{
+  opacity: [0.08, 0.2, 0.08],
+  scale: [1, 1.12, 1],
+}}
+
+transition={{
+  duration: 18,
+  repeat: Infinity,
+  ease: "easeInOut",
+}}
+        style={{
+          right: "5%",
+          bottom: "-5%",
+          width: "40%",
+          height: "50%",
+          background:
+            "radial-gradient(ellipse at 70% 80%, rgba(100,160,60,0.06) 0%, transparent 60%)",
+        }}
+      />
+    </div>
+  );
+}
+
+// ─── Large ghosted "KOPI" background text ─────────────────────────────────────
+
+function GhostText() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.3, duration: 1.4, ease: "easeOut" }}
+      aria-hidden="true"
+      className="absolute right-[-2%] top-1/2 -translate-y-1/2 select-none pointer-events-none"
+    >
+      <span
+        className="block font-black leading-none tracking-tight"
+        style={{
+          fontSize: "clamp(9rem, 22vw, 22rem)",
+          fontFamily: "Georgia, 'Times New Roman', serif",
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(180, 140, 60, 0.13)",
+          letterSpacing: "-0.04em",
+        }}
+      >
+        KOPI
+      </span>
+    </motion.div>
+  );
+}
+
+// ─── Floating coffee beans SVG (scattered, organic) ───────────────────────────
+
+function CoffeeBeans() {
+  const beans = [
+    // [cx, cy, rx, ry, rotate, opacity, scale, animDelay]
+    [78,  12,  9, 5.5, -28, 0.28, 1.0,  0],
+    [92,  28,  7, 4.0,  15, 0.20, 0.8,  1.2],
+    [68,  38,  8, 4.8, -45, 0.10, 0.9,  0.6],
+    [86,  52,  6, 3.5,  30, 0.24, 0.7,  1.8],
+    [95,  18,  5, 3.0, -10, 0.09, 0.6,  0.3],
+    [74,  60,  9, 5.5,  55, 0.11, 1.0,  2.1],
+    [88,  68,  7, 4.0, -35, 0.22, 0.8,  0.9],
+    [96,  42,  6, 3.5,  20, 0.08, 0.65, 1.5],
+    [70,  78,  8, 4.8, -60, 0.10, 0.9,  0.4],
+    [82,  85,  5, 3.0,  40, 0.20, 0.7,  1.1],
+    [91,  80,  9, 5.5, -15, 0.09, 1.0,  2.4],
+    [76,  92,  6, 3.5,  65, 0.07, 0.6,  0.7],
+    // extra sparse right-edge beans
+    [99,  10,  4, 2.5,  -5, 0.06, 0.5,  1.9],
+    [100, 55,  5, 3.0,  25, 0.07, 0.6,  0.2],
+    [97,  90,  4, 2.5, -50, 0.06, 0.5,  1.6],
+  ];
+
+   return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid slice"
+      className="absolute inset-0 w-full h-full"
+    >
+      <defs>
+        {/* Radial mask: beans fade in from right, invisible on left */}
+        <radialGradient id="beanFade" cx="90%" cy="50%" r="60%">
+          <stop offset="0%"  stopColor="white" stopOpacity="1" />
+          <stop offset="70%" stopColor="white" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="white" stopOpacity="0" />
+        </radialGradient>
+        <mask id="beanMask">
+          <rect width="100" height="100" fill="url(#beanFade)" />
+        </mask>
+      </defs>
+
+      <g mask="url(#beanMask)">
+        {beans.map(([cx, cy, rx, ry, rotate, opacity, , delay], i) => (
+         <motion.g
+  key={i}
+  initial={{
+    opacity: 0,
+    scale: 0.6,
+  }}
+  animate={{
+    opacity: [
+      (opacity as number) * 0.5,
+      opacity as number,
+      (opacity as number) * 0.5,
+    ],
+
+    y: [0, -8, 0],
+
+    x: [0, 5, 0],
+
+    rotate: [0, 4, -4, 0],
+
+    scale: [1, 1.04, 1],
+  }}
+  transition={{
+    duration: 10 + (delay as number),
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  style={{
+    transformOrigin: `${cx}% ${cy}%`,
+  }}
+>
+            <g transform={`translate(${cx} ${cy}) rotate(${rotate})`}>
+              {/* Bean body */}
+              <ellipse
+                cx={0} cy={0}
+                rx={rx as number} ry={ry as number}
+                fill="none"
+                stroke="#C8A96E"
+                strokeWidth="0.9"
+                strokeOpacity={opacity as number}
+              />
+              {/* Center crease line */}
+              <line
+                x1={0} y1={-(ry as number) * 0.75}
+                x2={0} y2={(ry as number) * 0.75}
+                stroke="#C8A96E"
+                strokeWidth="0.55"
+                strokeOpacity={(opacity as number) * 0.9}
+                strokeLinecap="round"
+              />
+            </g>
+          </motion.g>
+        ))}
+      </g>
+    </svg>
+  );
+}
+
+
+  // ─── Drifting dot field (very sparse, right half only) ────────────────────────
+
+function DotField() {
+  // pre-computed random-ish positions, all in right 40–100% of width
+  const dots = [
+    [85, 15], [92, 38], [78, 55], [96, 72], [70, 88],
+    [88, 22], [75, 42], [94, 60], [82, 80], [98, 8],
+    [73, 68], [90, 48], [80, 30], [97, 85], [76, 10],
+  ];
+  return (
+    <div aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none">
+      {dots.map(([x, y], i) => (
+        <motion.span
+          key={i}
+          className="absolute rounded-full bg-amber-400"
+          style={{
+            left: `${x}%`,
+            top: `${y}%`,
+            width: i % 3 === 0 ? 3 : 2,
+            height: i % 3 === 0 ? 3 : 2,
+            opacity: 0,
+          }}
+          animate={{
+            opacity: [0, 0.25, 0.1, 0.22, 0],
+            y: [0, -6, 2, -4, 0],
+          }}
+          transition={{
+            delay: i * 0.35,
+            duration: 6 + (i % 4),
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+// ─── Curved contour lines (topographic feel — kopi dari pegunungan) ───────────
+
+function ContourLines() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid slice"
+      className="absolute inset-0 w-full h-full pointer-events-none"
+    >
+      <defs>
+        <radialGradient id="contourFade" cx="85%" cy="50%" r="55%">
+          <stop offset="0%"  stopColor="white" stopOpacity="1" />
+          <stop offset="100%" stopColor="white" stopOpacity="0" />
+        </radialGradient>
+        <mask id="contourMask">
+          <rect width="100" height="100" fill="url(#contourFade)" />
+        </mask>
+      </defs>
+      <g mask="url(#contourMask)">
+        {[
+          "M 55 -5 Q 70 25 65 50 Q 60 75 70 105",
+          "M 65 -5 Q 78 22 73 50 Q 68 78 76 105",
+          "M 75 -5 Q 86 20 82 50 Q 76 80 84 105",
+          "M 85 -5 Q 92 18 90 50 Q 87 82 93 105",
+          "M 93 -5 Q 97 15 96 50 Q 95 85 99 105",
+        ].map((d, i) => (
+          <motion.path
+            key={i}
+            d={d}
+            fill="none"
+            stroke="#C8A96E"
+            strokeWidth="0.4"
+            strokeOpacity={0.09 - i * 0.01}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ delay: 0.6 + i * 0.18, duration: 1.8, ease: "easeOut" }}
+          />
+        ))}
+      </g>
+    </svg>
+  );
+}
+
+
+
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function HeroSection() {
@@ -192,6 +459,12 @@ export default function HeroSection() {
   return (
      <section id="beranda" 
      className="relative overflow-hidden min-h-screen bg-linear-to-b from-(--dark-green) via-(--bg-primary) to-(--bg-primary)">
+
+   <AmbientGlow />
+  <GhostText />
+  <CoffeeBeans />
+  <DotField />
+  <ContourLines />
 
     {/* ── Overlays ── */}
      <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-transparent" />
@@ -259,7 +532,7 @@ export default function HeroSection() {
             variants={fadeSlideUp}
             className="text-sm sm:text-base text-white/60 leading-relaxed max-w-xl mb-8"
           >
-            Kopi Girimurti merupakan warisan perkebunan kopi Desa Tlekung yang telah tumbuh dan berkembang sejak tahun 1958. Ditanam di kawasan pegunungan dengan iklim yang mendukung, Kopi Girimurti menghadirkan cita rasa khas yang menjadi kebanggaan masyarakat setempat.
+            Pendopo Giri Murti adalah pusat kegiatan komunitas yang terbuka untuk umum, bukan sekadar tempat pengelolaan kebun kopi. Melalui berbagai program kegiatan seperti edukasi anak, wisata budaya, kuliner khas (termasuk warung Angling Darmo), tempat ini berkomitmen meningkatkan kualitas hidup dan sumber daya manusia di lingkungan sekitar.
           </motion.p>
 
           {/* CTA */}
@@ -358,6 +631,12 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+
+
     </section>
+
+
+
   );
 }

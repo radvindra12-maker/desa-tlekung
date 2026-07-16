@@ -61,7 +61,7 @@ export default function VarietasSection() {
 
   <div className="absolute bottom-20 left-20 w-105 h-105 rounded-full bg-green-500/8 blur-[220px]" />
 </div>
-          <p className="mt-6 max-w-3xl mx-auto text-stone-400 leading-relaxed">
+          <p className="mt-6 max-w-3xl mx-auto text-stone-200 leading-relaxed">
             Perkebunan kopi Desa Tlekung memiliki berbagai varietas kopi
             unggulan yang dibudidayakan oleh masyarakat selama bertahun-tahun.
             Setiap varietas memiliki karakteristik serta cita rasa yang

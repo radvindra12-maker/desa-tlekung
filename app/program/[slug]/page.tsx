@@ -8,6 +8,10 @@ import {
   GraduationCap,
   Cookie,
   Users,
+  Clock3,
+MapPin,
+Wallet,
+UsersRound,
 } from "lucide-react";
 
 import { programData } from "@/data/programData";
@@ -123,7 +127,15 @@ const featureDescription: Record<string, string> = {
  return (
   <main className="bg-[var(--cream)]  text-[var(--text-dark)]">
 
-    <section className="relative h-[85vh] overflow-hidden">
+   <section
+  className="
+    relative
+    min-h-screen
+    overflow-hidden
+    pt-28
+    pb-20
+  "
+>
 
       <img
         src={program.image}
@@ -134,37 +146,48 @@ const featureDescription: Record<string, string> = {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/55" />
 
-      <div className="relative z-10 flex h-full items-center">
+ {/* =========================
+      Breadcrumb
+  ========================== */}
 
-        <div className="mx-auto max-w-7xl px-6 w-full">
+  <div className="absolute top-16 left-0 right-0 z-20">
 
-<Link
+    <div className="max-w-7xl mx-auto px-6">
+
+    <div className="mt-5 mb-10">
+
+  <Link
   href="/#program"
   className="
-    inline-flex
-    items-center
-    gap-2
-    rounded-full
-    border
-    border-white/20
-    bg-white/10
-    backdrop-blur-md
-    px-5
-    py-3
-    text-white
-    font-medium
-    transition
-    hover:bg-emerald-600
-    hover:border-emerald-600
-    mb-10
-  "
+inline-flex
+items-center
+gap-2
+mt-4
+text-white/70
+hover:text-amber-300
+transition
+"
 >
-
-  <ArrowLeft size={18} />
-
-  Kembali ke Program
-
+    <ArrowLeft size={18}/>
+    Kembali ke Program
 </Link>
+  <span className="text-white/50 mb-4">
+    
+
+  </span>
+
+  
+</div>
+
+    </div>
+
+  </div>
+
+      <div className="relative z-10 flex items-center">
+
+        <div className="mx-auto max-w-7xl px-6 w-full pt-28">
+
+
 
          <div className="max-w-3xl">
 
@@ -206,59 +229,67 @@ const featureDescription: Record<string, string> = {
 
 </div>
 
-<div className="mt-12 flex flex-wrap gap-8">
+<div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-5">
 
-  <div>
+  <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 p-5">
+
+    <Clock3 className="text-amber-300 mb-4" size={28} />
 
     <p className="text-xs uppercase tracking-[0.25em] text-amber-300">
       Durasi
     </p>
 
-    <p className="mt-2 text-white font-semibold">
+    <h3 className="mt-2 text-white font-bold text-lg">
       {program.duration}
-    </p>
+    </h3>
 
   </div>
 
-  <div>
+  <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 p-5">
+
+    <UsersRound className="text-amber-300 mb-4" size={28} />
 
     <p className="text-xs uppercase tracking-[0.25em] text-amber-300">
       Peserta
     </p>
 
-    <p className="mt-2 text-white font-semibold">
+    <h3 className="mt-2 text-white font-bold text-lg">
       {program.participants}
-    </p>
+    </h3>
 
   </div>
 
-  <div>
+  <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 p-5">
+
+    <MapPin className="text-amber-300 mb-4" size={28} />
 
     <p className="text-xs uppercase tracking-[0.25em] text-amber-300">
       Lokasi
     </p>
 
-    <p className="mt-2 text-white font-semibold">
+    <h3 className="mt-2 text-white font-bold text-lg">
       {program.location}
-    </p>
+    </h3>
 
   </div>
 
-  <div>
+  <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 p-5">
+
+    <Wallet className="text-amber-300 mb-4" size={28} />
 
     <p className="text-xs uppercase tracking-[0.25em] text-amber-300">
       Harga
     </p>
 
-    <p className="mt-2 text-white font-bold text-xl">
+    <h3 className="mt-2 text-white font-bold text-lg">
       {program.price}
-    </p>
+    </h3>
 
   </div>
 
 </div>
 
-<div className="mt-12 flex flex-wrap gap-4">
+<div className="mt-10 flex flex-wrap gap-5">
 
   <a
     href={`https://wa.me/6281234292878?text=${encodeURIComponent(
@@ -267,32 +298,40 @@ const featureDescription: Record<string, string> = {
     target="_blank"
     rel="noopener noreferrer"
     className="
-      rounded-full
-      bg-emerald-600
-      px-8
-      py-4
-      font-semibold
-      text-white
-      transition
-      hover:bg-emerald-500
-    "
+rounded-full
+bg-emerald-600
+px-9
+py-4
+font-semibold
+text-white
+shadow-lg
+shadow-emerald-900/30
+transition-all
+duration-300
+hover:-translate-y-1
+hover:bg-emerald-500
+"
   >
     Reservasi Sekarang
   </a>
 
   <a
     href="#detail"
-    className="
-      rounded-full
-      border
-      border-white/20
-      bg-white/10
-      px-8
-      py-4
-      font-semibold
-      text-white
-      backdrop-blur
-    "
+   className="
+rounded-full
+border
+border-white/20
+bg-white/10
+backdrop-blur
+px-9
+py-4
+font-semibold
+text-white
+transition-all
+duration-300
+hover:bg-white/20
+hover:-translate-y-1
+"
   >
     Lihat Detail
   </a>
@@ -650,7 +689,7 @@ const featureDescription: Record<string, string> = {
 
 <section>
 
-...
+
 
 </section>
 

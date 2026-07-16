@@ -30,19 +30,19 @@ export default function ProsesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-28"
+        className="text-center mt-28 mb-28"
       >
 
-        <span className="inline-flex items-center gap-2 rounded-full border border-emerald-700/40 bg-emerald-900/30 px-5 py-2 text-xs uppercase tracking-[0.3em] text-emerald-300">
+        <span className="inline-flex items-centers gap-2 rounded-full border border-emerald-700/40 bg-emerald-900/30 px-5 py-2 text-xs uppercase tracking-[0.3em] text-emerald-300">
 
   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
 
-  PERJALANAN KOPI GIRIMURTI
+  PERJALANAN KOPI GIRI MURTI
 
 </span>
 
        <h2
-  className="mt-8 text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+  className="mt-12 text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
   style={{
     fontFamily: "Georgia, 'Times New Roman', serif",
   }}
@@ -52,7 +52,7 @@ Perjalanan
 
 <br />
 
-<span className="text-amber-400">
+<span className="text-[var(--coffee)] ">
   Kopi Girimurti
 </span>
 
@@ -106,12 +106,12 @@ akhirnya menjadi secangkir kopi dengan cita rasa khas yang siap dinikmati.
 
     <div className="
       rounded-full
-      bg-amber-900/20
+      bg-emerald-900/20
       border
-      border-amber-600/30
+      border-emerald-600/30
       px-8
       py-4
-      text-amber-300
+      text-green-200
       font-semibold
     ">
 
@@ -157,13 +157,13 @@ akhirnya menjadi secangkir kopi dengan cita rasa khas yang siap dinikmati.
       className="
         rounded-full
         border
-        border-amber-700/40
-        bg-amber-900/20
+        border-emerald-700/40
+        bg-emerald-900/20
         px-8
         py-4
         text-lg
         font-semibold
-        text-amber-300
+        text-green-200
       "
     >
       

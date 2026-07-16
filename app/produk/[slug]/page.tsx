@@ -22,9 +22,9 @@ export default async function ProductDetail({ params }: Props) {
 
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[var(--beige)] text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[var(--cream)] text-green-700">
 
-<div className="absolute inset-0 overflow-hidden pointer-events-none">
+<div className="absolute inset-0 overflow-hidden pointer-events-none"> 
 
 <div className="absolute top-20 left-20 w-125 h-125 bg-emerald-600/10 rounded-full blur-[180px]" />
 
@@ -36,7 +36,7 @@ export default async function ProductDetail({ params }: Props) {
 
         <Link
           href="/#produk"
-          className="text-emerald-400 hover:text-emerald-300"
+          className="text-emerald-600 hover:text-emerald-300"
         >
           ← Kembali ke Produk
         </Link>
@@ -84,7 +84,7 @@ nama={product.nama}
 
 </div>
 
-            <p className="mt-8 text-stone-400 leading-8">
+            <p className="mt-8 text-stone-600 leading-8">
               {product.deskripsi}
             </p>
 
@@ -96,7 +96,7 @@ nama={product.nama}
 
     </p>
 
-    <h2 className="text-5xl font-bold text-amber-400 mt-2">
+    <h2 className="text-5xl font-bold text-[var(--coffee)] mt-2">
 
         {product.harga}
 
@@ -112,7 +112,7 @@ nama={product.nama}
 
 </div>
 
-<span className="text-stone-400">
+<span className="text-stone-600">
 
 Pilihan favorit pelanggan
 
@@ -225,7 +225,7 @@ Berat
     Cerita Produk
   </h2>
 
-  <p className="text-stone-400 leading-8">
+  <p className="text-stone-600 leading-8">
     {product.story}
   </p>
 
@@ -257,11 +257,11 @@ border
 border-amber-600/30
 px-5
 py-3
-text-amber-300
+text-[var(--white-cream)]
 "
 >
 
-☕ {item}
+ {item}
 
 </span>
 
@@ -283,7 +283,7 @@ text-amber-300
         items-center
         justify-center
         rounded-full
-        bg-emerald-600
+        bg-emerald-200
         hover:bg-emerald-500
         px-8
         py-4
@@ -294,7 +294,11 @@ text-amber-300
     "
 >
 
+
+
 Hubungi Penjual
+
+
 
 </a>
 
