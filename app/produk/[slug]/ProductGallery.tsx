@@ -57,6 +57,10 @@ export default function ProductGallery({
   <Image
     src={selectedImage}
     alt={nama}
+    sizes="(max-width:768px) 100vw,
+(max-width:1200px) 50vw,
+33vw"
+quality={85}
     fill
     priority
     className="
@@ -137,6 +141,10 @@ export default function ProductGallery({
   <Image
     src={img}
     alt={`${nama} ${index + 1}`}
+    sizes="(max-width:768px) 100vw,
+(max-width:1200px) 50vw,
+33vw"
+quality={85}
     fill
     className="
       object-cover
@@ -202,6 +210,10 @@ export default function ProductGallery({
   <Image
     src={selectedImage}
     alt={nama}
+    sizes="(max-width:768px) 100vw,
+(max-width:1200px) 50vw,
+33vw"
+quality={85}
     fill
     className="object-contain"
   />

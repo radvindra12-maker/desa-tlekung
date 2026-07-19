@@ -20,7 +20,7 @@ export default function RootLayout({
   );
 }
 export const metadata = {
-  title: "Kopi Girimurti | Desa Tlekung",
+  title: "Pendopo Giri Murti | Gangsiran Putuk",
   description:
     "Website resmi Kopi Girimurti Desa Tlekung, Kota Batu.",
 };

@@ -32,6 +32,6 @@ export default function Home() {
 <FooterSection />
 
 <Analytics />
- </>
+</>
   );
 }

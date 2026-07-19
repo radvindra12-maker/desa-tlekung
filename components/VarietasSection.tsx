@@ -39,7 +39,8 @@ export default function VarietasSection() {
   return (
     <section
       id="varietas"
-      className="relative overflow-hidden bg-linear-to-b from-(--coffee) via-(--beige) to-(--beige)"
+      className="relative overflow-hidden bg-linear-to-b from-(--cream)
+to-(--cream)"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -87,6 +88,10 @@ export default function VarietasSection() {
         <Image
   src={item.image}
   alt={item.nama}
+  sizes="(max-width:768px) 100vw,
+(max-width:1200px) 50vw,
+33vw"
+quality={85}
   fill
   className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
 />

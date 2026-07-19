@@ -63,7 +63,7 @@ export default function AboutSection() {
      className="relative overflow-hidden bg-linear-to-b from-(--bg-primary) via-(--bg-primary) to-(--cream)"
 style={
 {
-"--section-next-bg":"#05080d"
+"--section-next-bg":"var(--cream)"
 } as React.CSSProperties
 }
 >
@@ -71,7 +71,7 @@ style={
   <div className="absolute -top-40 -left-10 w-125 h-125 rounded-full bg-emerald-500/5 blur-[180px]" />
 
 
-      <div className="absolute -top-40 -left-10 w-125 h-125 dark:bg-emerald-950/40 rounded-full bg-emerald-500/8 blur-[220px]" />
+     
       <div className="absolute -bottom-16 right-0 w-72 h-72 bg-orange-50 dark:bg-orange-950/20 rounded-full blur-3xl opacity-70 pointer-events-none" />
 
      <div className="relative max-w-7xl mx-auto px-6">
@@ -89,6 +89,10 @@ style={
               <Image
                 src="/images/kopi/kebun-pagi.jpg"
                 alt="Kebun Kopi Girimurti"
+                sizes="(max-width:768px) 100vw,
+(max-width:1200px) 50vw,
+33vw"
+quality={85}
                 fill
                 priority
                 className="object-cover"

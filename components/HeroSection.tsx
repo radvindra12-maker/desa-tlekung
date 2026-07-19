@@ -72,11 +72,11 @@ function formatValue(raw: number, index: number): string {
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
-  if (index === 3) {
+if (index === 3) {
     // Luas wilayah: divide back and show 2 decimal with comma  e.g. 6,29
     return (raw / 100).toFixed(2).replace(".", ",");
   }
-  return Math.floor(raw).toString();
+return Math.floor(raw).toString();
 }
 
 // ─── Animated counter hook ────────────────────────────────────────────────────
@@ -190,7 +190,7 @@ function AmbientGlow() {
         animate={{
   opacity: [0.15, 0.35, 0.15],
   scale: [1, 1.08, 1],
-}}
+}}    
 
 transition={{
   duration: 16,
@@ -258,6 +258,8 @@ function GhostText() {
     </motion.div>
   );
 }
+
+
 
 // ─── Floating coffee beans SVG (scattered, organic) ───────────────────────────
 
@@ -458,20 +460,75 @@ export default function HeroSection() {
 
   return (
      <section id="beranda" 
-     className="relative overflow-hidden min-h-screen bg-linear-to-b from-(--dark-green) via-(--bg-primary) to-(--bg-primary)">
+     className="relative overflow-hidden min-h-[115vh] bg-linear-to-b from-(--dark-green) via-(--bg-primary) to-(--bg-primary)">
 
    <AmbientGlow />
   <GhostText />
   <CoffeeBeans />
   <DotField />
-  <ContourLines />
+  <motion.div
+  initial={{
+    opacity: 0,
+    x: 120,
+    scale: 0.96,
+  }}
+  animate={{
+    opacity: 1,
+  x: 0,
+  scale: 1,
+  }}
+  transition={{
+     duration: 10,    
+  ease: [0.22, 1, 0.36, 1],
+  }}
+  style={{
+    WebkitMaskImage:
+      "linear-gradient(to left, black 75%, transparent 100%)",
+    maskImage:
+      "linear-gradient(to left, black 75%, transparent 100%)",
+  }}
+  className="
+    absolute
+    right-[-3%]
+    bottom-0
+    w-[42vw]
+    max-w-[720px]
+    min-w-[420px]
+    h-[92%]
+    z-10
+    pointer-events-none
+    select-none
+  "
+>
+  
+  <Image
 
+    src="/images/hero/petani-kopi.png"
+    alt="Petani Kopi Girimurti"
+    fill
+    priority
+    className="object-contain object-bottom"
+  />
+ <div
+  className="
+    absolute
+    right-0
+    top-0
+    h-full
+    w-20
+    bg-gradient-to-l
+    from-[var(--bg-primary)]
+    to-transparent
+  "
+/>
+
+</motion.div>
+ <ContourLines />
+ 
     {/* ── Overlays ── */}
      <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-transparent" />
     
 
-
-     
 
       {/* ── Content ── */}
       <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 pb-8">
@@ -479,6 +536,8 @@ export default function HeroSection() {
         {/* Heading block */}
         <div className="flex-1 flex flex-col justify-center max-w-3xl">
 
+
+     
           {/* Eyebrow */}
           <motion.div
             custom={0.2}
@@ -579,7 +638,7 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          {/* Scroll hint */}
+         {/* Scroll hint */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -596,7 +655,7 @@ export default function HeroSection() {
             </motion.div>
             Gulir untuk melihat lebih
           </motion.div>
-        </div>
+        </div> 
 
         {/* ── Stat cards ── */}
         <div className="mt-auto pt-8">

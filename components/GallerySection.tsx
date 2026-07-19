@@ -77,6 +77,10 @@ function GalleryCard({
         <Image
           src={item.src}
           alt={item.title}
+          sizes="(max-width:768px) 100vw,
+(max-width:1200px) 50vw,
+33vw"
+quality={85}
           fill
           className="object-cover transition duration-500 group-hover:scale-110"
         />
@@ -158,6 +162,10 @@ function Lightbox({
             <Image
               src={item.src}
               alt={item.title}
+              sizes="(max-width:768px) 100vw,
+(max-width:1200px) 50vw,
+33vw"
+quality={85}
               fill
               className="object-contain"
             />

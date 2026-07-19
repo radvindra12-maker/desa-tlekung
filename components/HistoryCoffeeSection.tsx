@@ -175,14 +175,14 @@ export default function HistoryCoffeeSection() {
   return (
     <section 
     id="sejarah"
- className="bg-[var(--bg-coffee)]"
+ className="relative overflow-hidden py-28 bg-linear-to-b from bg-[var(--coffee)] via-[--coffee] to-[var(--cream)]"
  >
       {/* Background texture */}
       <div
       className="section-fade relative overflow-hidden py-28"
     style={
       {
-        "--section-next-bg":"#05080d"
+        "--section-next-bg":"var(--bg-primary)"
       } as React.CSSProperties
   }
     
@@ -219,7 +219,7 @@ export default function HistoryCoffeeSection() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-900/20 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Top divider line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-800/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-cream to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -241,7 +241,7 @@ export default function HistoryCoffeeSection() {
         {/* ── Two-column grid ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-          {/* ── Left: Image ─────────────────────────────────────────── */}
+          {/* ── Left:   ─────────────────────────────────────────── */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -268,6 +268,30 @@ export default function HistoryCoffeeSection() {
   }}
   className="absolute inset-0 w-full h-full object-cover"
 >
+
+<motion.div
+    initial={{
+        scale:1.08,
+        opacity:0
+    }}
+
+    whileInView={{
+        scale:1,
+        opacity:1
+    }}
+
+    viewport={{
+        once:true
+    }}
+
+    transition={{
+        duration:1,
+        ease:"easeOut"
+    }}
+
+    className="absolute inset-0"
+    />
+
   <source src="/videos/produk_preview.mp4" 
   type="video/mp4"
   />
@@ -473,7 +497,7 @@ export default function HistoryCoffeeSection() {
               href="#kontak"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full
                   border border-stone-700 hover:border-amber-700/60
-                  text-stone-400 hover:text-amber-400 text-sm font-semibold
+                  text-stone-800 hover:text-amber-400 text-sm font-semibold
                   hover:bg-stone-800 transition-all duration-200"
               >
                 Hubungi Kami
@@ -483,22 +507,9 @@ export default function HistoryCoffeeSection() {
         </div>
       </div>
 
-      {/* Bottom divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-900/30 to-transparent" />
-      <div
-  className="
-    absolute
-    bottom-0
-    left-0
-    w-full
-    h-28
-    pointer-events-none
-    bg-linear-to-b
-    from-transparent
-    to-[#05080d]
-    z-10
-  "
-  />
+     
+      
+  
 <div
   className="
     absolute
@@ -508,7 +519,7 @@ export default function HistoryCoffeeSection() {
     w-175
     h-75
     rounded-full
-    bg-[#C89B3C]
+    bg-(--cream)
     blur-[180px]
     pointer-events-none
   "
