@@ -137,7 +137,7 @@ export default function TahapSection({
           sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,
 33vw"
-quality={85}
+quality={93}
           fill
           className="
             object-cover
