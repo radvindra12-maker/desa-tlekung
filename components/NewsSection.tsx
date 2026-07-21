@@ -131,6 +131,7 @@ function FeaturedCard({ item, index }: { item: NewsItem; index: number }) {
           <Image
             src={item.thumbnail}
             alt={item.judul}
+            loading="lazy"
             fill
             sizes="(max-width: 1024px) 100vw, 45vw"
             quality={85}
@@ -244,6 +245,7 @@ function RegularCard({ item, index }: { item: NewsItem; index: number }) {
           <Image
             src={item.thumbnail}
             alt={item.judul}
+            loading="lazy"
             fill
             sizes="(max-width: 640px) 100vw, 50vw"
             quality={82}

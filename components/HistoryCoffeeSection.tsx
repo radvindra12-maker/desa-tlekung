@@ -175,7 +175,7 @@ export default function HistoryCoffeeSection() {
   return (
     <section 
     id="sejarah"
- className="relative overflow-hidden py-28 bg-linear-to-b from bg-[var(--coffee)] via-[--coffee] to-[var(--cream)]"
+ className="relative overflow-hidden py-28 bg-linear-to-b from bg-[var(--cream)] via-[--beige] to-[var(--cream)]"
  >
       {/* Background texture */}
       <div

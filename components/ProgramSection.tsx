@@ -177,6 +177,7 @@ export default function ProgramSection() {
   <Image
     src={item.image}
     alt={item.title}
+    loading="lazy"
     sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,
 33vw"
@@ -474,6 +475,7 @@ quality={85}
     <Image
       src="/images/program/reservasi.jpg"
       alt="Reservasi Kopi Girimurti"
+      loading="lazy"
       sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,
 33vw"

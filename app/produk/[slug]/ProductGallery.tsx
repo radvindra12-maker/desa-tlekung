@@ -57,12 +57,13 @@ export default function ProductGallery({
   <Image
     src={selectedImage}
     alt={nama}
+    loading="lazy"
     sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,
 33vw"
 quality={85}
     fill
-    priority
+    priority={false}
     className="
       object-cover
       transition-transform
@@ -141,6 +142,7 @@ quality={85}
   <Image
     src={img}
     alt={`${nama} ${index + 1}`}
+    loading="lazy"
     sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,
 33vw"
@@ -210,6 +212,7 @@ quality={85}
   <Image
     src={selectedImage}
     alt={nama}
+    loading="lazy"
     sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,
 33vw"

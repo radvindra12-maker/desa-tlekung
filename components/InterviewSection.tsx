@@ -154,7 +154,7 @@ export default function InterviewSection() {
   return (
     <section 
     id="wawancara"
-  className=" bg-linear-to-b from-(--cream) via-(--cream) to-(--coffee)"
+  className=" bg-linear-to-b from-(--bg-primary) via-(--dark-green) to-(--cream)"
     >
 
 
@@ -181,14 +181,14 @@ export default function InterviewSection() {
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 mb-5">
             <span className="h-px w-8 bg-amber-700" />
-            <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
+            <span className="text-xs line-height font-bold uppercase tracking-widest text-amber-500">
               Dokumenter Eksklusif
             </span>
             <span className="h-px w-8 bg-amber-700" />
           </div>
 
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-11"
             style={{ color: "#8B4513" }}
           >
           
@@ -207,7 +207,7 @@ export default function InterviewSection() {
             </span>
           </h2>
 
-          <p className="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-stone-800 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Wawancara eksklusif bersama pemilik perkebunan Kopi Girimurti yang menceritakan sejarah,
             perkembangan, serta harapan untuk masa depan kopi Desa Tlekung.
           </p>

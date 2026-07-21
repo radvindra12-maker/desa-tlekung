@@ -502,7 +502,6 @@ export default function HeroSection() {
 >
   
   <Image
-
     src="/images/hero/petani-kopi.png"
     alt="Petani Kopi Girimurti"
     fill

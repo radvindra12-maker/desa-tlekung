@@ -60,7 +60,7 @@ export default function AboutSection() {
   return (
     <section
       id="profil"
-     className="relative overflow-hidden bg-linear-to-b from-(--bg-primary) via-(--bg-primary) to-(--cream)"
+     className="relative overflow-hidden bg-linear-to-b from-(--bg-primary) via-(--dark-green) to-(--bg-primary)"
 style={
 {
 "--section-next-bg":"var(--cream)"
@@ -72,7 +72,7 @@ style={
 
 
      
-      <div className="absolute -bottom-16 right-0 w-72 h-72 bg-orange-50 dark:bg-orange-950/20 rounded-full blur-3xl opacity-70 pointer-events-none" />
+      
 
      <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -89,12 +89,13 @@ style={
               <Image
                 src="/images/kopi/kebun-pagi.jpg"
                 alt="Kebun Kopi Girimurti"
+                loading="lazy"
                 sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,
 33vw"
 quality={85}
                 fill
-                priority
+                priority={false}
                 className="object-cover"
               />
 
