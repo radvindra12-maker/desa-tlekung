@@ -3,7 +3,7 @@ export const budidaya = [
     nomor: "01",
     judul: "Tanam",
     badge: "Budidaya",
-    image: "/images/proses/tanam.jpg",
+    image: "/images/proses/tanam-v2.jpg",
     deskripsi:
       "Bibit kopi ditanam pada lahan dengan kondisi tanah dan iklim yang mendukung pertumbuhan optimal tanaman kopi Girimurti.",
   },
