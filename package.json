@@ -7,14 +7,24 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-     "generate:regions": "tsx scripts/generate-region-sql.ts"
+    "generate:regions": "tsx scripts/generate-region-sql.ts"
   },
   "dependencies": {
+    "@base-ui/react": "^1.7.0",
+    "@hookform/resolvers": "^5.7.1",
+    "@supabase/supabase-js": "^2.112.3",
     "@vercel/analytics": "^2.0.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
+    "lucide-react": "^1.31.0",
     "next": "16.2.9",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.85.0",
+    "tailwind-merge": "^3.6.0",
+    "tw-animate-css": "^1.4.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -27,4 +37,3 @@
     "typescript": "^5"
   }
 }
-
