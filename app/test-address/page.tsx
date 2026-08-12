@@ -7,7 +7,7 @@ export default function TestAddressPage() {
         Alamat Pengiriman
       </h1>
 
-      <AddressForm />
+      <AddressForm onNext={() => {}} />
     </main>
   );
 }
