@@ -152,12 +152,7 @@ export default function FooterSection() {
   className="relative overflow-hidden bg-linear-to-b from-(--coffee) via-(--coffee) to-(--coffee)"
 >
 
-      {/* Wave divider */}
-      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
-        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" className="w-full h-14 fill-white dark:fill-gray-900">
-          <path d="M0,32 C360,56 1080,0 1440,32 L1440,0 L0,0 Z" />
-        </svg>
-      </div>
+      
 
       {/* Dot-grid texture */}
       <div

@@ -5,6 +5,7 @@ import { addPurchaseItem } from "@/lib/purchase/purchase-storage";
 import { useRouter } from "next/navigation";
 import ProductSpecificationTable from "./ProductSpecificationTable";
 import { useMemo, useState } from "react";
+import type { Product } from "@/lib/types/products";
 
 type Props = {
   product: Product;
@@ -33,7 +34,7 @@ const [selectedVariantId, setSelectedVariantId] = useState(
   );
 
   const selectedVariant = useMemo(
-    () => variants.find((v: any) => v.id === selectedVariantId),
+    () => variants.find((v) => v.id === selectedVariantId),
     [variants, selectedVariantId]
   );
 console.log(
@@ -42,7 +43,7 @@ console.log(
 
 const specifications = useMemo(() => {
   return [...(product.product_specifications ?? [])].sort(
-    (a: any, b: any) =>
+    (a, b) =>
       (a.specification_definitions?.sort_order ?? 999) -
       (b.specification_definitions?.sort_order ?? 999)
   );
@@ -103,7 +104,7 @@ console.log(item);
         </h3>
 
         <div className="flex gap-3 flex-wrap">
-          {variants.map((variant: any) => (
+          {variants.map((variant) => (
             <button
               key={variant.id}
               onClick={() => setSelectedVariantId(variant.id)}

@@ -172,6 +172,12 @@ quality={85}
               Kopi Girimurti merupakan warisan perkebunan kopi yang
               telah menjadi bagian dari identitas masyarakat Desa
               Tlekung sejak tahun 1958.
+              Ditanam di kawasan pegunungan dengan kondisi alam yang
+              mendukung, Kopi Girimurti dikenal memiliki karakter rasa
+              yang khas dan menjadi salah satu produk unggulan
+              masyarakat setempat. Hingga saat ini kopi ini terus
+              dikembangkan sebagai upaya menjaga warisan lokal dan
+              mendukung perekonomian masyarakat.
             </motion.p>
 
             <motion.p
@@ -179,12 +185,7 @@ quality={85}
               variants={fadeUp}
               className="text-[var(--cream)] leading-relaxed mb-8"
             >
-              Ditanam di kawasan pegunungan dengan kondisi alam yang
-              mendukung, Kopi Girimurti dikenal memiliki karakter rasa
-              yang khas dan menjadi salah satu produk unggulan
-              masyarakat setempat. Hingga saat ini kopi ini terus
-              dikembangkan sebagai upaya menjaga warisan lokal dan
-              mendukung perekonomian masyarakat.
+             
             </motion.p>
 
             <motion.ul

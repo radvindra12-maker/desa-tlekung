@@ -1,6 +1,6 @@
 export const programData = {
-  "coffee-farm-tour": {
-    title: "Coffee Farm Tour",
+  "coffee-trekking-easy": {
+    title: "Coffee Trekking Easy",
     subtitle: "Jelajahi Kebun Kopi Girimurti",
 
     image: "/images/program/farm-tour.jpg",
@@ -67,10 +67,10 @@ gallery: [
 
   },
 
-  "coffee-experience": {
-    title: "Coffee Experience",
+  "coffee-trekking-medium": {
+    title: "Coffee Trekking Medium",
 
-    subtitle: "Belajar Menyeduh Seperti Barista",
+    subtitle: "Belajar Tentang Kopi",
 
     image: "/images/program/brewing.jpg",
 
@@ -131,8 +131,8 @@ gallery: [
 
   },
 
-  "sunrise-coffee-trip": {
-    title: "Sunrise Coffee Trip",
+  "coffee-trekking-advanced": {
+    title: "Coffee Trekking Advanced",
 
     subtitle: "Ngopi Menikmati Sunrise Lereng Arjuno",
 

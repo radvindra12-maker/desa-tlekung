@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const paketWisata = [
   {
-    title: "Coffee Farm Tour",
+    title: "Coffee Trekking Easy",
     image: "/images/program/farm-tour.jpg",
     duration: "±2 Jam",
     price: "Mulai Rp50.000",
@@ -16,17 +16,17 @@ const paketWisata = [
       "Menjelajahi kebun kopi, mengenal varietas kopi, serta belajar budidaya langsung dari petani.",
   },
   {
-    title: "Coffee Experience",
+    title: "Coffee Trekking Medium",
     image: "/images/program/brewing.jpg",
     duration: "±3 Jam",
     price: "Mulai Rp75.000",
     badge: "Best Experience",
     icon: "",
     description:
-      "Belajar proses roasting, grinding, hingga menyeduh kopi menggunakan berbagai metode manual brew.",
+      "Belajar mengenai kopi dan menikmati berbagai pemandangan gunung",
   },
   {
-    title: "Sunrise Coffee Trip",
+    title: "Coffee Trekking Advanced",
     image: "/images/program/sunrise.jpg",
     duration: "Half Day",
     price: "Mulai Rp120.000",
@@ -39,8 +39,8 @@ const paketWisata = [
 
 const events = [
   {
-    date: "12",
-    month: "AGU",
+    date: "COMING",
+    month: "SOON",
     title: "Coffee Festival",
     type: "Festival",
     status: "OPEN",
@@ -49,8 +49,8 @@ const events = [
       "Festival kopi tahunan yang menghadirkan UMKM, bazar, lomba seduh kopi, serta pertunjukan seni budaya.",
   },
   {
-    date: "24",
-    month: "AGU",
+    date: "LAKUKAN",
+    month: "RESERVASI",
     title: "Workshop Brewing",
     type: "Workshop",
     status: "LIMITED",
@@ -59,8 +59,8 @@ const events = [
       "Belajar teknik manual brew langsung bersama praktisi kopi lokal.",
   },
   {
-    date: "31",
-    month: "AGU",
+    date: "COMING",
+    month: "SOON",
     title: "Live Acoustic Coffee Night",
     type: "Music",
     status: "FREE",
@@ -505,7 +505,7 @@ quality={85}
         "
       >
 
-        ☕ BOOK YOUR EXPERIENCE
+        BOOK YOUR EXPERIENCE
 
       </span>
 

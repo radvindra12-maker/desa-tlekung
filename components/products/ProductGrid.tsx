@@ -1,5 +1,5 @@
 import ProductCard from "./ProductCard";
-import type { ProductCardData } from "@/lib/types/product";
+import type { ProductCardData } from "@/lib/types/products";
 
 type Props = {
   products: ProductCardData[];

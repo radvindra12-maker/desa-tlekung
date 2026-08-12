@@ -70,7 +70,7 @@ const summary = useMemo(() => {
       description="Tambahkan produk ke daftar permintaan sebelum melanjutkan proses pembelian."
       action={
         <Button
-          onClick={() => router.push("/products")}
+          onClick={() => router.push("/produk")}
         >
           Jelajahi Produk
         </Button>

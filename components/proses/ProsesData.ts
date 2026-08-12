@@ -3,7 +3,7 @@ export const budidaya = [
     nomor: "01",
     judul: "Tanam",
     badge: "Budidaya",
-    image: "/images/proses/tanam-v2.jpg",
+    image: "/images/proses/tanam-v3.jpg",
     deskripsi:
       "Bibit kopi ditanam pada lahan dengan kondisi tanah dan iklim yang mendukung pertumbuhan optimal tanaman kopi Girimurti.",
   },
@@ -11,7 +11,7 @@ export const budidaya = [
     nomor: "02",
     judul: "Petik",
     badge: "Panen",
-    image: "/images/proses/petik.jpg",
+    image: "/images/proses/petik-v1.jpg",
     deskripsi:
       "Buah kopi dipetik secara selektif ketika telah berwarna merah sempurna agar menghasilkan kualitas rasa terbaik.",
   },

@@ -28,6 +28,15 @@ export default function ProductGallery({
   const [isOpen, setIsOpen] = useState(false);
   const isSelectedVideo =
   selectedImage.storage_path.endsWith(".mp4");
+  console.log(
+  "PRODUCT IMAGE PATH:",
+  selectedImage.storage_path
+);
+
+console.log(
+  "PRODUCT IMAGE URL:",
+  getProductImageUrl(selectedImage.storage_path)
+);
 
   return (
     <>

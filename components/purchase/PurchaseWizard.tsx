@@ -53,14 +53,31 @@ const methods = useForm<PurchaseWizardValues>({
 const stepComponents = [
   <BuyerInformationForm
     key="buyer"
-    onNext={() => setCurrentStep(1)}
+    onNext={() => {
+      console.log("BUYER → ADDRESS");
+      setCurrentStep(1);
+    }}
   />,
 
-  <AddressForm key="address" />,
+  <AddressForm
+    key="address"
+    onNext={() => {
+      console.log("ADDRESS → REQUEST");
+      setCurrentStep(2);
+    }}
+  />,
 
-  <RequestInformationForm key="request" />,
+  <RequestInformationForm
+    key="request"
+    onNext={() => {
+      console.log("REQUEST → REVIEW");
+      setCurrentStep(3);
+    }}
+  />,
 
-  <PurchaseReview key="review" />,
+  <PurchaseReview
+    key="review"
+  />,
 ];
 
 

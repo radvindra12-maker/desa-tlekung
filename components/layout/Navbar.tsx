@@ -19,6 +19,49 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToSection = (href: string) => {
+  const id = href.replace("#", "");
+  const element = document.getElementById(id);
+
+  if (!element) return;
+
+  const startPosition = window.scrollY;
+  const targetPosition =
+    element.getBoundingClientRect().top + window.scrollY - 80;
+
+  const distance = targetPosition - startPosition;
+  const duration = 1000;
+  let startTime: number | null = null;
+
+  const easeInOutCubic = (t: number) => {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  };
+
+  const animation = (currentTime: number) => {
+    if (startTime === null) {
+      startTime = currentTime;
+    }
+
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    const easedProgress = easeInOutCubic(progress);
+
+    window.scrollTo(
+      0,
+      startPosition + distance * easedProgress
+    );
+
+    if (progress < 1) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
 
@@ -54,23 +97,25 @@ export default function Navbar() {
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-8">
 
-            {navLinks.map((link) => (
-
-              <a
-                key={link.href}
-                href={link.href}
-                className="
-                  text-white/90
-                  hover:text-emerald-400
-                  transition-all
-                  duration-300
-                  font-medium
-                "
-              >
-                {link.label}
-              </a>
-
-            ))}
+           {navLinks.map((link) => (
+  <a
+    key={link.href}
+    href={link.href}
+    onClick={(e) => {
+      e.preventDefault();
+      scrollToSection(link.href);
+    }}
+    className="
+      text-white/90
+      hover:text-emerald-400
+      transition-all
+      duration-300
+      font-medium
+    "
+  >
+    {link.label}
+  </a>
+))}
 
           </div>
 
@@ -110,11 +155,14 @@ export default function Navbar() {
             <div className="flex flex-col py-4">
 
               {navLinks.map((link, index) => (
-
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
+  <motion.a
+    key={link.href}
+    href={link.href}
+    onClick={(e) => {
+      e.preventDefault();
+      setIsOpen(false);
+      scrollToSection(link.href);
+    }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{

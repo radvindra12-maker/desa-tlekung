@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getProductImageUrl } from "@/lib/utils/image";
-import type { ProductCardData } from "@/lib/types/product";
+import type { ProductCardData } from "@/lib/types/products";
 import Image from "next/image";
 
 

@@ -1,12 +1,17 @@
-import { BuyerInformationValues } from "@/lib/validation/purchase-schema";
-
-export interface PurchaseWizardData {
-  buyer: BuyerInformationValues;
+export type PurchaseWizardData = {
+  buyer: {
+    fullName: string;
+    email: string;
+    phone: string;
+    organization?: string;
+    position?: string;
+  };
 
   address: {
     province: string;
     city: string;
     district: string;
+    village: string;
     postalCode: string;
     fullAddress: string;
   };
@@ -14,4 +19,4 @@ export interface PurchaseWizardData {
   request: {
     notes: string;
   };
-}
+};

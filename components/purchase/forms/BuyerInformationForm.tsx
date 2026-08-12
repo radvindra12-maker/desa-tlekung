@@ -14,35 +14,41 @@ type BuyerInformationFormProps = {
 };
 
 export default function BuyerInformationForm({
-
-  
-
   onNext,
 }: BuyerInformationFormProps) {
- const {
-  register,
-  handleSubmit,
-  watch,
-  formState: { errors },
-} = useFormContext<PurchaseWizardValues>();
+  const {
+    register,
+    trigger,
+    formState: { errors },
+  } = useFormContext<PurchaseWizardValues>();
 
-console.log("WATCH", watch());
-console.log("ERRORS", errors);
+  const handleNext = async () => {
+    console.log("BUTTON CLICK");
 
-  const onSubmit = () => {
-  console.log("NEXT STEP");
-  onNext();
-};
+    const isValid = await trigger([
+      "buyer.fullName",
+      "buyer.email",
+      "buyer.phone",
+      "buyer.organization",
+      "buyer.position",
+    ]);
+
+    console.log("BUYER VALID:", isValid);
+
+    if (!isValid) {
+      console.log("BUYER VALIDATION FAILED");
+      return;
+    }
+
+    console.log("BUYER VALIDATION SUCCESS");
+    console.log("NEXT STEP");
+
+    onNext();
+  };
 
   return (
-    <form
-  onSubmit={(e) => {
-    console.log("FORM SUBMIT");
-    handleSubmit(onSubmit)(e);
-    
-  }}
-    >
-        <PageHeader
+    <div className="space-y-6">
+      <PageHeader
         title="Informasi Pembeli"
         description="Lengkapi data pembeli sebelum melanjutkan."
       />
@@ -128,12 +134,12 @@ console.log("ERRORS", errors);
 
       <div className="flex justify-end pt-4">
         <Button
-  type="submit"
-  className="rounded-xl bg-amber-600 px-4 py-2 text-white"
->
-  Selanjutnya
-</Button>
+          type="button"
+          onClick={handleNext}
+        >
+          Selanjutnya
+        </Button>
       </div>
-    </form>
+    </div>
   );
 }

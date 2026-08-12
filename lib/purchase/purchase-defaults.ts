@@ -1,4 +1,4 @@
-import { PurchaseWizardData } from "@/types/purchase-wizard";
+import type { PurchaseWizardData } from "@/types/purchase-wizard";
 
 export const defaultPurchaseWizardData: PurchaseWizardData = {
   buyer: {
@@ -13,6 +13,7 @@ export const defaultPurchaseWizardData: PurchaseWizardData = {
     province: "",
     city: "",
     district: "",
+    village: "",
     postalCode: "",
     fullAddress: "",
   },

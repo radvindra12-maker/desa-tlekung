@@ -253,11 +253,9 @@ export default function HistoryCoffeeSection() {
 
            <div className="relative h-155 overflow-hidden rounded-[30px]">
 
-  <motion.video
-  autoPlay
-  muted
-  loop
-  playsInline
+  <motion.img
+  src="/images/history/produk_preview.jpg"
+  alt="Produk Kopi Girimurti"
   initial={{ scale: 1 }}
   animate={{ scale: 1.08 }}
   transition={{
@@ -267,35 +265,7 @@ export default function HistoryCoffeeSection() {
     ease: "easeInOut",
   }}
   className="absolute inset-0 w-full h-full object-cover"
->
-
-<motion.div
-    initial={{
-        scale:1.08,
-        opacity:0
-    }}
-
-    whileInView={{
-        scale:1,
-        opacity:1
-    }}
-
-    viewport={{
-        once:true
-    }}
-
-    transition={{
-        duration:1,
-        ease:"easeOut"
-    }}
-
-    className="absolute inset-0"
-    />
-
-  <source src="/videos/produk_preview.mp4" 
-  type="video/mp4"
-  />
-</motion.video>
+/>
               
 
               {/* Inner gradient overlays */}
@@ -381,7 +351,7 @@ export default function HistoryCoffeeSection() {
             <motion.p
               custom={0.16}
               variants={fadeUp}
-              className="text-stone-400 text-sm sm:text-base leading-relaxed mb-8"
+              className="text-stone-700 text-sm sm:text-base leading-relaxed mb-8"
             >
               Perkebunan kopi di Desa Tlekung telah menjadi bagian penting dari kehidupan masyarakat selama puluhan tahun. Berada di lereng Gunung Arjuno, 
               kawasan ini menghasilkan kopi berkualitas sekaligus menjadi warisan yang terus dijaga dan dikembangkan dari generasi ke generasi.
