@@ -5,12 +5,14 @@ export type BuyerType =
   | "distributor";
 
 export type PurchaseStatus =
-  | "submitted"
-  | "reviewed"
+  | "pending"
+  | "verified"
   | "contacted"
   | "negotiation"
-  | "confirmed"
-  | "cancelled";
+  | "quotation_sent"
+  | "approved"
+  | "completed"
+  | "rejected";
 
 export interface PurchaseItem {
   id: string;

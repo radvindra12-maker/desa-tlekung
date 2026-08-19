@@ -57,7 +57,7 @@ export const products = [
   },
 
   {
-    slug: "arabica-gp",
+    slug: "arabika-girimurti",
     nama: "Arabica Gangsiran Puthuk",
     harga: "Harga Fluktuatif",
     berat: "200 gram",

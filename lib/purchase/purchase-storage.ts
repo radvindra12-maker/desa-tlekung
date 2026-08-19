@@ -38,6 +38,14 @@ export function savePurchaseItems(items: PurchaseItem[]): void {
   );
 }
 
+export function clearPurchaseItems(): void {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  localStorage.removeItem(PURCHASE_STORAGE_KEY);
+}
+
 export function addPurchaseItem(
   item: PurchaseItemInput
   )

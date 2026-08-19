@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
-
+import { useRouter } from "next/navigation";
+import { getPurchaseItems } from "@/lib/purchase/purchase-storage";
 import { Button } from "@/components/ui/button";
-
+import { submitPurchaseRequest } from "@/lib/services/purchase/purchase.service";
+import { clearPurchaseItems } from "@/lib/purchase/purchase-storage";
 import type { PurchaseWizardValues } from "@/lib/validation/purchase-wizard-schema";
-
 import { getRegion } from "@/lib/regions/region-query";
 
 type RegionNames = {
@@ -20,6 +21,10 @@ export default function PurchaseReview() {
   const { watch } = useFormContext<PurchaseWizardValues>();
 
   const data = watch();
+
+  const router = useRouter();
+
+const [submitting, setSubmitting] = useState(false);
 
   const [regionNames, setRegionNames] = useState<RegionNames>({
     province: "",
@@ -95,42 +100,48 @@ export default function PurchaseReview() {
     data.address.village,
   ]);
 
-  const handleSubmitRequest = () => {
-    console.log(
-      "================================="
+  const handleSubmitRequest = async () => {
+  if (submitting) {
+    return;
+  }
+
+  setSubmitting(true);
+
+  try {
+    const items = getPurchaseItems();
+
+    if (items.length === 0) {
+      alert("Tidak ada produk yang dipilih.");
+      return;
+    }
+
+   const result = await submitPurchaseRequest({
+  data,
+  regionNames,
+  items,
+});
+
+clearPurchaseItems();
+
+console.log(
+  "Purchase request berhasil dibuat:",
+  result.id
+);
+
+router.push(`/purchase/success/${result.id}`);
+  } catch (error) {
+    console.error(
+      "Failed to submit purchase request:",
+      error
     );
 
-    console.log("SUBMIT PURCHASE REQUEST");
-
-    console.log(
-      "================================="
+    alert(
+      "Terjadi kesalahan saat mengirim permintaan pembelian."
     );
-
-    console.log("BUYER:", data.buyer);
-
-    console.log("ADDRESS:", {
-      provinceCode: data.address.province,
-      provinceName: regionNames.province,
-
-      cityCode: data.address.city,
-      cityName: regionNames.city,
-
-      districtCode: data.address.district,
-      districtName: regionNames.district,
-
-      villageCode: data.address.village,
-      villageName: regionNames.village,
-
-      postalCode: data.address.postalCode,
-      fullAddress: data.address.fullAddress,
-    });
-
-    console.log("REQUEST:", data.request);
-
-    console.log(
-      "================================="
-    );
-  };
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   return (
     <div className="space-y-8">
@@ -273,11 +284,14 @@ export default function PurchaseReview() {
       {/* ACTION */}
       <div className="flex justify-end pt-2">
         <Button
-          type="button"
-          onClick={handleSubmitRequest}
-        >
-          Kirim Permintaan
-        </Button>
+  type="button"
+  onClick={handleSubmitRequest}
+  disabled={submitting || loadingRegions}
+>
+  {submitting
+    ? "Mengirim..."
+    : "Kirim Permintaan"}
+</Button>
       </div>
     </div>
   );

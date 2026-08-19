@@ -4,6 +4,7 @@ import { products } from "../../data/products";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Fragment } from "react";
 
 
 export default function ProductSection() {
@@ -98,9 +99,8 @@ export default function ProductSection() {
   const reverse = index % 2 === 1;
 
   return (
-<>
+  <Fragment key={product.nama}>
     <motion.div
-      key={product.nama}
       initial={{ opacity: 0, y: 70 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -378,8 +378,8 @@ quality={85}
 
       </div>
 
-    )}
-</>
+       )}
+  </Fragment>
   );
 
 })}
