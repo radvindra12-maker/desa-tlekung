@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabaseServer } from "@/lib/supabase/server";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 const allowedStatuses = [
   "pending",
@@ -20,6 +20,15 @@ type RouteProps = {
   }>;
 };
 
+type PublicPurchaseRequest = {
+  id: string;
+  full_name: string;
+  status: string;
+  estimated_total: number | null;
+  admin_note: string | null;
+  created_at: string;
+};
+
 // =========================
 // GET PURCHASE REQUEST
 // =========================
@@ -31,15 +40,19 @@ export async function GET(
   try {
     const { id } = await params;
 
-    const supabase = await supabaseServer;
+    const supabase = await createSupabaseServerClient();
 
-    const { data, error } = await supabase
-      .from("purchase_requests")
-      .select(
-        "id, full_name, status, estimated_total, admin_note, created_at"
-      )
-      .eq("id", id)
-      .single();
+const { data: rows, error } = await supabase.rpc(
+  "get_purchase_request_public" as never,
+  {
+    p_request_id: id,
+  } as never
+);
+
+const data =
+  (Array.isArray(rows)
+    ? rows[0] ?? null
+    : null) as PublicPurchaseRequest | null;
 
     if (error || !data) {
       console.error(
@@ -200,7 +213,7 @@ export async function PATCH(
     // SUPABASE
     // =========================
 
-   const supabase = await supabaseServer;
+   const supabase = await createSupabaseServerClient();
 
 const { data, error } = await supabase
   .from("purchase_requests")

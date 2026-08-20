@@ -4,36 +4,28 @@ import { useState } from "react";
 
 const statuses = [
   {
-    value: "pending",
-    label: "Menunggu Konfirmasi",
+    value: "approved",
+    label: "Disetujui",
   },
   {
     value: "verified",
     label: "Terverifikasi",
   },
   {
-    value: "contacted",
-    label: "Sudah Dihubungi",
+    value: "quotation_sent",
+    label: "Penawaran Dikirim",
   },
   {
     value: "negotiation",
     label: "Negosiasi",
   },
   {
-    value: "quotation_sent",
-    label: "Penawaran Dikirim",
-  },
-  {
-    value: "approved",
-    label: "Disetujui",
+    value: "rejected",
+    label: "Ditolak",
   },
   {
     value: "completed",
     label: "Selesai",
-  },
-  {
-    value: "rejected",
-    label: "Ditolak",
   },
 ] as const;
 
@@ -49,10 +41,10 @@ export default function PurchaseRequestStatus({
   currentStatus,
 }: Props) {
   const initialStatus: Status = statuses.some(
-    (item) => item.value === currentStatus
-  )
-    ? (currentStatus as Status)
-    : "pending";
+  (item) => item.value === currentStatus
+)
+  ? (currentStatus as Status)
+  : "verified";
 
   const [status, setStatus] =
     useState<Status>(initialStatus);

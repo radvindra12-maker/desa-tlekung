@@ -119,38 +119,39 @@ const itemsPerPage = 10;
   // STATUS SUMMARY
   // =========================
 
-  const statusSummary = useMemo(() => {
-    return {
-      pending: requests.filter(
-        (request) =>
-          request.status?.toLowerCase() === "pending"
-      ).length,
+ const statusSummary = useMemo(() => {
+  return {
+    approved: requests.filter(
+      (request) =>
+        request.status?.toLowerCase() === "approved"
+    ).length,
 
-      confirmed: requests.filter(
-        (request) =>
-          request.status?.toLowerCase() ===
-          "confirmed"
-      ).length,
+    verified: requests.filter(
+      (request) =>
+        request.status?.toLowerCase() === "verified"
+    ).length,
 
-      processing: requests.filter(
-        (request) =>
-          request.status?.toLowerCase() ===
-          "processing"
-      ).length,
+    quotationSent: requests.filter(
+      (request) =>
+        request.status?.toLowerCase() === "quotation_sent"
+    ).length,
 
-      completed: requests.filter(
-        (request) =>
-          request.status?.toLowerCase() ===
-          "completed"
-      ).length,
+    negotiation: requests.filter(
+      (request) =>
+        request.status?.toLowerCase() === "negotiation"
+    ).length,
 
-      cancelled: requests.filter(
-        (request) =>
-          request.status?.toLowerCase() ===
-          "cancelled"
-      ).length,
-    };
-  }, [requests]);
+    rejected: requests.filter(
+      (request) =>
+        request.status?.toLowerCase() === "rejected"
+    ).length,
+
+    completed: requests.filter(
+      (request) =>
+        request.status?.toLowerCase() === "completed"
+    ).length,
+  };
+}, [requests]);
 
   // =========================
   // FILTER DATA
@@ -251,36 +252,42 @@ const paginatedRequests = useMemo(() => {
             STATUS SUMMARY
         ========================= */}
 
-        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           <SummaryCard
-            label="Pending"
-            value={statusSummary.pending}
-            className="border-amber-200 bg-amber-50 text-amber-800"
-          />
+  label="Disetujui"
+  value={statusSummary.approved}
+  className="border-gray-200 bg-gray-50 text-gray-800"
+/>
 
-          <SummaryCard
-            label="Dikonfirmasi"
-            value={statusSummary.confirmed}
-            className="border-blue-200 bg-blue-50 text-blue-800"
-          />
+<SummaryCard
+  label="Terverifikasi"
+  value={statusSummary.verified}
+  className="border-blue-200 bg-blue-50 text-blue-800"
+/>
 
-          <SummaryCard
-            label="Diproses"
-            value={statusSummary.processing}
-            className="border-purple-200 bg-purple-50 text-purple-800"
-          />
+<SummaryCard
+  label="Penawaran Dikirim"
+  value={statusSummary.quotationSent}
+  className="border-purple-200 bg-purple-50 text-purple-800"
+/>
 
-          <SummaryCard
-            label="Selesai"
-            value={statusSummary.completed}
-            className="border-emerald-200 bg-emerald-50 text-emerald-800"
-          />
+<SummaryCard
+  label="Negosiasi"
+  value={statusSummary.negotiation}
+  className="border-amber-200 bg-amber-50 text-amber-800"
+/>
 
-          <SummaryCard
-            label="Dibatalkan"
-            value={statusSummary.cancelled}
-            className="border-red-200 bg-red-50 text-red-800"
-          />
+<SummaryCard
+  label="Ditolak"
+  value={statusSummary.rejected}
+  className="border-red-200 bg-red-50 text-red-800"
+/>
+
+<SummaryCard
+  label="Selesai"
+  value={statusSummary.completed}
+  className="border-emerald-200 bg-emerald-50 text-emerald-800"
+/>
         </div>
 
         {/* =========================
@@ -329,29 +336,33 @@ const paginatedRequests = useMemo(() => {
                 }
                 className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-stone-500 focus:ring-2 focus:ring-stone-200"
               >
-                <option value="all">
-                  Semua Status
-                </option>
+               <option value="all">
+  Semua Status
+</option>
 
-                <option value="pending">
-                  Pending
-                </option>
+<option value="approved">
+  Disetujui
+</option>
 
-                <option value="confirmed">
-                  Dikonfirmasi
-                </option>
+<option value="verified">
+  Terverifikasi
+</option>
 
-                <option value="processing">
-                  Diproses
-                </option>
+<option value="quotation_sent">
+  Penawaran Dikirim
+</option>
 
-                <option value="completed">
-                  Selesai
-                </option>
+<option value="negotiation">
+  Negosiasi
+</option>
 
-                <option value="cancelled">
-                  Dibatalkan
-                </option>
+<option value="rejected">
+  Ditolak
+</option>
+
+<option value="completed">
+  Selesai
+</option>
               </select>
             </div>
 
@@ -692,34 +703,40 @@ function StatusBadge({
       className: string;
     }
   > = {
-    pending: {
-      label: "Pending",
+    approved: {
+      label: "Disetujui",
       className:
-        "bg-amber-100 text-amber-800",
+        "bg-gray-100 text-gray-800",
     },
 
-    confirmed: {
-      label: "Dikonfirmasi",
+    verified: {
+      label: "Terverifikasi",
       className:
         "bg-blue-100 text-blue-800",
     },
 
-    processing: {
-      label: "Diproses",
+    quotation_sent: {
+      label: "Penawaran Dikirim",
       className:
         "bg-purple-100 text-purple-800",
+    },
+
+    negotiation: {
+      label: "Negosiasi",
+      className:
+        "bg-amber-100 text-amber-800",
+    },
+
+    rejected: {
+      label: "Ditolak",
+      className:
+        "bg-red-100 text-red-800",
     },
 
     completed: {
       label: "Selesai",
       className:
         "bg-emerald-100 text-emerald-800",
-    },
-
-    cancelled: {
-      label: "Dibatalkan",
-      className:
-        "bg-red-100 text-red-800",
     },
   };
 

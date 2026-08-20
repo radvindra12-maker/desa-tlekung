@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { supabaseServer } from "@/lib/supabase/server";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 import PurchaseRequestStatus from "@/components/purchase-requests/PurchaseRequestStatus";
 import PurchaseRequestTotal from "@/components/purchase-requests/PurchaseRequestTotal";
 import { PurchaseRequestNote } from "@/components/purchase-requests/PurchaseRequestNote";
@@ -16,7 +16,7 @@ export default async function PurchaseRequestDetailPage({
 }: PageProps) {
   const { id } = await params;
 
-  const supabase = await supabaseServer;
+  const supabase = await createSupabaseServerClient();
 
   // =========================
   // PURCHASE REQUEST

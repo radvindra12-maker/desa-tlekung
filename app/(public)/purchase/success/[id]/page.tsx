@@ -11,6 +11,15 @@ type PageProps = {
   }>;
 };
 
+type PublicPurchaseRequest = {
+  id: string;
+  full_name: string;
+  status: string;
+  estimated_total: number | null;
+  admin_note: string | null;
+  created_at: string;
+};
+
 export default async function PurchaseSuccessPage({
   params,
 }: PageProps) {
@@ -18,13 +27,17 @@ export default async function PurchaseSuccessPage({
 
   const supabase = await supabaseServer;
 
-  const { data: request, error } = await supabase
-    .from("purchase_requests")
-    .select(
-      "id, full_name, status, estimated_total, admin_note, created_at"
-    )
-    .eq("id", id)
-    .single();
+  const { data: rows, error } = await supabase.rpc(
+  "get_purchase_request_public" as never,
+  {
+    p_request_id: id,
+  } as never
+);
+
+const request =
+  (Array.isArray(rows)
+    ? rows[0] ?? null
+    : null) as PublicPurchaseRequest | null;
 
   if (error || !request) {
     console.error(
