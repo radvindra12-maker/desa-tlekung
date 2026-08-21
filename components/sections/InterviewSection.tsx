@@ -71,7 +71,7 @@ function VideoPlayer() {
         <iframe
           className="absolute inset-0 w-full h-full"
           src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
-          title="Wawancara Pemilik Perkebunan Kopi Girimurti"
+          title="Wawancara Pemilik Perkebunan Kopi Giri Murti"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen 
         />
@@ -124,7 +124,7 @@ function VideoPlayer() {
                 Klik untuk memutar
               </p>
               <p className="text-white/50 text-xs">
-                Video Dokumenter &bull; Kopi Girimurti
+                Video Dokumenter &bull; Kopi Giri Murti
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function InterviewSection() {
   return (
     <section 
     id="wawancara"
-  className=" bg-linear-to-b from-(--bg-primary) via-(--dark-green) to-(--cream)"
+  className="relative pt-36 bg-linear-to-b from-(--bg-primary) via-(--dark-green) to-(--cream)"
     >
 
 
@@ -192,7 +192,7 @@ export default function InterviewSection() {
             
           >
           
-            Perjalanan Kopi Girimurti{" "}
+            Perjalanan Kopi Giri Murti{" "}
             <span className="relative inline-block text-amber-400">
               dari Masa ke Masa
               <svg className="absolute -bottom-1.5 left-0 w-full" viewBox="0 0 320 8" preserveAspectRatio="none">
@@ -207,8 +207,8 @@ export default function InterviewSection() {
             </span>
           </h2>
 
-          <p className="text-stone-800 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Wawancara eksklusif bersama pemilik perkebunan Kopi Girimurti yang menceritakan sejarah,
+          <p className="text-(--gold) text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+            Wawancara eksklusif bersama pemilik perkebunan Kopi Giri Murti yang menceritakan sejarah,
             perkembangan, serta harapan untuk masa depan kopi Desa Tlekung.
           </p>
         </motion.div>
@@ -323,18 +323,7 @@ export default function InterviewSection() {
             Tonton di YouTube
           </a>
 
-          <a
-            href="#potensi"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full
-              border border-stone-700 hover:border-amber-700/60
-              text-stone-400 hover:text-amber-400 text-sm font-semibold
-              hover:bg-stone-900 transition-all duration-200"
-          >
-            Pelajari Potensi Kopi
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+         
         </motion.div>
 
       </div>

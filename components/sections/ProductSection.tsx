@@ -71,7 +71,7 @@ export default function ProductSection() {
 
             <span className="text-(--bg-primary)">
 
-              Kopi Girimurti
+              Kopi Giri Murti
 
             </span>
 

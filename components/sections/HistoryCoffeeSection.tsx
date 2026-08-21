@@ -26,7 +26,7 @@ const timelineItems: TimelineItem[] = [
   {
     year: "1940-an",
     title: "Awal Perkebunan",
-    desc: "Masyarakat mulai membuka lahan di lereng Gunung Arjuno dan menanam kopi sebagai salah satu komoditas utama yang kemudian menjadi sumber mata pencaharian warga.",
+    desc: "Masyarakat mulai membuka lahan di lereng Kawi dan menanam kopi sebagai salah satu komoditas utama yang kemudian menjadi sumber mata pencaharian warga.",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
@@ -59,7 +59,7 @@ const timelineItems: TimelineItem[] = [
   {
     year: "Kini",
     title: "Pendopo Kopi Giri Murti",
-    desc: "Pendopo Kopi Girimurti dibangun sebagai pusat promosi, edukasi, dan pengenalan kopi hasil perkebunan Desa Tlekung kepada masyarakat luas.",
+    desc: "Pendopo Kopi Giri Murti dibangun sebagai pusat promosi, edukasi, dan pengenalan kopi hasil perkebunan Desa Tlekung kepada masyarakat luas.",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
@@ -71,8 +71,8 @@ const timelineItems: TimelineItem[] = [
 
 const stats: StatItem[] = [
   {
-    label: "Tahun Berdiri",
-    value: "1940",
+    label: "Mulai Dari",
+    value: "1958",
     unit: "",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,7 +146,7 @@ const timelineItem: Variants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-// ─── Image placeholder (shown when /images/kopi-girimurti.jpg is missing) ─────
+// ─── Image placeholder (shown when /images/kopi-giri murti.jpg is missing) ─────
 
 
 
@@ -255,7 +255,7 @@ export default function HistoryCoffeeSection() {
 
   <motion.img
   src="/images/history/produk_preview.jpg"
-  alt="Produk Kopi Girimurti"
+  alt="Produk Kopi Giri Murti"
   initial={{ scale: 1 }}
   animate={{ scale: 1.08 }}
   transition={{
@@ -278,7 +278,7 @@ export default function HistoryCoffeeSection() {
                   <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[var(--coffee)]/40 backdrop-blur-md border border-white/10">
                     <div className="w-2 h-2 rounded-full bg-[var(--green)] animate-pulse" />
                     <span className="text-xs font-semibold text-[var(--cream)]/90 tracking-wide">
-                      Kopi Girimurti
+                      Kopi Giri Murti
                     </span>
                   </div>
                   <div className="px-3 py-2 rounded-xl bg-[var(--green)]/80 backdrop-blur-sm text-white text-xs font-bold">
@@ -288,29 +288,7 @@ export default function HistoryCoffeeSection() {
               </div>
             </div>
 
-            {/* Floating stat cards */}
-  
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.88 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.55, duration: 0.5, ease: "easeOut" }}
-              className="absolute -bottom-4 -left-4 w-48 bg-[rgba(255,255,255,.06)] rounded-2xl p-4 border border-stone-800 shadow-xl"
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-7 h-7 rounded-lg bg-amber-900/50 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <span className="text-xs font-bold text-stone-300">Organik Bersertifikat</span>
-              </div>
-              <p className="text-[10px] text-stone-500 leading-snug">
-                Diproses tanpa bahan kimia, menjaga cita rasa alami kopi pegunungan
-              </p>
-            </motion.div>
+            
           </motion.div>
 
           {/* ── Right: Content ──────────────────────────────────────── */}
@@ -353,7 +331,7 @@ export default function HistoryCoffeeSection() {
               variants={fadeUp}
               className="text-stone-700 text-sm sm:text-base leading-relaxed mb-8"
             >
-              Perkebunan kopi di Desa Tlekung telah menjadi bagian penting dari kehidupan masyarakat selama puluhan tahun. Berada di lereng Gunung Arjuno, 
+              Perkebunan kopi di Desa Tlekung telah menjadi bagian penting dari kehidupan masyarakat selama puluhan tahun. Berada di lereng Kawi, 
               kawasan ini menghasilkan kopi berkualitas sekaligus menjadi warisan yang terus dijaga dan dikembangkan dari generasi ke generasi.
 </motion.p>
             {/* ── Stats cards ── */}

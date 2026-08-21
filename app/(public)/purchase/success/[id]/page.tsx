@@ -77,7 +77,7 @@ const request =
                 {request.full_name}
               </span>
               . Permintaan pembelian Anda telah berhasil
-              dikirim kepada tim Kopi Girimurti.
+              dikirim kepada tim Kopi Giri Murti.
             </p>
 
           </div>

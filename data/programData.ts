@@ -1,7 +1,7 @@
 export const programData = {
   "coffee-trekking-easy": {
     title: "Coffee Trekking Easy",
-    subtitle: "Jelajahi Kebun Kopi Girimurti",
+    subtitle: "Jelajahi Kebun Kopi Giri Murti",
 
     image: "/images/program/farm-tour.jpg",
 
@@ -11,10 +11,10 @@ export const programData = {
 
     participants: "5–20 Orang",
 
-    location: "Kebun Kopi Girimurti",
+    location: "Kebun Kopi Giri Murti",
 
     description:
-      "Nikmati pengalaman menjelajahi kebun kopi Girimurti bersama petani lokal. Pelajari proses budidaya, panen, hingga mengenal berbagai varietas kopi yang tumbuh di lereng Gunung Arjuno.",
+      "Nikmati pengalaman menjelajahi kebun kopi Giri Murti bersama petani lokal. Pelajari proses budidaya, panen, hingga mengenal berbagai varietas kopi yang tumbuh di lereng Gunung Kawi.",
 
     features: [
       "Tour Kebun",
@@ -51,7 +51,7 @@ gallery: [
   {
     time: "10.00",
     title: "Coffee Break",
-    description: "Menikmati seduhan Kopi Girimurti."
+    description: "Menikmati seduhan Kopi Giri Murti."
   },
   {
     time: "10.30",
@@ -80,10 +80,10 @@ gallery: [
 
     participants: "5–15 Orang",
 
-    location: "Rumah Produksi Girimurti",
+    location: "Rumah Produksi Giri Murti",
 
     description:
-      "Belajar proses roasting, grinding, cupping, hingga manual brew bersama tim Kopi Girimurti.",
+      "Belajar proses roasting, grinding, cupping, hingga manual brew bersama tim Kopi Giri Murti.",
 
     features: [
       "Roasting",
@@ -134,7 +134,7 @@ gallery: [
   "coffee-trekking-advanced": {
     title: "Coffee Trekking Advanced",
 
-    subtitle: "Ngopi Menikmati Sunrise Lereng Arjuno",
+    subtitle: "Ngopi Menikmati Sunrise Lereng Kawi",
 
     image: "/images/program/sunrise.jpg",
 
@@ -147,7 +147,7 @@ gallery: [
     location: "Bukit Gangsiran",
 
     description:
-      "Nikmati panorama matahari terbit sambil menikmati secangkir Kopi Girimurti ditemani udara pegunungan yang sejuk.",
+      "Nikmati panorama matahari terbit sambil menikmati secangkir Kopi Giri Murti ditemani udara pegunungan yang sejuk.",
 
     features: [
       "Sunrise",
@@ -169,7 +169,7 @@ gallery: [
   {
     time: "05.00",
     title: "Meeting Point",
-    description: "Berkumpul di basecamp Girimurti."
+    description: "Berkumpul di basecamp Giri Murti."
   },
   {
     time: "05.30",

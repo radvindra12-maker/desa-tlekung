@@ -76,7 +76,7 @@ export default function Navbar() {
 >
   <img
     src="/images/logo/logo-girimurti.png"
-    alt="Logo Girimurti"
+    alt="Logo Giri Murti"
     className="w-15 h-15 object-contain"
   />
 

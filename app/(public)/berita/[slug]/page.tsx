@@ -214,7 +214,7 @@ className="text-4xl font-bold"
 style={{ fontFamily: "Georgia, serif" }}
 >
 
-Tertarik Mengenal Kopi Girimurti?
+Tertarik Mengenal Kopi Giri Murti?
 
 </h2>
 

@@ -503,7 +503,7 @@ export default function HeroSection() {
   
   <Image
     src="/images/hero/petani-kopi.png"
-    alt="Petani Kopi Girimurti"
+    alt="Petani Kopi Giri Murti"
     fill
     priority
     className="object-contain object-bottom"

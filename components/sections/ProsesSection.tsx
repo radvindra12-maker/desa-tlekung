@@ -10,7 +10,7 @@ export default function ProsesSection() {
   return (
   <section
     id="proses"
-    className="relative overflow-hidden bg-linear-to-b from-(--beige) via-(--cream) to-(--beige)"
+    className="relative overflow-hidden bg-linear-to-b from-(--beige) via-(--warm-stone) to-(--beige)"
   >
     {/* Background Glow */}
     <div className="absolute inset-0 pointer-events-none">
@@ -53,7 +53,7 @@ Perjalanan
 <br />
 
 <span className="text-[var(--coffee)] ">
-  Kopi Girimurti
+  Kopi Giri Murti
 </span>
 
 </h2>
@@ -65,7 +65,7 @@ Perjalanan
 
         <p className="max-w-3xl mx-auto text-lg leading-8 text-[var(--coffee)]">
 
-         Perjalanan Kopi Girimurti dimulai dari kebun milik petani Gangsiran puthuk,
+         Perjalanan Kopi Giri Murti dimulai dari kebun milik petani Gangsiran puthuk,
 melalui proses budidaya, panen, hingga pengolahan pascapanen sebelum
 akhirnya menjadi secangkir kopi dengan cita rasa khas yang siap dinikmati.
         </p>
@@ -81,10 +81,10 @@ akhirnya menjadi secangkir kopi dengan cita rasa khas yang siap dinikmati.
 ========================= */}
 
 <TahapSection
-  subtitle="🌿 Tahap 1"
+  subtitle="Tahap 1"
   title="Budidaya di Kebun"
   description="
-  Perjalanan Kopi Girimurti dimulai dari kebun,
+  Perjalanan Kopi Giri Murti dimulai dari kebun,
   mulai dari proses penanaman,
   pemetikan buah kopi merah,
   hingga rambang sebagai sortasi alami.
@@ -132,7 +132,7 @@ akhirnya menjadi secangkir kopi dengan cita rasa khas yang siap dinikmati.
   Setelah melewati proses budidaya,
   kopi memasuki tahap pengolahan
   hingga siap diseduh menjadi
-  secangkir Kopi Girimurti.
+  secangkir Kopi Giri Murti.
   "
   data={pengolahan}
 />
@@ -178,7 +178,7 @@ Siap untuk Dinikmati
   <p className="mt-8 max-w-2xl mx-auto text-[var(--coffee)] leading-8">
 
     Setelah melalui proses budidaya dan pemilihan buah kopi terbaik,
-    kopi Girimurti memasuki tahapan pengolahan untuk menjaga kualitas,
+    kopi Giri Murti memasuki tahapan pengolahan untuk menjaga kualitas,
     aroma, dan cita rasa sebelum siap dinikmati.
 
   </p>

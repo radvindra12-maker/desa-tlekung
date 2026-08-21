@@ -9,22 +9,22 @@ const quickLinks = [
   {
     label: "Tentang Kopi",
     href: "#profil",
-    icon: "☕",
+    icon: "",
   },
   {
     label: "Sejarah",
     href: "#sejarah",
-    icon: "📜",
+    icon: "",
   },
   {
     label: "Berita",
     href: "#berita",
-    icon: "📰",
+    icon: "",
   },
   {
     label: "Galeri",
     href: "#galeri",
-    icon: "📸",
+    icon: "",
   },
 ];
   
@@ -140,7 +140,7 @@ export default function CTASection() {
             custom={0.2}
             className="text-green-200/60 text-base sm:text-lg leading-relaxed max-w-2xl mb-10"
           >
-            Kopi Girimurti bukan hanya produk kopi, tetapi juga bagian dari sejarah,
+            Kopi Giri Murti bukan hanya produk kopi, tetapi juga bagian dari sejarah,
              budaya, dan identitas masyarakat Desa Tlekung yang terus dijaga dan dikembangkan hingga saat ini.
           </motion.p>
 

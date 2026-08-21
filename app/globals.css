@@ -2,7 +2,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -19,6 +18,8 @@
   --dark-green: #0D530E;
   --gold: #C89B3C;
   --white-cream: #EFE6D4;
+  --terracotta: #ce3e05;
+  --warm-stone: #D8D0BF;
 
   --text-dark: #1F1B18;
   --text-light: #FFFDF8;
@@ -193,7 +194,7 @@ body {
   --bg-light: var(--cream);
   --bg-gold: var(--gold);
   --bg-white: var(--white-cream);
-
+  --bg-tera: var(--terracotta);
   /* Card */
 
   --card-dark: #19451A;
@@ -205,6 +206,7 @@ body {
   --heading: #1D1A17;
   --text: #50483F;
   --text-light: #FFFDF7;
+  --text-tera: #ce3e05;
 
   /* Border */
 
@@ -295,5 +297,23 @@ body {
   }
   html {
     @apply font-sans;
+  }
+  .maplibregl-popup-content {
+    @apply bg-transparent! shadow-none! p-0! rounded-none!;
+  }
+  .maplibregl-popup-tip {
+    @apply hidden!;
+  }
+  .maplibregl-ctrl-attrib {
+    @apply bg-background! text-muted-foreground! border-border! rounded-md! border! shadow-sm!;
+  }
+  .maplibregl-ctrl-attrib a {
+    @apply text-muted-foreground!;
+  }
+  .maplibregl-ctrl-attrib a:hover {
+    @apply text-foreground!;
+  }
+  .maplibregl-ctrl-attrib-button {
+    @apply bg-transparent! dark:invert;
   }
 }

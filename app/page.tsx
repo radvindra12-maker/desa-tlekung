@@ -12,6 +12,7 @@ import VarietasSection from "@/components/sections/VarietasSection";
 import ProsesSection from "@/components/sections/ProsesSection";
 import ProductSection from "@/components/sections/ProductSection";
 import ProgramSection from "@/components/sections/ProgramSection";
+import PendopoSection from "@/components/sections/PendopoSection";
 import { Analytics } from '@vercel/analytics/next';
 export default function Home() {
 
@@ -30,6 +31,7 @@ export default function Home() {
 <ProgramSection />
 <GallerySection />
 <NewsSection />
+<PendopoSection />
 <CTASection />
 <FooterSection />
 

@@ -38,7 +38,7 @@ const kategoriConfig: Record<
     dot: string;
   }
 > = {
-  "Kopi Girimurti": {
+  "Kopi Giri Murti": {
     bg: "bg-emerald-900/50",
     text: "text-emerald-300",
     dot: "bg-emerald-400",
@@ -374,7 +374,7 @@ export default function NewsSection() {
               className="mt-3 text-stone-400 text-sm max-w-md"
             >
               Ikuti perkembangan terbaru seputar panen, pengolahan, promosi,
-dan kegiatan Kopi Girimurti.
+dan kegiatan Kopi Giri Murti.
             </motion.p>
           </div>
 
@@ -436,7 +436,7 @@ dan kegiatan Kopi Girimurti.
           <p className="text-sm text-stone-600">
             <span className="font-semibold text-emerald-400">Pengumuman:</span>{" "}
             <span className="font-semibold text-emerald-400">Informasi:</span>{" "}
-Kopi Girimurti terus dikembangkan sebagai produk unggulan masyarakat
+Kopi Giri Murti terus dikembangkan sebagai produk unggulan masyarakat
 Desa Tlekung melalui peningkatan kualitas budidaya dan pengolahan kopi.{" "}
             <Link href="#berita" className="underline underline-offset-2 text-emerald-500 hover:text-orange-400 transition-colors">
               Selengkapnya

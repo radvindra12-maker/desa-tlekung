@@ -6,15 +6,15 @@ import { motion, Variants } from "framer-motion";
 
 const highlights = [
   {
-    icon: "☕",
+    icon: "",
     text: "Warisan Perkebunan Kopi Sejak 1958",
   },
   {
-    icon: "🌿",
+    icon: "",
     text: "Ditanam di Lereng Pegunungan Tlekung",
   },
   {
-    icon: "🤝",
+    icon: "",
     text: "Mendukung Ekonomi dan Petani Lokal",
   },
 ];
@@ -88,7 +88,7 @@ style={
             <div className="relative rounded-4xl overflow-hidden aspect-4/5 max-h-145 shadow-[var(--shadow)] shadow-green-900/20">
               <Image
                 src="/images/kopi/kebun-pagi_v2.jpg"
-                alt="Kebun Kopi Girimurti"
+                alt="Kebun Kopi Giri Murti"
                 loading="lazy"
                 sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,
@@ -101,10 +101,10 @@ quality={85}
 
               <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
 
-              <div className="absolute bottom-5 left-5 right-5 flex justify-between items-end">
-                <div className="px-4 py-2 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20">
-                  <span className="text-xs font-semibold text-[var(--heading)]">
-                    Desa Tlekung, Kota Batu
+              <div className="absolute bottom-1 left-3 right-3 flex justify-between items-end">
+                <div className="px-4 py-1 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20">
+                  <span className="text-xs font-semibold text-[var(--charcoal)]">
+                    Desa Tlekung, Kota Batu, Gangsiranputhuk
                   </span>
                 </div>
 
@@ -116,7 +116,7 @@ quality={85}
 
             <div className="absolute -top-5 -right-5 bg-(--cream) dark:bg-gray-900 p-4 rounded-2xl shadow-xl">
               <h4 className="font-bold text-[var(--coffee)]">
-                Kopi Girimurti
+                Kopi Giri Murti
               </h4>
               <p className="text-xs text-gray-500">
                 Warisan kopi masyarakat Desa Tlekung
@@ -156,11 +156,11 @@ quality={85}
             <motion.h2
               custom={0.1}
               variants={fadeUp}
-              className="text-4xl font-extrabold text-gray-900 dark:text-white/60"
+              className="text-4xl font-extrabold text-[var(--terracotta)]"
             >
               Mengenal Lebih Dekat{" "}
-              <span className="text-[var(--dark-green)]">
-                Kopi Girimurti
+              <span className="text-[var(--gold)]">
+                Kopi Giri Murti
               </span>
             </motion.h2>
 
@@ -169,11 +169,11 @@ quality={85}
               variants={fadeUp}
               className="text-[var(--cream)] dark:text-[var(--cream)] leading-relaxed mb-4"
             >
-              Kopi Girimurti merupakan warisan perkebunan kopi yang
+              Kopi Giri Murti merupakan warisan perkebunan kopi yang
               telah menjadi bagian dari identitas masyarakat Desa
               Tlekung sejak tahun 1958.
               Ditanam di kawasan pegunungan dengan kondisi alam yang
-              mendukung, Kopi Girimurti dikenal memiliki karakter rasa
+              mendukung, Kopi Giri Murti dikenal memiliki karakter rasa
               yang khas dan menjadi salah satu produk unggulan
               masyarakat setempat. Hingga saat ini kopi ini terus
               dikembangkan sebagai upaya menjaga warisan lokal dan
@@ -196,7 +196,7 @@ quality={85}
               {highlights.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-3 text-gray-900 dark:text-[var(--beige)]"
+                  className="flex items-center gap-3 text-(--gold) dark:text-[var(--beige)]"
                 >
                   <span className="text-xl">
                     {item.icon}

@@ -33,7 +33,7 @@ const paketWisata = [
     badge: "Limited",
     icon: "",
     description:
-      "Menikmati sunrise di lereng pegunungan sambil menikmati secangkir Kopi Girimurti.",
+      "Menikmati sunrise di lereng pegunungan sambil menikmati secangkir Kopi Giri Murti.",
   },
 ];
 
@@ -66,7 +66,7 @@ const events = [
     status: "FREE",
     color: "bg-sky-500",
     description:
-      "Menikmati kopi Girimurti ditemani live acoustic di Pendopo Kopi.",
+      "Menikmati kopi Giri Murti ditemani live acoustic di Pendopo Kopi.",
   },
 ];
 
@@ -135,7 +135,7 @@ export default function ProgramSection() {
             Nikmati berbagai paket wisata edukasi kopi,
             pengalaman memanen kopi,
             hingga berbagai event menarik yang diselenggarakan
-            di Kopi Girimurti.
+            di Kopi Giri Murti.
 
           </p>
 
@@ -330,7 +330,7 @@ quality={85}
 
       Jangan lewatkan berbagai festival kopi,
       workshop,
-      dan kegiatan menarik lainnya di Girimurti.
+      dan kegiatan menarik lainnya di Giri Murti.
 
     </p>
 
@@ -474,7 +474,7 @@ quality={85}
 
     <Image
       src="/images/program/reservasi.jpg"
-      alt="Reservasi Kopi Girimurti"
+      alt="Reservasi Kopi Giri Murti"
       loading="lazy"
       sizes="(max-width:768px) 100vw,
 (max-width:1200px) 50vw,

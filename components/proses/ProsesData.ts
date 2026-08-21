@@ -5,7 +5,7 @@ export const budidaya = [
     badge: "Budidaya",
     image: "/images/proses/tanam-v3.jpg",
     deskripsi:
-      "Bibit kopi ditanam pada lahan dengan kondisi tanah dan iklim yang mendukung pertumbuhan optimal tanaman kopi Girimurti.",
+      "Bibit kopi ditanam pada lahan dengan kondisi tanah dan iklim yang mendukung pertumbuhan optimal tanaman kopi Giri Murti.",
   },
   {
     nomor: "02",
@@ -42,7 +42,7 @@ export const pengolahan = [
     image: "/images/proses/sangrai.jpg",
     video: "/images/proses/sangrai.mp4",
     deskripsi:
-      "Biji kopi dijemur hingga mencapai kadar air ideal sehingga kualitas dan aroma tetap terjaga.",
+      "Dari biji pilihan, kami sangrai dengan presisi untuk mengunci cita rasa autentik dan kesegaran maksimal di setiap cangkir Anda.",
   },
   {
     nomor: "06",
@@ -60,6 +60,6 @@ export const pengolahan = [
     image: "/images/proses/seduh.jpg",
     video: "/images/proses/seduh.mp4",
     deskripsi:
-      "Kopi Girimurti siap diseduh sehingga menghasilkan secangkir kopi dengan aroma dan cita rasa khas Desa Tlekung.",
+      "Kopi Giri Murti siap diseduh sehingga menghasilkan secangkir kopi dengan aroma dan cita rasa khas Desa Tlekung.",
   },
 ];

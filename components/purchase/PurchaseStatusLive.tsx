@@ -250,7 +250,7 @@ export default function PurchaseStatusLive({
 
         <a
           href={`https://wa.me/6281234292878?text=${encodeURIComponent(
-            `Halo Admin Kopi Girimurti, saya ingin menanyakan permintaan pembelian dengan ID ${requestId}.`
+            `Halo Admin Kopi Giri Murti, saya ingin menanyakan permintaan pembelian dengan ID ${requestId}.`
           )}`}
           target="_blank"
           rel="noopener noreferrer"

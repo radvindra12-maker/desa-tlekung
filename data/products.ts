@@ -21,7 +21,7 @@ export const products = [
     slug: "arabica-yellow-caturra",
     nama: "Arabica Yellow Caturra",
     harga: "Harga Fluktuatif",
-    berat: "200 gram",
+    berat: "250 gram",
     roast: "Medium Roast",
     proses: "Natural Process",
     origin: "Desa Tlekung, Kota Batu",
@@ -60,7 +60,7 @@ export const products = [
     slug: "arabika-girimurti",
     nama: "Arabica Gangsiran Puthuk",
     harga: "Harga Fluktuatif",
-    berat: "200 gram",
+    berat: "250 gram",
     roast: "Light Roast",
     proses: "Natural Process",
     origin: "Desa Tlekung",
@@ -99,10 +99,10 @@ gallery: [
 
   {
 
-    slug: "excelsa",
+    slug: "excelsa-gangsiran-puthuk",
     nama: "Excelsa",
     harga: " Harga Fluktuatif",
-    berat: "200 gram",
+    berat: "250 gram",
     roast: "Medium Roast",
     proses: "Natural",
     origin: "Desa Tlekung",

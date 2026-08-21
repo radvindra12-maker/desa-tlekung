@@ -60,7 +60,7 @@ const featureDescription: Record<string, string> = {
     "Belajar memanen buah kopi yang siap diproses.",
 
   "Coffee Break":
-    "Menikmati kopi Girimurti yang baru diseduh.",
+    "Menikmati kopi Giri Murti yang baru diseduh.",
 
   "Dokumentasi":
     "Mengabadikan pengalaman selama kegiatan berlangsung.",
@@ -84,13 +84,13 @@ const featureDescription: Record<string, string> = {
     "Snack dan minuman selama kegiatan.",
 
   "Sunrise":
-    "Menikmati matahari terbit di kawasan Girimurti.",
+    "Menikmati matahari terbit di kawasan Giri Murti.",
 
   "Breakfast":
     "Sarapan bersama di alam terbuka.",
 
   "Coffee Session":
-    "Sesi menikmati kopi khas Girimurti.",
+    "Sesi menikmati kopi khas Giri Murti.",
 
   "Guide":
     "Didampingi pemandu lokal.",
@@ -384,7 +384,7 @@ hover:-translate-y-1
       <p className="mt-5 text-lg text-gray-600">
 
         Semua paket telah dirancang agar pengunjung memperoleh
-        pengalaman terbaik selama berada di Kopi Girimurti.
+        pengalaman terbaik selama berada di Kopi Giri Murti.
 
       </p>
 
@@ -618,7 +618,7 @@ hover:-translate-y-1
       <p className="mt-5 text-lg text-gray-600">
 
         Dokumentasi pengalaman peserta selama mengikuti
-        program wisata Kopi Girimurti.
+        program wisata Kopi Giri Murti.
 
       </p>
 

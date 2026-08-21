@@ -34,7 +34,7 @@ const navLinks = [
 ];
 
 const layananLinks: NavLink[] = [
-  { label: "Sejarah Kopi Girimurti", href: "#sejarah" },
+  { label: "Sejarah Kopi Giri Murti", href: "#sejarah" },
   { label: "Proses Produksi", href: "#produksi" },
   { label: "Galeri Perkebunan", href: "#galeri" },
   { label: "Berita & Kegiatan", href: "#berita" },
@@ -213,7 +213,7 @@ export default function FooterSection() {
               </div>
 
               <p className="text-sm text-green-300/70 leading-relaxed mb-6">
-              Kopi Girimurti merupakan warisan perkebunan kopi yang telah menjadi bagian dari 
+              Kopi Giri Murti merupakan warisan perkebunan kopi yang telah menjadi bagian dari 
               identitas masyarakat Desa Tlekung sejak tahun 1958. Hingga saat ini kopi ini terus dikembangkan sebagai produk unggulan yang mendukung perekonomian masyarakat lokal.
               </p>
 

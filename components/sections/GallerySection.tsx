@@ -41,13 +41,13 @@ const galleryItems: GalleryItem[] = [
   {
     id: 5,
     src: "/images/galeri/foto-5.jpg",
-    title: "Produk Girimurti",
+    title: "Produk Giri Murti",
     kategori: "Produk",
   },
   {
     id: 6,
     src: "/images/galeri/foto-6.jpg",
-    title: "Kebun Arjuno",
+    title: "Kebun Kopi",
     kategori: "Kebun",
   },
 ];
@@ -230,11 +230,11 @@ export default function GallerySection() {
             className="mt-4 text-5xl font-bold text-(--coffee)"
             style={{ fontFamily: "Georgia, serif" }}
           >
-            Galeri Kopi Girimurti
+            Galeri Kopi Giri Murti
           </h2>
 
           <p className="mt-5 max-w-2xl mx-auto text-stone-600 leading-8">
-            Dokumentasi perjalanan Kopi Girimurti mulai dari kebun,
+            Dokumentasi perjalanan Kopi Giri Murti mulai dari kebun,
             panen, pengolahan, hingga menjadi kopi berkualitas.
           </p>
         </motion.div>

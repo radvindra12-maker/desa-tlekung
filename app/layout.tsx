@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Pendopo Giri Murti | Gangsiran Putuk",
   description:
-    "Website resmi Kopi Girimurti Desa Tlekung, Kota Batu.",
+    "Website resmi Kopi Giri Murti Desa Tlekung, Kota Batu.",
 };
 
 export default function RootLayout({
