@@ -9,39 +9,82 @@ import {
 interface BeforeInstallPromptEvent
   extends Event {
   prompt: () => Promise<void>;
+
   userChoice: Promise<{
     outcome: "accepted" | "dismissed";
     platform: string;
   }>;
 }
 
+declare global {
+  interface Window {
+    __giriMurtiInstallPrompt?: BeforeInstallPromptEvent;
+  }
+}
+
 const DISMISS_KEY =
   "giri-murti-admin-install-dismissed";
+
+/**
+ * Tangkap event sedini mungkin saat module client
+ * sudah dimuat.
+ *
+ * Ini mencegah beforeinstallprompt terlewat
+ * sebelum useEffect component berjalan.
+ */
+if (
+  typeof window !== "undefined" &&
+  !window.__giriMurtiInstallPrompt
+) {
+  window.addEventListener(
+    "beforeinstallprompt",
+    (event) => {
+      event.preventDefault();
+
+      const installEvent =
+        event as BeforeInstallPromptEvent;
+
+      window.__giriMurtiInstallPrompt =
+        installEvent;
+
+      window.dispatchEvent(
+        new CustomEvent(
+          "giri-murti-install-available"
+        )
+      );
+    }
+  );
+}
 
 function detectStandalone(): boolean {
   if (typeof window === "undefined") {
     return false;
   }
 
-  return (
+  const standalone =
     window.matchMedia(
       "(display-mode: standalone)"
-    ).matches ||
-    // iOS Safari
-    Boolean(
-      (
-        window.navigator as Navigator & {
-          standalone?: boolean;
-        }
-      ).standalone
-    )
+    ).matches;
+
+  const iosStandalone = Boolean(
+    (
+      window.navigator as Navigator & {
+        standalone?: boolean;
+      }
+    ).standalone
   );
+
+  return standalone || iosStandalone;
 }
 
 export function useInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(
-      null
+      () =>
+        typeof window !== "undefined"
+          ? window.__giriMurtiInstallPrompt ??
+            null
+          : null
     );
 
   const [isDismissed, setIsDismissed] =
@@ -62,24 +105,21 @@ export function useInstallPrompt() {
     });
 
   const [isInstalled, setIsInstalled] =
-    useState<boolean>(() =>
-      detectStandalone()
-    );
+    useState(() => detectStandalone());
 
   useEffect(() => {
-    const handleBeforeInstallPrompt = (
-      event: Event
-    ) => {
-      event.preventDefault();
-
+    const syncInstallPrompt = () => {
       setDeferredPrompt(
-        event as BeforeInstallPromptEvent
+        window.__giriMurtiInstallPrompt ??
+          null
       );
     };
 
     const handleAppInstalled = () => {
       setIsInstalled(true);
       setDeferredPrompt(null);
+
+      delete window.__giriMurtiInstallPrompt;
 
       try {
         window.localStorage.removeItem(
@@ -101,8 +141,8 @@ export function useInstallPrompt() {
     );
 
     window.addEventListener(
-      "beforeinstallprompt",
-      handleBeforeInstallPrompt
+      "giri-murti-install-available",
+      syncInstallPrompt
     );
 
     window.addEventListener(
@@ -115,10 +155,13 @@ export function useInstallPrompt() {
       handleDisplayModeChange
     );
 
+    // Sync sekali lagi setelah mount.
+    syncInstallPrompt();
+
     return () => {
       window.removeEventListener(
-        "beforeinstallprompt",
-        handleBeforeInstallPrompt
+        "giri-murti-install-available",
+        syncInstallPrompt
       );
 
       window.removeEventListener(
@@ -135,15 +178,36 @@ export function useInstallPrompt() {
 
   const promptInstall = useCallback(
     async () => {
-      if (!deferredPrompt) {
+      const prompt =
+        deferredPrompt ??
+        window.__giriMurtiInstallPrompt;
+
+      if (!prompt) {
+        console.warn(
+          "beforeinstallprompt belum tersedia."
+        );
+
         return;
       }
 
       try {
-        await deferredPrompt.prompt();
-        await deferredPrompt.userChoice;
+        await prompt.prompt();
+
+        const choice =
+          await prompt.userChoice;
+
+        console.log(
+          "Install choice:",
+          choice.outcome
+        );
+      } catch (error) {
+        console.error(
+          "Gagal menampilkan install prompt:",
+          error
+        );
       } finally {
         setDeferredPrompt(null);
+        delete window.__giriMurtiInstallPrompt;
       }
     },
     [deferredPrompt]
