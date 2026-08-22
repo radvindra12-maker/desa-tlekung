@@ -1,173 +1,337 @@
 /**
  * Service Worker KHUSUS Dashboard Admin (Giri Murti Admin PWA).
  *
- * PENTING: file ini didaftarkan dengan scope eksplisit "/purchase-requests"
- * dari lib/admin-pwa/useAdminServiceWorker.ts, yang HANYA dipanggil ketika
- * AdminPwaProvider mendeteksi pathname diawali "/purchase-requests".
- * Service worker ini TIDAK PERNAH aktif di halaman publik, /purchase,
- * atau /login.
+ * Scope: /purchase-requests
  *
- * ATURAN CACHING (wajib dipatuhi, jangan diubah sembarangan):
+ * Caching:
+ * - Non-GET: network default, tidak diintersep.
+ * - Supabase/API: network-only.
+ * - /_next/static + /icons: cache-first.
+ * - HTML navigation: network-only + offline synthetic page.
  *
- * 1. Method selain GET (POST/PATCH/PUT/DELETE) TIDAK PERNAH diintersep —
- *    selalu diteruskan langsung ke network, tidak pernah masuk cache.
- *
- * 2. Request ke Supabase (*.supabase.co) dan ke /api/* SELALU
- *    network-only. Tidak ada fallback cache untuk data admin,
- *    supaya dashboard tidak pernah menampilkan data basi/authenticated
- *    data yang ter-cache.
- *
- * 3. Static asset build Next.js yang sudah di-hash (/_next/static/*)
- *    memakai cache-first + fallback network (bukan cache-only):
- *    - Dicek di cache dulu karena nama file berubah tiap build
- *      (immutable by filename), jadi aman dan cepat.
- *    - Kalau TIDAK ada di cache (deployment baru, cache lama sudah
- *      dibersihkan saat activate), selalu fallback fetch ke network —
- *      tidak pernah gagal diam-diam.
- *    - Icon admin (/icons/*) pakai strategi sama.
- *
- * 4. Navigasi dokumen (HTML) SELALU network-only. Tidak ada fallback
- *    ke cache HTML lama — mencegah stale chunk/CSS/JS mismatch setelah
- *    deployment baru. Kalau benar-benar offline, tampilkan halaman
- *    offline sintetis yang di-generate langsung di sini (bukan dari
- *    cache), supaya tidak ada admin data atau markup basi yang bocor.
- *
- * 5. CACHE_VERSION WAJIB di-bump manual (v1 -> v2 -> dst) setiap kali
- *    ada deployment yang mengubah static asset. Saat SW baru "activate",
- *    semua cache dengan versi lama otomatis dihapus.
+ * Push:
+ * - Menampilkan notifikasi permintaan pembelian baru.
+ * - Klik notifikasi membuka /purchase-requests/[id].
  */
 
-const CACHE_VERSION = "giri-murti-admin-v1";
-const STATIC_CACHE = `${CACHE_VERSION}-static`;
+const CACHE_VERSION =
+  "giri-murti-admin-v1";
 
-const NEVER_CACHE_HOSTS = ["supabase.co"];
+const STATIC_CACHE =
+  `${CACHE_VERSION}-static`;
 
-self.addEventListener("install", () => {
-  // Sengaja TIDAK memanggil self.skipWaiting() di sini.
-  // Versi baru harus menunggu konfirmasi user lewat tombol
-  // "Perbarui" (lihat pesan SKIP_WAITING di bawah), supaya
-  // tidak ada auto-reload paksa/tiba-tiba dan tidak ada
-  // infinite reload loop.
-});
+const NEVER_CACHE_HOSTS = [
+  "supabase.co",
+];
 
-self.addEventListener("message", (event) => {
-  if (event.data?.type === "SKIP_WAITING") {
-    self.skipWaiting();
+self.addEventListener(
+  "install",
+  () => {
+    // Tidak skipWaiting otomatis.
   }
-});
+);
 
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    (async () => {
-      const cacheNames = await caches.keys();
-      await Promise.all(
-        cacheNames
-          .filter(
-            (name) =>
-              name.startsWith("giri-murti-admin-") &&
-              name !== STATIC_CACHE
-          )
-          .map((name) => caches.delete(name))
-      );
-      await self.clients.claim();
-    })()
-  );
-});
+self.addEventListener(
+  "message",
+  (event) => {
+    if (
+      event.data?.type ===
+      "SKIP_WAITING"
+    ) {
+      self.skipWaiting();
+    }
+  }
+);
+
+self.addEventListener(
+  "activate",
+  (event) => {
+    event.waitUntil(
+      (async () => {
+        const cacheNames =
+          await caches.keys();
+
+        await Promise.all(
+          cacheNames
+            .filter(
+              (name) =>
+                name.startsWith(
+                  "giri-murti-admin-"
+                ) &&
+                name !== STATIC_CACHE
+            )
+            .map((name) =>
+              caches.delete(name)
+            )
+        );
+
+        await self.clients.claim();
+      })()
+    );
+  }
+);
+
+/* =========================================================
+   PUSH NOTIFICATION
+========================================================= */
+
+self.addEventListener(
+  "push",
+  (event) => {
+    event.waitUntil(
+      (async () => {
+        let payload = {};
+
+        try {
+          if (event.data) {
+            payload =
+              event.data.json();
+          }
+        } catch {
+          try {
+            payload = {
+              body: event.data?.text() ?? "",
+            };
+          } catch {
+            payload = {};
+          }
+        }
+
+        const requestId =
+          typeof payload.requestId ===
+          "string"
+            ? payload.requestId
+            : null;
+
+        const title =
+          typeof payload.title ===
+          "string"
+            ? payload.title
+            : "Permintaan Pembelian Baru";
+
+        const body =
+          typeof payload.body ===
+          "string"
+            ? payload.body
+            : "Ada permintaan pembelian baru.";
+
+        const url =
+          requestId
+            ? `/purchase-requests/${encodeURIComponent(
+                requestId
+              )}`
+            : "/purchase-requests";
+
+        await self.registration.showNotification(
+          title,
+          {
+            body,
+            icon: "/icons/admin-icon-192.png",
+            badge: "/icons/admin-icon-192.png",
+            tag: requestId
+              ? `purchase-request-${requestId}`
+              : "purchase-request-general",
+            renotify: false,
+            requireInteraction: true,
+            vibrate: [
+              200,
+              100,
+              200,
+            ],
+            data: {
+              requestId,
+              url,
+            },
+          }
+        );
+      })()
+    );
+  }
+);
+
+self.addEventListener(
+  "notificationclick",
+  (event) => {
+    event.notification.close();
+
+    event.waitUntil(
+      (async () => {
+        const notificationData =
+          event.notification
+            .data ?? {};
+
+        const targetUrl =
+          typeof notificationData.url ===
+          "string"
+            ? new URL(
+                notificationData.url,
+                self.location.origin
+              ).href
+            : new URL(
+                "/purchase-requests",
+                self.location.origin
+              ).href;
+
+        const windowClients =
+          await self.clients.matchAll({
+            type: "window",
+            includeUncontrolled: true,
+          });
+
+        for (const client of windowClients) {
+          try {
+            await client.navigate(
+              targetUrl
+            );
+
+            await client.focus();
+
+            return;
+          } catch {
+            // Lanjut ke client berikutnya.
+          }
+        }
+
+        await self.clients.openWindow(
+          targetUrl
+        );
+      })()
+    );
+  }
+);
+
+/* =========================================================
+   CACHE HELPERS
+========================================================= */
 
 function isSupabaseRequest(url) {
-  return NEVER_CACHE_HOSTS.some((host) => url.hostname.endsWith(host));
+  return NEVER_CACHE_HOSTS.some(
+    (host) =>
+      url.hostname.endsWith(host)
+  );
 }
 
 function isAdminApiRequest(url) {
-  return url.pathname.startsWith("/api/");
+  return url.pathname.startsWith(
+    "/api/"
+  );
 }
 
 function isHashedStaticAsset(url) {
-  // Next.js build output, nama file sudah mengandung content-hash,
-  // jadi aman di-cache selama-lamanya per versi build.
-  return url.pathname.startsWith("/_next/static/");
+  return url.pathname.startsWith(
+    "/_next/static/"
+  );
 }
 
 function isAdminIcon(url) {
-  return url.pathname.startsWith("/icons/");
+  return url.pathname.startsWith(
+    "/icons/"
+  );
 }
 
-self.addEventListener("fetch", (event) => {
-  const { request } = event;
+/* =========================================================
+   FETCH
+========================================================= */
 
-  // 1) Method selain GET: jangan pernah diintersep sama sekali.
-  if (request.method !== "GET") {
-    return;
-  }
+self.addEventListener(
+  "fetch",
+  (event) => {
+    const { request } = event;
 
-  const url = new URL(request.url);
+    if (request.method !== "GET") {
+      return;
+    }
 
-  // 2) Data Supabase & API admin: network-only, tidak pernah masuk cache,
-  //    tidak ada fallback cache dalam kondisi apa pun.
-  if (isSupabaseRequest(url) || isAdminApiRequest(url)) {
-    event.respondWith(fetch(request));
-    return;
-  }
+    const url = new URL(
+      request.url
+    );
 
-  // 3) Static asset hasil build (hashed) & icon admin:
-  //    cache-first dengan fallback network eksplisit.
-  if (isHashedStaticAsset(url) || isAdminIcon(url)) {
-    event.respondWith(
-      (async () => {
-        const cache = await caches.open(STATIC_CACHE);
-        const cached = await cache.match(request);
+    if (
+      isSupabaseRequest(url) ||
+      isAdminApiRequest(url)
+    ) {
+      event.respondWith(
+        fetch(request)
+      );
 
-        if (cached) {
-          return cached;
-        }
+      return;
+    }
 
-        // Fallback network wajib ada — cache miss (mis. setelah
-        // deployment baru & cache lama dibersihkan) tidak boleh gagal.
-        try {
-          const response = await fetch(request);
-          if (response.ok) {
-            cache.put(request, response.clone());
+    if (
+      isHashedStaticAsset(url) ||
+      isAdminIcon(url)
+    ) {
+      event.respondWith(
+        (async () => {
+          const cache =
+            await caches.open(
+              STATIC_CACHE
+            );
+
+          const cached =
+            await cache.match(request);
+
+          if (cached) {
+            return cached;
           }
-          return response;
-        } catch (error) {
-          // Benar-benar offline dan tidak ada di cache: teruskan error,
-          // biarkan browser menampilkan kegagalan asset secara normal.
-          throw error;
-        }
-      })()
-    );
-    return;
-  }
 
-  // 4) Navigasi dokumen HTML: network-only. TIDAK ADA fallback ke cache
-  //    HTML lama, supaya tidak pernah terjadi stale chunk/CSS/JS mismatch
-  //    setelah deployment baru. Kalau offline, generate halaman offline
-  //    sintetis langsung (bukan dari cache).
-  if (request.mode === "navigate") {
-    event.respondWith(
-      (async () => {
-        try {
-          return await fetch(request);
-        } catch {
-          return new Response(
-            "<!DOCTYPE html><html lang='id'><head><meta charset='utf-8'>" +
-              "<meta name='viewport' content='width=device-width, initial-scale=1'>" +
-              "<title>Offline — Giri Murti Admin</title></head>" +
-              "<body style='font-family:system-ui;padding:2rem;text-align:center;color:#0D530E;'>" +
-              "<h1>Anda sedang offline</h1>" +
-              "<p>Sambungkan kembali ke internet untuk membuka dashboard admin.</p>" +
-              "</body></html>",
-            {
-              status: 503,
-              headers: { "Content-Type": "text/html; charset=utf-8" },
+          try {
+            const response =
+              await fetch(request);
+
+            if (response.ok) {
+              cache.put(
+                request,
+                response.clone()
+              );
             }
-          );
-        }
-      })()
-    );
-    return;
-  }
 
-  // 5) Selain kasus di atas: biarkan browser menangani secara default
-  //    (tidak diintersep, tidak dicache).
-});
+            return response;
+          } catch (error) {
+            throw error;
+          }
+        })()
+      );
+
+      return;
+    }
+
+    if (
+      request.mode ===
+      "navigate"
+    ) {
+      event.respondWith(
+        (async () => {
+          try {
+            return await fetch(
+              request
+            );
+          } catch {
+            return new Response(
+              "<!DOCTYPE html><html lang='id'>" +
+                "<head>" +
+                "<meta charset='utf-8'>" +
+                "<meta name='viewport' content='width=device-width, initial-scale=1'>" +
+                "<title>Offline — Giri Murti Admin</title>" +
+                "</head>" +
+                "<body style='font-family:system-ui;padding:2rem;text-align:center;color:#0D530E;'>" +
+                "<h1>Anda sedang offline</h1>" +
+                "<p>Sambungkan kembali ke internet untuk membuka dashboard admin.</p>" +
+                "</body>" +
+                "</html>",
+              {
+                status: 503,
+                headers: {
+                  "Content-Type":
+                    "text/html; charset=utf-8",
+                },
+              }
+            );
+          }
+        })()
+      );
+
+      return;
+    }
+  }
+);

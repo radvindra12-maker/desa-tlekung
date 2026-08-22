@@ -1,19 +1,10 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
+import { redirect } from "next/navigation";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+import type { AdminSupabaseClient } from "@/lib/types/admin-database";
 import { AdminPwaProvider } from "@/components/admin-pwa/AdminPwaProvider";
 
-/**
- * Layout KHUSUS route group (admin): /purchase-requests & /purchase-requests/[id].
- *
- * Route group tidak menambah segmen URL, jadi metadata di sini
- * (termasuk link manifest PWA) HANYA berlaku untuk dua halaman
- * tersebut — tidak bocor ke website publik maupun /login, karena
- * keduanya berada di route group lain yang tidak mewarisi file ini.
- *
- * Sengaja TIDAK memakai tag <main> di sini karena app/layout.tsx
- * (root) dan setiap page.tsx admin sudah memiliki <main> masing-masing.
- * Menambah <main> lagi di sini akan membuat nesting berlebih.
- */
 export const metadata: Metadata = {
   title: "Giri Murti Admin",
   description:
@@ -35,10 +26,43 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: {
   children: ReactNode;
 }) {
-  return <AdminPwaProvider>{children}</AdminPwaProvider>;
+  const supabase = await createSupabaseServerClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Belum login
+  if (!user) {
+    redirect("/login");
+  }
+
+  const adminSupabase =
+    supabase as unknown as AdminSupabaseClient;
+
+  const {
+    data: adminUser,
+    error: adminError,
+  } = await adminSupabase
+    .from("admin_users")
+    .select("user_id")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  // User login tetapi bukan admin,
+  // atau terjadi error authorization.
+  if (adminError || !adminUser) {
+    redirect("/login");
+  }
+
+  return (
+    <AdminPwaProvider>
+      {children}
+    </AdminPwaProvider>
+  );
 }
