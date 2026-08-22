@@ -39,34 +39,34 @@ const paketWisata = [
 
 const events = [
   {
-    date: "COMING",
-    month: "SOON",
-    title: "Coffee Festival",
-    type: "Festival",
-    status: "OPEN",
+    date: "TAHUNAN",
+    month: "",
+    title: "Selametan Dusun",
+    type: "Festival Budaya",
+    status: "LIMITED",
     color: "bg-emerald-500",
     description:
-      "Festival kopi tahunan yang menghadirkan UMKM, bazar, lomba seduh kopi, serta pertunjukan seni budaya.",
+      "Tradisi ritual masyarakat Jawa sebagai wujud rasa syukur kepada Tuhan, memohon keselamatan, dan menolak bala.",
   },
   {
-    date: "LAKUKAN",
-    month: "RESERVASI",
-    title: "Workshop Brewing",
-    type: "Workshop",
-    status: "LIMITED",
+    date: "SETIAP HARI",
+    month: "MINGGU",
+    title: "Nandur Dulur",
+    type: "Education",
+    status: "FREE",
     color: "bg-amber-500",
     description:
-      "Belajar teknik manual brew langsung bersama praktisi kopi lokal.",
+      "Mengajari dan menceritakan dongeng pada Anak - anak",
   },
   {
-    date: "COMING",
-    month: "SOON",
-    title: "Live Acoustic Coffee Night",
-    type: "Music",
+    date: "TIAP",
+    month: "2 TAHUN",
+    title: "Ritual Syukuran",
+    type: "Harvest Festival",
     status: "FREE",
     color: "bg-sky-500",
     description:
-      "Menikmati kopi Giri Murti ditemani live acoustic di Pendopo Kopi.",
+      "Warga berkumpul untuk mengumpulkan hasil panen mereka dan membaginya sama rata",
   },
 ];
 

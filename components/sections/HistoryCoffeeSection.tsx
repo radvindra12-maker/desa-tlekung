@@ -24,9 +24,9 @@ interface StatItem {
 
 const timelineItems: TimelineItem[] = [
   {
-    year: "1940-an",
+    year: "1874-an",
     title: "Awal Perkebunan",
-    desc: "Masyarakat mulai membuka lahan di lereng Kawi dan menanam kopi sebagai salah satu komoditas utama yang kemudian menjadi sumber mata pencaharian warga.",
+    desc: "Masyarakat mulai membuka lahan peninggalan belanda di lereng Kawi dan menanam kopi sebagai salah satu komoditas utama yang kemudian menjadi sumber mata pencaharian warga.",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
@@ -35,7 +35,7 @@ const timelineItems: TimelineItem[] = [
     ),
   },
   {
-    year: "1958-an",
+    year: "1874-an",
     title: "Perkembangan Kebun",
     desc: "Perkebunan kopi semakin berkembang dengan bertambahnya luas lahan dan jumlah petani yang membudidayakan kopi di Desa Tlekung.",
     icon: (
@@ -72,7 +72,7 @@ const timelineItems: TimelineItem[] = [
 const stats: StatItem[] = [
   {
     label: "Mulai Dari",
-    value: "1958",
+    value: "1874",
     unit: "",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,7 +94,7 @@ const stats: StatItem[] = [
   },
   {
     label: "Ketinggian",
-    value: "950",
+    value: "1200",
     unit: "mdpl",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

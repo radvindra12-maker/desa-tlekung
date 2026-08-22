@@ -7,11 +7,11 @@ import { motion, Variants } from "framer-motion";
 const highlights = [
   {
     icon: "",
-    text: "Warisan Perkebunan Kopi Sejak 1958",
+    text: "Warisan Perkebunan Kopi Sejak 1874",
   },
   {
     icon: "",
-    text: "Ditanam di Lereng Pegunungan Tlekung",
+    text: "Ditanam di Lereng Kawi",
   },
   {
     icon: "",
@@ -20,8 +20,8 @@ const highlights = [
 ];
 
 const miniStats = [
-  { value: "1958", label: "Tahun Dimulai" },
-  { value: "60+", label: "Tahun Warisan" },
+  { value: "1874", label: "Tahun Dimulai" },
+  { value: "80+", label: "Tahun Warisan" },
   { value: "88+", label: "Petani Terlibat" },
 ];
 
@@ -109,7 +109,7 @@ quality={85}
                 </div>
 
                 <div className="px-3 py-2 rounded-2xl bg-orange-500 text-white text-xs font-bold">
-                  Sejak 1958
+                  Sejak 1874
                 </div>
               </div>
             </div>
@@ -128,7 +128,7 @@ quality={85}
                 Ketinggian Kebun
               </p>
               <p className="text-2xl font-extrabold text-[var(--coffee)]">
-                ±950 mdpl
+                ±1200 mdpl
               </p>
               <p className="text-[10px] text-gray-600">
                 Mendukung kualitas biji kopi
@@ -171,7 +171,7 @@ quality={85}
             >
               Kopi Giri Murti merupakan warisan perkebunan kopi yang
               telah menjadi bagian dari identitas masyarakat Desa
-              Tlekung sejak tahun 1958.
+              Tlekung sejak tahun 1874.
               Ditanam di kawasan pegunungan dengan kondisi alam yang
               mendukung, Kopi Giri Murti dikenal memiliki karakter rasa
               yang khas dan menjadi salah satu produk unggulan

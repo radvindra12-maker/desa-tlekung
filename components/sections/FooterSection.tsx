@@ -214,7 +214,7 @@ export default function FooterSection() {
 
               <p className="text-sm text-green-300/70 leading-relaxed mb-6">
               Kopi Giri Murti merupakan warisan perkebunan kopi yang telah menjadi bagian dari 
-              identitas masyarakat Desa Tlekung sejak tahun 1958. Hingga saat ini kopi ini terus dikembangkan sebagai produk unggulan yang mendukung perekonomian masyarakat lokal.
+              identitas masyarakat Desa Tlekung sejak tahun 1874. Hingga saat ini kopi ini terus dikembangkan sebagai produk unggulan yang mendukung perekonomian masyarakat lokal.
               </p>
 
               <div className="flex items-center gap-2">

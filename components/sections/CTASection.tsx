@@ -106,7 +106,7 @@ export default function CTASection() {
               bg-emerald-900/50 border border-emerald-700/50
               text-xs font-bold uppercase tracking-widest text-emerald-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Warisan Sejak 1958
+              Warisan Sejak 1874
             </span>
           </motion.div>
 

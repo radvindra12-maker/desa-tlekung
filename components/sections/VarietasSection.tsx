@@ -19,7 +19,7 @@ const varietas = [
       "Varietas kopi yang turut dibudidayakan masyarakat sebagai bagian dari keberagaman tanaman kopi di Desa Tlekung.",
   },
   {
-    nama: "Gayoh Aceh",
+    nama: "Gayo Aceh",
     latin: "Varietas Lokal",
     image: "/images/varietas/gayuh.jpg",
     warna: "bg-yellow-500",
@@ -126,7 +126,7 @@ quality={85}
   </div>
 
   <span className="text-lg">
-    ☕
+    
   </span>
 
 </div>

@@ -20,7 +20,7 @@ const narasumber: Narasumber = {
   nama: "Natan Karunianto",
   peran: "Salah Satu Pendiri Giri Murti",
   deskripsi:
-    "Generasi kelima penerus perkebunan kopi keluarga yang telah berdiri sejak tahun 1940-an di lereng Gunung Kawi, Desa Tlekung.",
+    "Generasi kelima penerus perkebunan kopi keluarga yang telah berdiri sejak tahun 1874-an di lereng Gunung Kawi, Desa Tlekung.",
   inisial: "NK",
 };
 
