@@ -108,6 +108,10 @@ function StatusBadge({
   );
 }
 
+function formatRequestId(id: string) {
+  return `${id.slice(0, 8)}…${id.slice(-6)}`;
+}
+
 export default function PurchaseRequestsPage() {
   const [requests, setRequests] = useState<
     PurchaseRequest[]
@@ -124,6 +128,9 @@ export default function PurchaseRequestsPage() {
     useState("all");
 
   const [currentPage, setCurrentPage] = useState(1);
+
+  const [copiedRequestId, setCopiedRequestId] =
+    useState<string | null>(null);
 
   const itemsPerPage = 10;
 
@@ -217,6 +224,9 @@ export default function PurchaseRequestsPage() {
     return requests.filter((request) => {
       const matchesSearch =
         keyword === "" ||
+        request.id
+          .toLowerCase()
+          .includes(keyword) ||
         request.full_name
           ?.toLowerCase()
           .includes(keyword) ||
@@ -263,6 +273,30 @@ export default function PurchaseRequestsPage() {
     setSearch("");
     setStatusFilter("all");
     setCurrentPage(1);
+  };
+
+  const copyRequestId = async (
+    requestId: string
+  ) => {
+    try {
+      await navigator.clipboard.writeText(
+        requestId
+      );
+
+      setCopiedRequestId(requestId);
+
+      window.setTimeout(() => {
+        setCopiedRequestId((current) =>
+          current === requestId
+            ? null
+            : current
+        );
+      }, 1500);
+    } catch {
+      console.error(
+        "Gagal menyalin ID permintaan."
+      );
+    }
   };
 
   return (
@@ -338,7 +372,7 @@ export default function PurchaseRequestsPage() {
                   setSearch(event.target.value);
                   setCurrentPage(1);
                 }}
-                placeholder="Nama, email, nomor HP, atau instansi..."
+                placeholder="Nama, email, nomor HP, instansi, atau ID permintaan..."
                 className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-stone-400 focus:border-stone-500 focus:ring-2 focus:ring-stone-200"
               />
             </div>
@@ -593,6 +627,34 @@ export default function PurchaseRequestsPage() {
                             <p className="mt-1 text-sm text-stone-500">
                               {request.email}
                             </p>
+
+                            <div className="mt-2 flex items-center gap-2">
+                              <code
+                                title={request.id}
+                                className="truncate text-xs text-stone-400"
+                              >
+                                ID:{" "}
+                                {formatRequestId(
+                                  request.id
+                                )}
+                              </code>
+
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  copyRequestId(
+                                    request.id
+                                  )
+                                }
+                                className="shrink-0 rounded-md border border-stone-200 px-2 py-1 text-xs font-medium text-stone-600 transition hover:bg-stone-100"
+                                title="Salin ID permintaan"
+                              >
+                                {copiedRequestId ===
+                                request.id
+                                  ? "Tersalin"
+                                  : "📋"}
+                              </button>
+                            </div>
                           </td>
 
                           <td className="px-6 py-5 text-sm text-stone-700">
@@ -708,7 +770,9 @@ export default function PurchaseRequestsPage() {
                               )
                           )
                         }
-                        disabled={currentPage === 1}
+                        disabled={
+                          currentPage === 1
+                        }
                         className="rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition hover:bg-stone-100 disabled:cursor-not-allowed disabled:opacity-40"
                       >
                         ← Sebelumnya
